@@ -34,7 +34,8 @@
 8. **You can use Sass, if you and your teammate know Sass. If your teammate doesn't know Sass, you will be responsible for teaching your teammate enough Sass to build the project, or you can take full responsibility for the Sass/CSS aspect of the project, if your teammate agrees with the plan and you really want to use Sass.**
 
 9. **Animation: We didn’t yet cover animation in any our courses, but the project includes a bit of animation. Since each team has three students, decide if one teammate should focus entirely on the animation while the other teammates focus on the UI layout and styling. The student who agrees to do the animation will likely have to research and practice to get the animation just right.**
-<br />
+
+
 ###Project Requirements
 
 1. **The website will be responsive, but full responsiveness isn’t mandatory during the hackathon, particularly since we have not given you the UI design for the tablet and mobile phone views. We have given you the UI design for just the desktop view. You won’t lose points if your final submission isn’t responsive, but you will get bonus 5 points (this is huge) if the site is responsive.**
