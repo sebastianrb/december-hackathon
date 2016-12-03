@@ -1,0 +1,59 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* flex container for the user modal */
+.user-modal__container {
+	height: 85vh;
+	width: 75vw;
+	max-width: 75em;
+	margin: 3% auto;
+  display: flex;
+  border: solid 1px red;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* photo and quote section containing block */
+.user-modal__photo-block {
+  background: lightblue;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* user photo container */
+.user-modal__photo-block__photo {
+	height: 80%;
+	background: lightgreen;
+}
+
+/* user quote container */
+.user-modal__photo-block__quote {
+	height: 20%;
+	background: darkgray;
+}
+
+
+/* Bio info and career progress section containing block */
+.user-modal__info-block {
+	background: mistyrose;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Bio info section header (user name, career path, evidential badge) */
+.user-modal__info-block__header {
+  height: 22%;
+  background: url(../BovAcademy_Students_Website_Assets/BovAcademy_EvidentialDegree_Emblem.png) cornflowerblue no-repeat right;
+}
+
+/* Bio info main section container */
+.user-modal__info-block__main-content {
+  height: 78%;
+  background: lightsalmon;
+}
+
