@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #December Hackathon: Student Profile Site
 
 ###[Team Resources](./Team\ Resources/)
@@ -7,10 +6,3 @@
 * [Hackathon/Project Rules](./Team\ Resources/RULES.md)
 
 ###[GitHub Pages](http://sebastianrb.github.io/december-hackathon/index.html)
-
-=======
-# december-hackathon
-## Sam Chittenden development branch
-
-Friday, December 2, 2016
->>>>>>> sam_development
