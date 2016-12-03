@@ -100,15 +100,14 @@ main{
 .student-image-grid{
   display: flex;
   flex-flow: row wrap;
-
 }
-.student-image-grid__student-image{
-  width: 20%;
+
+.student-image-grid__image-cont{
+  width: 10%;
   flex: 0 0 25%;
-
 }
 
-.student-image-grid__student-image img{
+.student-image-grid__image-cont__image{
   width: 100%;
 }
 
