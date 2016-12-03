@@ -1,0 +1,156 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+/* flex container for the user modal */
+
+.user-modal__container {
+  height: 80vh;
+  width: 70vw;
+  max-width: 70em;
+  margin: 3% auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* photo and quote section containing block */
+
+.user-modal__photo-block {
+  background: lightblue;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* user photo container */
+
+.user-modal__photo-block__photo {
+  height: 80%;
+  background: lightgreen;
+}
+
+
+/* student photo img */
+
+.student-photo {}
+
+
+/* quote mark circle */
+
+.user-modal__photo-block__quote:before {
+  content: '\201D';
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 0.6rem;
+  border-radius: 50%;
+  background-color: black;
+  color: #ffffff;
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+
+/* user quote container */
+
+.user-modal__photo-block__quote {
+  height: 20%;
+  background: darkgray;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* student quote blockquote */
+
+.student-quote {
+  margin: 0;
+  width: 80%;
+}
+
+.student-quote p {
+  font-style: italic;
+}
+
+.student-quote cite {
+  font-style: normal;
+}
+
+
+/* Bio info and career progress section containing block */
+
+.user-modal__info-block {
+  background: mistyrose;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Bio info section header (user name, career path, evidential badge) */
+
+.user-modal__info-block__header {
+  height: 22%;
+  display: flex;
+}
+
+
+/* Student name, career path, grad date container */
+
+.user-modal__info-block__header__text {
+  padding: 2em;
+  flex: 2;
+}
+
+
+/* Evidential degree badge container */
+
+.user-modal__info-block__header__badge {
+  margin: 0 4em 0 0;
+}
+
+
+/* Student name h1 */
+
+.student-name {
+  font-weight: 400;
+  margin: 0;
+}
+
+
+/* Career path h3 */
+
+.career-path__subheader {
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+
+/* graduation date p */
+
+.graduation-date {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+
+/* Bio info main section container */
+
+.user-modal__info-block__main-content {
+  height: 78%;
+  background: lightsalmon;
+}
