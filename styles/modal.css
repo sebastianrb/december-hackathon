@@ -7,8 +7,8 @@
 /* flex container for the user modal */
 .user-modal__container {
 	height: 85vh;
-	width: 75vw;
-	max-width: 75em;
+	width: 70vw;
+	max-width: 70em;
 	margin: 3% auto;
   display: flex;
   border: solid 1px red;
@@ -48,8 +48,34 @@
 /* Bio info section header (user name, career path, evidential badge) */
 .user-modal__info-block__header {
   height: 22%;
-  background: url(../BovAcademy_Students_Website_Assets/BovAcademy_EvidentialDegree_Emblem.png) cornflowerblue no-repeat right;
+	display: flex;
 }
+
+/*  */
+.user-modal__info-block__header__text {
+	padding: 2em;
+	flex: 2;
+}
+
+.user-modal__info-block__header__badge {
+	margin: 0 4em 0 0;
+}
+
+.student-name {
+	font-weight: 400;
+	margin: 0;
+}
+
+.career-path__subheader {
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
+
+.graduation-date {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
 
 /* Bio info main section container */
 .user-modal__info-block__main-content {
