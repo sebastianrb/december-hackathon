@@ -95,6 +95,23 @@ main{
   display: flexbox;
 }
 
+
+/* STUDENT IMAGE GRID */
+.student-image-grid{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+.student-image-grid__student-image{
+  width: 20%;
+  flex: 0 0 25%;
+
+}
+
+.student-image-grid__student-image img{
+  width: 100%;
+}
+
 /**********/
 /* FOOTER */
 /**********/
