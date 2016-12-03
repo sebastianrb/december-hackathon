@@ -2,5 +2,5 @@
 
 ###[Team Resources](./Team\ Resources/)
 
-###[GitHub Pages](#)
+###[GitHub Pages](http://sebastianrb.github.io/december-hackathon/index.html.)
 
