@@ -1,142 +1,104 @@
-*,
-*:before,
-*:after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   background: #eee;
+    align-items: center;
+  justify-content: center;
 }
 
+/**********/
+/* HEADER */
+/**********/
 
-
-/****************************************
-HEADER
-*****************************************/
-
-header {
-  height: 80px;
-  background: #222;
-}
-
-.header__logo img {
-  width: 5%;
-  margin: 1.5% 0 0 4%;
-}
-
-.header__title {
-  font-size: 2em;
-  text-decoration: none;
-  color: #f5f5f5;
-  margin-top: -10px;
-}
-
-.header__title-bov {
-  color: blue;
-}
-
-.header__subtitle {
-  color: #eee;
-}
-
-.menu__trigger {
-  background: #16414f;
-  float: right;
-  padding: 1.3rem 0;
-  width: 10%;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.menu__trigger--active {
-  background: salmon;
-}
-
-.menu__dropdown {
-  padding: 1.6rem 0;
-  background: salmon;
-  display: none;
-}
-
-.menu__col {
-  width: 33.333%;
-  float: left;
-  padding: 2.5rem 1.5rem;
-}
-
-.menu__dropdown li {
-  list-style: none;
-}
-
-.cf:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-
-/****************************************
-IMAGE GALLARY
-*****************************************/
-
-.section__image-container {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 1 1rem;
-  font-size: 0;
-  display: flex;
-}
-
-.section__image-container div {
-  flex: auto;
-  width: 200px;
-  margin: .5vw;
-}
-
-.section__image-container div img {
+header{
   width: 100%;
-  height: auto;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  background-color: rgb(30, 34, 38)
 }
 
-.section__image-responsive {
-  max-width: 100%;
+.header__logo{
+  width: 80px;
+  padding: 10px;
 }
 
-.section__image-cell {
-  display: block;
-  margin: 1rem;
+.header__title{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: 35px; 
+  font-weight: 200;
 }
 
-/* Responsive for Tablet*/
-@media screen and (min-width: 600px) {
-  .section__image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  .section__image-cell {
-    width: calc(50% - 2rem);
-  }
+.header__title__main{
+  color: rgb(164,188,193);
 }
 
-/*Responsive for Desktop*/
-@media screen and (min-width: 1000px) {
-  .section__image-cell {
-    width: calc((100% / 3) - 2rem);
-  }
+.header__title__subtitle{
+    font-size: 0.35em; 
+    color: rgb(134, 156, 161)
+;
 }
 
-/*Responsive for mobile*/
-/* ??? This part I think I did not do well*/
-@media screen and (max-width: 200px) {
-  .section__image-container div { margin: 0; }
-  .section__image-container { padding: 0; }
-
+.header__title__main--bovBlue{
+  color: #42bcda;
 }
 
-/****************************************
-FOOTER
-*****************************************/
+/* HEADER__DROPDOWN-NAV */
+
+.header__dropdown-nav{
+  padding: 7px;
+  background-color: #272b30;
+  border: 3px solid white;
+  border-radius: 5px;
+  margin-right: 2%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header__dropdown-nav__dropdown-arrow{
+  color: rgb(134, 156, 161);
+  cursor: pointer;
+}
+
+.circles{
+  width: 20px;
+  margin-right: 5px;
+  overflow: auto;
+}
+
+.circle{
+  background-color: white;
+  float: left;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/********/
+/* MAIN */
+/********/
+
+main{
+  width: 100%;
+}
+
+/* MAIN_HEADER */
+
+.main__header{
+  display: flexbox;
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer{
+  width: 100%;
+}

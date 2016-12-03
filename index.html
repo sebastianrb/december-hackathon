@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Bov Academy</title>
+
+        <!-- STYLE -->
         <link rel="stylesheet" href="./styles/main.css"/>
+
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <!-- ICONS -->
+        <script src="https://use.fontawesome.com/0b12db3902.js"></script>
+
     </head>
     <body>
-        <header>
-            <div class="header__logo">
 
+        <header>
+
+            <!-- LOGO -->
+            <img class="header__logo" src="./images/BovAcademy_logo_head_wider_stroke.png" alt="header logo" />
+            <div href="#" class="header__title">
+                <div class="header__title__main">
+                    <span class="header__title__main--bovBlue">Bov</span> Academy
+                </div>
+                <div class="header__title__subtitle">
+                    Of Programming and Futuristic Engineering
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#nowhere" title="Lorum ipsum dolor sit amet">Lorem</a></li>
-                    <li><a href="#nowhere" title="Aliquam tincidunt mauris eu risus">Aliquam</a></li>
-                    <li><a href="#nowhere" title="Morbi in sem quis dui placerat ornare">Morbi</a></li>
-                    <li><a href="#nowhere" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
-                    <li><a href="#nowhere" title="Pellentesque fermentum dolor">Pellentesque</a></li>
-                </ul>
+
+            <!-- HEADER DROPDOWN NAV -->
+            <nav class="header__dropdown-nav">
+
+                <div class="circles">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+
+                <i class="fa fa-caret-down header__dropdown-nav__dropdown-arrow" aria-hidden="true"></i>
+                    
             </nav>
         </header>
-        <main>
-            <section class="section__image-container">
 
-            </section>
+        <main>
+            
+            <!-- MAIN HEADER -->
+            <div class="main__header"> 
+                <div class="main__header__title">
+                    <h1 class="main__header__title__main">Our Students</h1>
+                    <div class="main__header__title__subtitle">
+                        <h3> First Cohort</h3>   
+                        <p"> Graduating February 2017 and Onward </p>
+                    </div>
+                </div>
+                <div class="registration-button">
+                    REGISTER FOR the 2nd COHORT
+                </div>
+            </div>
+            
+            <!-- IMAGE GRID -->
+            <div class="student-image-grid">
+                <div class="student-image-grid__student-image"><img src="./images/pexels-father-child.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/city-sunny-people-street.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/light-person-woman-fire.jpeg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-photo-116235.jpeg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/man-person-jumping-desert.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/city-sunny-people-street.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/people-coffee-notes-tea.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-metro.jpg"></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-group.jpeg" ></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-staris.jpeg" ></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-photo-alley.jpeg" class="section__image-responsive"></div>
+                <div class="student-image-grid__student-image"><img src="./images/pexels-reading.jpg"></div>
+            </div>
+
         </main>
-        <footer></footer>
+
+        <footer>
+
+            <!-- FOOTER NAV -->
+            <nav class="footer__nav">
+                <ul>
+                    <li>BOV ACADEMY HOME</li>
+                    <li>PROGRAMS AND CAREER PATHS</li>
+                    <li>OUR MISSION</li>
+                    <li>CAREERS</li>
+                    <li>CONTACT</li>
+                </ul>       
+            </nav>
+
+            <!-- SOCIAL MEDIA LINKS -->
+            <ul class="footer__social-media">
+                <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                <li><i class="fa" aria-hidden="true"><img src="./images/Enlightenment_temp_icon.png"></i></li>
+            </ul>
+            
+            <!-- AUTHORS CONTAINER -->
+            <div class="footer__authorsContainer">
+
+                <div class='footer__authorsContainer__title'>
+                    Site completed by Bov Academy Students
+                </div>
+
+                <div class="footer__authorsContainer__author"> 
+                    <img src="">
+                </div>
+                <div class="footer__authorsContainer__author"> 
+                    <img src="">
+                </div>
+                <div class="footer__authorsContainer__author"> 
+                    <img src="">
+                </div>
+                <div class="footer__authorsContainer__author"> 
+                    <img src="">
+                </div>
+
+            </div>
+
+        </footer>
+
     </body>
 </html>
