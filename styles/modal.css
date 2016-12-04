@@ -239,6 +239,7 @@
   font-size: 12px;
   margin: 0;
   padding: 0;
+  width: 75%;
 }
 
 .career-path__list li {
@@ -252,6 +253,7 @@
 .career-path-info__span {
   display: block;
   padding: 10px;
+  font-size: 0.9em;
 }
 
 .career-path-progress__span {
