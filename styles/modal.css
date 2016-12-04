@@ -391,3 +391,14 @@
   opacity: 1;
   height: 100%;
 }
+
+
+/*MODAL MEDIA QUERIES*/
+
+@media only screen and (max-width: 1010px) {
+  .user-modal__container,
+  .student-image-grid__image-cont__picture--active {
+
+  }
+}
+

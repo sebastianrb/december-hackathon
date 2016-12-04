@@ -656,6 +656,9 @@ button.load-more-container__button:hover {
     .main__header__search {
         padding-left: 25px;
     }
+    .header__dropdown-nav:hover {
+        background-color: transparent;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -702,7 +705,7 @@ button.load-more-container__button:hover {
   .circle {
     float: none;
     border-radius: 0;
-    width: 35px;
+    width: 85%;
     height: 4px;
     margin-right: 1px;
     margin-bottom: 6px;
@@ -723,6 +726,39 @@ button.load-more-container__button:hover {
   }
   .main__header__search__h3 {
       margin: 15px 0 0 10px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .circles {
+      width: 35px;
+  }
+  .header__title {
+      font-size: 1.5em;
+  }
+  .main__header {
+      padding: 25px 30px;
+  }
+  .circle {
+      height: 3px;
+  }
+  .circles {
+      margin-right: -3px;
+  }
+  .header__logo {
+      width: 70px;
+  }
+  .main__header__search__h3 {
+      margin: 10px 0 0 10px;
+  }
+  .main__header__registration {
+      margin-top: 45px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .main__header__title {
+      padding: 20px 45px 15px 5px;
   }
 }
 
