@@ -214,6 +214,7 @@
 .bio-info__section-heading {
   font-weight: 300;
   margin-bottom: 0;
+  font-size: 1.3em;
 }
 
 /* bio info ul */
@@ -221,6 +222,11 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.bio-info__list li {
+  display: inline-block;
+  margin-right: 2.3em;
 }
 
 /* bio info link styles */
