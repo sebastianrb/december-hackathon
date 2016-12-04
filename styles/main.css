@@ -253,6 +253,10 @@ main{
   height: 100%;
 }
 
+.student-image-grid__image-cont:hover {
+    opacity: .7;
+}
+
 /**********/
 /* FOOTER */
 /**********/
