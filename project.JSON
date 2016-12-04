@@ -1,0 +1,18 @@
+{
+    "header": {
+        "icon": "/images/BovAcademy_logo_head_wider_stroke.png",
+        "title": "Bov Academy Students",
+        "sub-title": "Of Programming and Futuristic Engineering",
+        "menu": {
+            "circle-colors": ["#489fef", "#75c36a", "#f15b5a", "#ed72aa", "#7b7def", "#a7c931", "#f7be26", "#fc8850", "#5ac9e3"],
+            "icon": "fa-caret-down"
+        }
+    },
+    "sub-header": {
+        "cohort": "First Cohort",
+        "graduation": "GRADUATING MARCH 2017 AND ONWARDS",
+        "search-field": {
+            "magnifying-glass-icon": "/images/magnifying-glass.svg"
+        }
+    }
+}
