@@ -28,11 +28,10 @@ for(i = 0; i < images.length; i++) {
         addClass(modalContainer, "user-modal__container--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
 
-        // transition the image into place
-        TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"});
+        // GSAP timeline code
+        var modalTime = new TimelineLite();
 
-        // fade in modal
-        TweenMax.to(modalContainer, 0.2, {opacity: "1"});
+        modalTime.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"}).to(modalContainer, 0.5, {opacity: "1"});
 
     });
 }
