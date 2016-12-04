@@ -19,6 +19,7 @@
   transform: translateX(-50%);
   z-index: -500;
   opacity: 0;
+  transition: z-index 0s, opacity 1s;
 }
 
 /* class to be applied when modal is active (image is clicked) */
@@ -255,8 +256,13 @@
   transition: 0.2s;
 }
 
+.user-modal__background-cover > a {
+  width: 100%;
+  height: 100%;
+}
+
 .user-modal__background-cover--active {
-  z-index: 100;
+  z-index: 300;
   opacity: 1;
   height: 100%;
 }
