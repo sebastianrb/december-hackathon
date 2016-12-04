@@ -354,7 +354,7 @@ main{
 }
 
 .student-image-grid__image-cont__picture--clone {
-  
+  /*transform: translateX(-50%);*/
 }
 
 /* class to be applied to .student-image-grid__image-cont__picture when clicked */
@@ -362,7 +362,7 @@ main{
 .student-image-grid__image-cont__picture--active {
   /*position: fixed;*/
   top: 3em;
-  left: 50%;
+  left: 40%;
   z-index: 500;
   transform: translateX(-50%);
   width: 60em;
