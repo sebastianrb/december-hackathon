@@ -617,5 +617,10 @@ button.load-more-container__button:hover {
   .student-image-grid__image-cont {
     flex: 0 0 100%;
   }
+  .footer__authorsContainer-list {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
+
 
