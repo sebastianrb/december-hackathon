@@ -681,8 +681,48 @@ button.load-more-container__button:hover {
   }
 }
 
-@media only screen and (max-width: 660px) {
-
+@media only screen and (max-width: 650px) {
+  .header__title {
+      font-size: 1.7em;
+  }
+  .fa-caret-down:before {
+    display: none;
+  }
+  .header__dropdown-nav {
+    background: transparent;
+    border: none;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  .circles {
+      width: 40px;
+      margin-right: 0;
+      overflow: auto;
+  }
+  .circle {
+    float: none;
+    border-radius: 0;
+    width: 35px;
+    height: 4px;
+    margin-right: 1px;
+    margin-bottom: 6px;
+  }
+  .circle--5,
+  .circle--6,
+  .circle--7,
+  .circle--8,
+  .circle--9 {
+    display: none;
+  }
 }
 
+@media only screen and (max-width: 570px) {
+  .main__header {
+      font-size: .8em;
+      padding: 40px 30px;
+  }
+  .main__header__search__h3 {
+      margin: 15px 0 0 10px;
+  }
+}
 
