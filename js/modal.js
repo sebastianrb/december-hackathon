@@ -7,6 +7,8 @@ function addClass(element, addedClass) {
 var images = document.querySelectorAll(".student-image-grid__image-cont");
 var modalBackground = document.querySelector(".user-modal__background-cover");
 var modalContainer = document.querySelector(".user-modal__container");
+var modalPosition = modalContainer.getBoundingClientRect();
+var cloneLeft = modalPosition.left.toString() + "px";
 
 var i;
 for(i = 0; i < images.length; i++) {
@@ -24,10 +26,11 @@ for(i = 0; i < images.length; i++) {
         //append classes
         addClass(modalBackground, "user-modal__background-cover--active");
         addClass(modalContainer, "user-modal__container--active");
-        addClass(clone, "student-image-grid__image-cont__picture--active");
+        // addClass(clone, "student-image-grid__image-cont__picture--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
         // clone.setAttribute('style', 'top: 3em; left: 50%; position: fixed; z-index: 400;');
 
+        TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"});
     });
 }
 
@@ -53,8 +56,8 @@ function scaleMove(e){
     //OVERLAY CLONE ON ORIGINAL IMAGE
     clone.style.position = "fixed";
     clone.width = thisDim.width;
-    // clone.style.top = (thisDim.top).toString() + "px";
-    // clone.style.right = (thisDim.right).toString() + "px";
+    clone.style.top = (thisDim.top).toString() + "px";
+    clone.style.left = (thisDim.left).toString() + "px";
     // clone.style.width = (picDim.width).toString() + 'px';
     // clone.style.height = (picDim.height).toString() + 'px';
     clone.style.zIndex = "400";
