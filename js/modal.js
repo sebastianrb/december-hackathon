@@ -6,13 +6,15 @@ function addClass(element, addedClass) {
 
 var images = document.querySelectorAll(".student-image-grid__image-cont");
 var modalBackground = document.querySelector(".user-modal__background-cover");
-var modalContainer = document.querySelector(".user-modal__container");
-var modalPosition = modalContainer.getBoundingClientRect();
-var cloneLeft = modalPosition.left.toString() + "px";
 
 var i;
 for(i = 0; i < images.length; i++) {
     images[i].addEventListener("click", function(e) {
+
+var modalContainer = document.querySelector(".user-modal__container");
+var modalPosition = modalContainer.getBoundingClientRect();
+var cloneLeft = modalPosition.left.toString() + "px";
+
        // scale to place
         var clone = scaleMove(e.target.parentNode);
         var image = clone.children;
