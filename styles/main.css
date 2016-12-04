@@ -357,14 +357,13 @@ main{
 /* class to be applied to .student-image-grid__image-cont__picture when clicked */
 
 .student-image-grid__image-cont__picture--active {
-  position: fixed;
+  /*position: fixed;*/
   top: 3em;
   left: 50%;
   z-index: 500;
   transform: translateX(-50%);
   width: 60em;
   height: 38.5em;
- /*transition: width 1s, height 1s, top 1s, left 1s, transform 1s, z-index 0s ;*/
   animation: 1s moveToModal ease-out forwards;
 }
 
