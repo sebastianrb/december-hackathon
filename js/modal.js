@@ -26,7 +26,7 @@ for(i = 0; i < images.length; i++) {
         addClass(modalContainer, "user-modal__container--active");
         addClass(clone, "student-image-grid__image-cont__picture--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
-
+        // clone.setAttribute('style', 'top: 3em; left: 50%; position: fixed; z-index: 400;');
 
     });
 }
@@ -37,9 +37,13 @@ for(i = 0; i < images.length; i++) {
 function scaleMove(e){
 
     console.log(e);
-
+    console.log(e.children[0]);
     //GET POSITION OF IMAGE CONT
     thisDim = e.getBoundingClientRect();
+    console.log(thisDim);
+
+    picDim = e.parentNode.getBoundingClientRect();
+    console.log(picDim);
 
     clone = e.cloneNode(true);
     console.log(clone);
@@ -49,13 +53,15 @@ function scaleMove(e){
     //OVERLAY CLONE ON ORIGINAL IMAGE
     clone.style.position = "fixed";
     clone.width = thisDim.width;
-    clone.style.top = (thisDim.top).toString() + "px";
-    clone.style.left = (thisDim.left).toString() + "px";
+    // clone.style.top = (thisDim.top).toString() + "px";
+    // clone.style.right = (thisDim.right).toString() + "px";
+    // clone.style.width = (picDim.width).toString() + 'px';
+    // clone.style.height = (picDim.height).toString() + 'px';
     clone.style.zIndex = "400";
 
     e.parentNode.appendChild(clone);
     document.body.parentNode.appendChild(clone);
-    clone.classList.add("student-image-grid__image-cont__picture");
+    clone.className = "student-image-grid__image-cont__picture--clone";
 
     return clone;
 }

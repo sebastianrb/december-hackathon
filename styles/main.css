@@ -353,6 +353,9 @@ main{
   align-items: center;
 }
 
+.student-image-grid__image-cont__picture--clone {
+  
+}
 
 /* class to be applied to .student-image-grid__image-cont__picture when clicked */
 
@@ -364,7 +367,8 @@ main{
   transform: translateX(-50%);
   width: 60em;
   height: 38.5em;
-  animation: 1s moveToModal ease-out forwards;
+  transition: all 0.5s;
+  /*animation: 1s moveToModal ease-out forwards;*/
 }
 
 /*-----------------------------------------------------
