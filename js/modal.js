@@ -14,7 +14,7 @@ var i;
 for(i = 0; i < images.length; i++) {
     images[i].addEventListener("click", function(e) {
        // scale to place
-        var clone = scaleMove(event.target.parentNode);
+        var clone = scaleMove(e.target.parentNode);
         var image = clone.children;
 
         //get child elements
