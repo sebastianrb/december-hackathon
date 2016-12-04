@@ -123,7 +123,8 @@ main {
   /*width: 10%;*/
   flex: 0 0 25%;
   /*  height: 190px;*/
-  position: relative; /* used to transform picture element on image click */
+  position: relative;
+  /* used to transform picture element on image click */
 }
 
 .student-image-grid__image-cont__image {
@@ -131,11 +132,36 @@ main {
   height: auto;
 }
 
+
+/* class to be applied to .student-image-grid__image-cont__image when clicked */
+
+.student-image-grid__image-cont__image--active {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+
 /* picture element containing student image */
+
 .student-image-grid__image-cont__picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* class to be applied to .student-image-grid__image-cont__picture when clicked */
+
+.student-image-grid__image-cont__picture--active {
+  position: fixed;
+  top: 5em;
+  left: 50%;
+  z-index: 500;
+  transform: translateX(-50%);
+  width: 62.5em;
+  height: 47.5em;
 }
 
 

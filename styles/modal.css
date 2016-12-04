@@ -8,21 +8,29 @@
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 80vh;
-  width: 70vw;
+  /*height: 80vh;*/
+  /*width: 70vw;*/
+  height: 47.5em;
+  width: 62.500em;
   max-width: 70em;
-  margin: 3% auto;
   display: flex;
   flex-wrap: wrap;
   border: solid 1px black;
   font-family: 'Roboto', sans-serif;
-  position: absolute;
+  position: fixed;
   top: 5em;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 500;
+  z-index: -500;
+  opacity: 0;
 }
 
+/* class to be applied when modal is active (image is clicked) */
+
+.user-modal__container--active {
+  z-index: 500;
+  opacity: 1;
+}
 
 /* photo and quote section containing block */
 
@@ -170,4 +178,9 @@
   left: 0;
   opacity: 0;
   transition: 0.2s;
+}
+
+.user-modal__background-cover--active {
+  z-index: 1;
+  opacity: 1;
 }
