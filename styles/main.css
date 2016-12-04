@@ -535,6 +535,7 @@ button.load-more-container__button:hover {
   display: block;
   margin-top:10px;
   width: 19.48%;
+  min-width: 150px;
 }
 
 .footer__authorsPic__author {
