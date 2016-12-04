@@ -4,12 +4,9 @@
   box-sizing: border-box;
 }
 
-
 /* flex container for the user modal */
 
 .user-modal__container {
-  /*height: 80vh;*/
-  /*width: 70vw;*/
   height: 47.5em;
   width: 62.500em;
   max-width: 70em;
