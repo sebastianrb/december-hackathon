@@ -353,16 +353,13 @@ main{
   align-items: center;
 }
 
-.student-image-grid__image-cont__picture--clone {
-
-}
 
 /* class to be applied to .student-image-grid__image-cont__picture when clicked */
 
 .student-image-grid__image-cont__picture--active {
   /*position: fixed;*/
   top: 3em;
-  left: 50%;
+  left: 40%;
   z-index: 500;
   transform: translateX(-50%);
   width: 60em;
@@ -438,8 +435,6 @@ button.load-more-container__button {
     min-width: 200px;
 }
 
-
-}
 
 button.load-more-container__button {
     background: #404b56;
