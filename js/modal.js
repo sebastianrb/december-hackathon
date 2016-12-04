@@ -37,6 +37,11 @@ for (i = 0; i < images.length; i++) {
 
     modalTime.to(clone, 0.5, { top: "3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)" }).to(modalContainer, 0.2, { opacity: "1", zIndex: 500 }).from(modalQuoteBox, 0.5, {bottom: "-12em"});
 
+        var elementsToTransUp = document.querySelectorAll('.user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list, .career-path-update__span');
+
+        for(var i = 0; i < elementsToTransUp.length; i++){
+            modalTime.to(elementsToTransUp[i], 0.2, { opacity: "1", y: -30, zIndex: 500 })
+        }
   });
 }
 
