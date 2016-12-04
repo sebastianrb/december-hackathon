@@ -58,11 +58,12 @@
 
 .user-modal__photo-block__quote:before {
   content: '\201D';
+  font-family: 'Source Sans Pro';
   width: 3rem;
   height: 3rem;
   font-size: 3rem;
   text-align: center;
-  padding-top: 0.6rem;
+  padding-top: 0.3rem;
   border-radius: 50%;
   background-color: black;
   color: #ffffff;
