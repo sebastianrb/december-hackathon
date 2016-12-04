@@ -336,3 +336,12 @@ button.load-more-container__button:hover {
   position: relative;
   top: 2px;
 }
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 1200px) {
+  .student-image-grid__image-cont {
+    flex: 0 0 50%;
+  }
+}
