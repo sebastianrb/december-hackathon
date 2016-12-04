@@ -14,7 +14,7 @@ var i;
 for(i = 0; i < images.length; i++) {
     images[i].addEventListener("click", function(e) {
        // scale to place
-        var clone = scaleMove(event.target.parentNode);
+        var clone = scaleMove(e.target.parentNode);
         var image = clone.children;
 
         //get child elements
@@ -26,15 +26,12 @@ for(i = 0; i < images.length; i++) {
         //append classes
         addClass(modalBackground, "user-modal__background-cover--active");
         addClass(modalContainer, "user-modal__container--active");
-        // addClass(clone, "student-image-grid__image-cont__picture--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
-        // clone.setAttribute('style', 'top: 3em; left: 50%; position: fixed; z-index: 400;');
 
-        TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em"});
+        var modalTime = new TimelineLite();
 
-        //TweenMax.to(clone, 0.9,{ left: cloneLeft, top: "3em", ease:Strong.easeOut});
+        modalTime.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"}).to(modalContainer, 0.5, {opacity: "1"});
 
-        //TweenMax.to(clone, 0.8,{ width:"60em",  height:"38.5em", transform: "translateX(-50%)", ease:Strong.easeOut}, "-=0.79" );
     });
 }
 

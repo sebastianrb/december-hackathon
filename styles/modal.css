@@ -395,7 +395,7 @@
 
 /*MODAL MEDIA QUERIES*/
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1040px) {
   .user-modal__container,
   .student-image-grid__image-cont__picture--active {
 
