@@ -238,7 +238,7 @@ main{
 .main__header__registration {
   float: right;
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .main__header__registration-button {
@@ -246,7 +246,7 @@ main{
   text-decoration: none;
   color: white;
   letter-spacing: 2px;
-  padding: 15px 15px 12px 25px;
+  padding: 12px 15px 12px 25px;
   text-align: center;
   border-radius: 35px 0 0 35px;
   font-size: .7em;
@@ -255,7 +255,6 @@ main{
   -o-transition: all .3s;
   -ms-transition: all .3s;
   transition: all .3s;
-  display: block;
 }
 
 .main__header__registration-button:hover {
@@ -454,8 +453,7 @@ button.load-more-container__button:hover {
     font-size: .9em;
     padding: 15px 25px 15px 20px;
     border-radius: 5px;
-    width: 60%;
-    margin: 0 auto;
+    width: 40%;
   }
 }
 
