@@ -241,6 +241,44 @@ main{
   margin-top: 40px;
 }
 
+=======
+}
+
+.main__header__search__h3::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: transparent;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: width .4s linear, background-color .3s linear;
+  -moz-transition: width .4s linear, background-color .3s linear;
+  -o-transition: width .4s linear, background-color .3s linear;
+  -ms-transition: width .4s linear, background-color .3s linear;
+  transition: width .4s linear, background-color .3s linear;
+  position: absolute;
+  top: 95%;
+  border-radius: 2%;
+  left: 0;
+}
+
+.main__header__search__h3:hover::after {
+  width: 100%;
+  background: #4bc4e1;
+  transition: all .4s;
+}
+
+.main__header__search__h3:hover {
+  background-color: white;
+}
+
+.main__header__registration {
+  float: right;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+
 .main__header__registration-button {
   background-color: #4bc4e1;
   text-decoration: none;
@@ -349,6 +387,31 @@ button.load-more-container__button {
     min-width: 200px;
 }
 
+
+}
+
+button.load-more-container__button {
+    background: #404b56;
+    border: none;
+    padding: 15px;
+    width: 15%;
+    margin: 20px auto 40px;
+    display: inherit;
+    color: #a2b7bc;
+    font-size: 1.5em;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    min-width: 200px;
+}
+
+
 button.load-more-container__button:hover {
   background: #5e6e7d;
 }
@@ -437,6 +500,7 @@ button.load-more-container__button:hover {
 
 /*MEDIA QUERIES*/
 
+
 /*@media only screen and (max-width: 1200px) {
 
 }
@@ -445,6 +509,15 @@ button.load-more-container__button:hover {
   .student-image-grid__image-cont {
     flex: 0 0 50%;
   }
+
+@media only screen and (max-width: 1200px) {
+  .student-image-grid__image-cont {
+    flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+
   .main__header {
       padding: 50px 40px;
   }
@@ -485,6 +558,7 @@ button.load-more-container__button:hover {
     width: 40%;
   }
 }
+
 
 @media only screen and (max-width: 800px) {
   .main__header__search__h3 {
