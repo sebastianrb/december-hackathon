@@ -337,6 +337,55 @@ button.load-more-container__button:hover {
   top: 2px;
 }
 
+.footer__authorsContainer {
+  font-size: 12px;
+  color: rgb(134, 156, 161);
+  padding: 25px 0 10px;
+  width: 70%;
+  margin: 0 auto;
+  border-top: 1px solid rgba(64, 75, 86, 0.6);
+  }
+
+.footer__authorsContainer-title {
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  margin: 5px;
+}
+
+.footer__authorsContainer-author {
+
+}
+
+.footer__authorsContainer-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+}
+
+.footer__authorsContainer-list > li {
+  display: block;
+  margin-top:10px;
+  width: 19.48%;
+}
+
+.footer__authorsPic__author {
+  border-radius: 100%;
+  width: 35%;
+  position: relative;
+  top: 10px;
+}
+
+.footer__authorsContainer-list li > p {
+  padding-top: 10px;
+}
 
 /*MEDIA QUERIES*/
 
