@@ -26,11 +26,14 @@ for(i = 0; i < images.length; i++) {
         //append classes
         addClass(modalBackground, "user-modal__background-cover--active");
         addClass(modalContainer, "user-modal__container--active");
-        // addClass(clone, "student-image-grid__image-cont__picture--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
-        // clone.setAttribute('style', 'top: 3em; left: 50%; position: fixed; z-index: 400;');
 
+        // transition the image into place
         TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"});
+
+        // fade in modal
+        TweenMax.to(modalContainer, 0.2, {opacity: "1"});
+
     });
 }
 
