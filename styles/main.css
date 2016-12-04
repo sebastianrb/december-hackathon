@@ -602,18 +602,24 @@ button.load-more-container__button:hover {
   }
 }
 
+@media only screen and (max-width: 840px) {
+    .main__header__search__h3 {
+          margin: 25px 0 0;
+          font-size: 1.8em;
+      }
+}
+
 
 @media only screen and (max-width: 800px) {
-  .main__header__search__h3 {
-        margin: 25px 0 0;
-        font-size: 1.8em;
-    }
     .main__header__search {
         padding-left: 25px;
     }
 }
 
 @media only screen and (max-width: 700px) {
+  .header__title {
+      font-size: 2em;
+  }
   .student-image-grid__image-cont {
     flex: 0 0 100%;
   }
@@ -621,6 +627,20 @@ button.load-more-container__button:hover {
     flex-wrap: wrap;
     width: 100%;
   }
+  .main__header {
+      font-size: .9em;
+  }
+  .main__header__search__h3 {
+      margin: 15px 0 0;
+      font-size: 1.7em;
+  }
+  .main__header__registration-button {
+      width: 75%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+
 }
 
 
