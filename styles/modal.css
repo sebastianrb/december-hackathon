@@ -4,25 +4,34 @@
   box-sizing: border-box;
 }
 
-
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 80vh;
-  width: 70vw;
+  height: 47.5em;
+  width: 62.500em;
   max-width: 70em;
-  margin: 3% auto;
   display: flex;
   flex-wrap: wrap;
   border: solid 1px black;
   font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -500;
+  opacity: 0;
 }
 
+/* class to be applied when modal is active (image is clicked) */
+
+.user-modal__container--active {
+  z-index: 500;
+  opacity: 1;
+}
 
 /* photo and quote section containing block */
 
 .user-modal__photo-block {
-  background: lightblue;
   height: 100%;
   width: 40%;
   display: flex;
@@ -34,7 +43,6 @@
 
 .user-modal__photo-block__photo {
   height: 80%;
-  background: lightgreen;
 }
 
 
@@ -47,11 +55,12 @@
 
 .user-modal__photo-block__quote:before {
   content: '\201D';
+  font-family: 'Source Sans Pro';
   width: 3rem;
   height: 3rem;
   font-size: 3rem;
   text-align: center;
-  padding-top: 0.6rem;
+  padding-top: 0.3rem;
   border-radius: 50%;
   background-color: black;
   color: #ffffff;
@@ -123,6 +132,21 @@
   margin: 0 4em 0 0;
 }
 
+/* modal close icon box */
+
+.user-modal__info-block__header__close-icon {
+  width: 2.2em;
+  height: 2.2em;
+  font-family: 'Source Sans Pro';
+  position: absolute;
+  background: #bbbcbd;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+}
 
 /* Student name h1 */
 
@@ -153,4 +177,24 @@
 .user-modal__info-block__main-content {
   height: 78%;
   background: lightsalmon;
+}
+
+/* modal background fade-in and cover div*/
+
+.user-modal__background-cover {
+  background: rgba(35,35,35,0.95);
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.user-modal__background-cover--active {
+  z-index: 100;
+  opacity: 1;
+  height: 100%;
 }

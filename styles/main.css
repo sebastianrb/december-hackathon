@@ -241,6 +241,44 @@ main{
   margin-top: 30px;
 }
 
+=======
+}
+
+.main__header__search__h3::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: transparent;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: width .4s linear, background-color .3s linear;
+  -moz-transition: width .4s linear, background-color .3s linear;
+  -o-transition: width .4s linear, background-color .3s linear;
+  -ms-transition: width .4s linear, background-color .3s linear;
+  transition: width .4s linear, background-color .3s linear;
+  position: absolute;
+  top: 95%;
+  border-radius: 2%;
+  left: 0;
+}
+
+.main__header__search__h3:hover::after {
+  width: 100%;
+  background: #4bc4e1;
+  transition: all .4s;
+}
+
+.main__header__search__h3:hover {
+  background-color: white;
+}
+
+.main__header__registration {
+  float: right;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+
 .main__header__registration-button {
   background-color: #4bc4e1;
   text-decoration: none;
@@ -263,30 +301,59 @@ main{
 }
 
 /* STUDENT IMAGE GRID */
-.student-image-grid{
+
+.student-image-grid {
   display: flex;
   flex-flow: row wrap;
 }
 
-.student-image-grid__image-cont{
-  width: 10%;
+.student-image-grid__image-cont {
+  /*width: 10%;*/
   flex: 0 0 25%;
-/*  height: 190px;*/
-  cursor: pointer;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -o-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;
-}
-
-.student-image-grid__image-cont__image{
-  width: 100%;
-  height: 100%;
+  /*  height: 190px;*/
+  position: relative;
+  /* used to transform picture element on image click */
 }
 
 .student-image-grid__image-cont:hover {
-    opacity: .7;
+  opacity: .7;
+}
+
+.student-image-grid__image-cont__image {
+  width: 100%;
+  height: auto;
+}
+
+
+/* class to be applied to .student-image-grid__image-cont__image when clicked */
+
+.student-image-grid__image-cont__image--active {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+
+/* picture element containing student image */
+
+.student-image-grid__image-cont__picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* class to be applied to .student-image-grid__image-cont__picture when clicked */
+
+.student-image-grid__image-cont__picture--active {
+  position: fixed;
+  top: 5em;
+  left: 50%;
+  z-index: 500;
+  transform: translateX(-50%);
+  width: 62.5em;
+  height: 47.5em;
 }
 
 /**********/
@@ -320,6 +387,31 @@ button.load-more-container__button {
     transition: all .3s;
     min-width: 200px;
 }
+
+
+}
+
+button.load-more-container__button {
+    background: #404b56;
+    border: none;
+    padding: 15px;
+    width: 15%;
+    margin: 20px auto 40px;
+    display: inherit;
+    color: #a2b7bc;
+    font-size: 1.5em;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    min-width: 200px;
+}
+
 
 button.load-more-container__button:hover {
   background: #5e6e7d;
@@ -409,6 +501,7 @@ button.load-more-container__button:hover {
 
 /*MEDIA QUERIES*/
 
+
 /*@media only screen and (max-width: 1200px) {
 
 }
@@ -417,6 +510,15 @@ button.load-more-container__button:hover {
   .student-image-grid__image-cont {
     flex: 0 0 50%;
   }
+
+@media only screen and (max-width: 1200px) {
+  .student-image-grid__image-cont {
+    flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+
   .main__header {
       padding: 50px 40px;
   }
@@ -458,6 +560,7 @@ button.load-more-container__button:hover {
     margin: 0 auto;
   }
 }
+
 
 @media only screen and (max-width: 800px) {
   .main__header__search__h3 {
