@@ -135,6 +135,21 @@
   margin: 0 4em 0 0;
 }
 
+/* modal close icon box */
+
+.user-modal__info-block__header__close-icon {
+  width: 2.2em;
+  height: 2.2em;
+  font-family: 'Source Sans Pro';
+  position: absolute;
+  background: #bbbcbd;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+}
 
 /* Student name h1 */
 
