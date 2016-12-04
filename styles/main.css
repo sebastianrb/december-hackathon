@@ -319,7 +319,7 @@ main{
 }
 
 .student-image-grid__image-cont:hover {
-  opacity: .7;
+  /*opacity: .7;*/
 }
 
 .student-image-grid__image-cont__image {
@@ -327,6 +327,9 @@ main{
   height: auto;
 }
 
+.student-image-grid__image-cont__image:hover {
+  opacity: 0.7;
+}
 
 /* class to be applied to .student-image-grid__image-cont__image when clicked */
 
@@ -335,8 +338,12 @@ main{
   height: 100%;
   position: absolute;
   left: 0;
+  /*animation: 0.4s scaleImage ease-out;*/
 }
 
+.student-image-grid__image-cont__image--active:hover {
+  opacity: 1;
+}
 
 /* picture element containing student image */
 
@@ -346,18 +353,58 @@ main{
   align-items: center;
 }
 
+.student-image-grid__image-cont__picture--clone {
+  
+}
 
 /* class to be applied to .student-image-grid__image-cont__picture when clicked */
 
 .student-image-grid__image-cont__picture--active {
-  position: fixed;
+  /*position: fixed;*/
   top: 3em;
   left: 50%;
   z-index: 500;
   transform: translateX(-50%);
   width: 60em;
   height: 38.5em;
+  transition: all 0.5s;
+  /*animation: 1s moveToModal ease-out forwards;*/
 }
+
+/*-----------------------------------------------------
+animations for transitions from image click to modal
+------------------------------------------------------ */
+
+
+/* animation for image scale and translation */
+
+@keyframes moveToModal {
+  0% {
+    /*position: static;*/
+    z-index: 500;
+  }
+  1% {
+    /*position: fixed;*/
+  }
+  100% {
+    top: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    /*width: 60em;*/
+    /*height: 38.5em;*/
+  }
+}
+
+@keyframes scaleImage {
+  0% {
+    transform: scale(0.5);
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /**********/
 /* FOOTER */

@@ -1,46 +1,67 @@
 /*animation keyframes*/
 
-@keyframes fadeDown{
-    from {
-        opacity: 0;
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
-@keyframes fadeUp{
-    from {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
-@keyframes fadeOut{
-    from {
-        opacity: 1;
-        transform: none;
-    }
-    to {
-        opacity: 0;
-        transform: translate3d(0, -100%);
-    }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%);
+  }
 }
 
-@keyframes scale-left{
-    from {
-        transform: translate(0, 0) scale(1, 1);
+@keyframes scale-left {
+  from {
+    transform: translate(0, 0) scale(1, 1);
+  }
+  to {
+    transform: translate(-120%, 0) scale(2, 2);
+  }
+}
 
-    }
-    to {
-        transform: translate(-120%, 0) scale(2, 2);
-    }
+
+/*-----------------------------------------------------
+animations for transitions from image click to modal
+------------------------------------------------------ */
+
+
+/* animation for image scale and translation */
+
+@keyframes moveToModal {
+  0% {
+    position: fixed;
+  }
+  100% {
+    top: 3em;
+    left: 50%;
+    z-index: 500;
+    transform: translateX(-50%);
+    width: 60em;
+    height: 38.5em;
+  }
 }
