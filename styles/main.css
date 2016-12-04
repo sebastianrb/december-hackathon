@@ -505,18 +505,9 @@ button.load-more-container__button:hover {
 /*MEDIA QUERIES*/
 
 
-/*@media only screen and (max-width: 1200px) {
-
-}
-*/
-@media only screen and (max-width: 1050px) {
-  .student-image-grid__image-cont {
-    flex: 0 0 50%;
-  }
-
 @media only screen and (max-width: 1200px) {
   .student-image-grid__image-cont {
-    flex: 0 0 100%;
+    flex: 0 0 50%;
   }
 }
 
