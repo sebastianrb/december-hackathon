@@ -313,6 +313,12 @@ main{
   /*  height: 190px;*/
   position: relative;
   /* used to transform picture element on image click */
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  transition: opacity .2s;
+  cursor: pointer;
 }
 
 .student-image-grid__image-cont:hover {
