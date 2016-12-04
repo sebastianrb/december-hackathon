@@ -30,7 +30,11 @@ for(i = 0; i < images.length; i++) {
         addClass(insideImage, "student-image-grid__image-cont__image--active");
         // clone.setAttribute('style', 'top: 3em; left: 50%; position: fixed; z-index: 400;');
 
-        TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"});
+        TweenMax.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em"});
+
+        //TweenMax.to(clone, 0.9,{ left: cloneLeft, top: "3em", ease:Strong.easeOut});
+
+        //TweenMax.to(clone, 0.8,{ width:"60em",  height:"38.5em", transform: "translateX(-50%)", ease:Strong.easeOut}, "-=0.79" );
     });
 }
 
