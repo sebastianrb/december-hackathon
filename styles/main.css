@@ -351,12 +351,12 @@ main{
 
 .student-image-grid__image-cont__picture--active {
   position: fixed;
-  top: 5em;
+  top: 3em;
   left: 50%;
   z-index: 500;
   transform: translateX(-50%);
-  width: 62.5em;
-  height: 47.5em;
+  width: 60em;
+  height: 38.5em;
 }
 
 /**********/

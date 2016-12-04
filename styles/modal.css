@@ -7,15 +7,14 @@
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 47.5em;
-  width: 62.500em;
+  height: 38.5em;
+  width: 60em;
   max-width: 70em;
   display: flex;
   flex-wrap: wrap;
-  border: solid 1px black;
   font-family: 'Roboto', sans-serif;
   position: fixed;
-  top: 5em;
+  top: 3em;
   left: 50%;
   transform: translateX(-50%);
   z-index: -500;
@@ -42,7 +41,7 @@
 /* user photo container */
 
 .user-modal__photo-block__photo {
-  height: 80%;
+  height: 82%;
 }
 
 
@@ -56,13 +55,14 @@
 .user-modal__photo-block__quote:before {
   content: '\201D';
   font-family: 'Source Sans Pro';
-  width: 3rem;
-  height: 3rem;
+  font-weight: 200;
+  width: 2.75rem;
+  height: 2.75rem;
   font-size: 3rem;
   text-align: center;
   padding-top: 0.3rem;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(79, 86, 95);
   color: #ffffff;
   position: absolute;
   top: -1.5rem;
@@ -75,12 +75,14 @@
 /* user quote container */
 
 .user-modal__photo-block__quote {
-  height: 20%;
-  background: darkgray;
+  height: 18%;
+  background: rgb(216, 225, 237);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.75em;
+  color: rgb(79, 86, 95);
 }
 
 
@@ -89,6 +91,8 @@
 .student-quote {
   margin: 0;
   width: 80%;
+  font-family: 'Roboto Slab';
+  font-weight: 400;
 }
 
 .student-quote p {
@@ -97,31 +101,35 @@
 
 .student-quote cite {
   font-style: normal;
+  font-family: 'Roboto';
+  font-weight: 400;
 }
 
 
 /* Bio info and career progress section containing block */
 
 .user-modal__info-block {
-  background: mistyrose;
+  background: #ffffff;
   width: 60%;
   display: flex;
   flex-direction: column;
+    color: rgb(79, 86, 95);
 }
 
 
 /* Bio info section header (user name, career path, evidential badge) */
 
 .user-modal__info-block__header {
-  height: 22%;
+  height: 25%;
   display: flex;
+  border-bottom: solid 1px rgb(185, 194, 204);
 }
 
 
 /* Student name, career path, grad date container */
 
 .user-modal__info-block__header__text {
-  padding: 2em;
+  padding: 1.5em 1.5em 0 2em;
   flex: 2;
 }
 
@@ -129,15 +137,21 @@
 /* Evidential degree badge container */
 
 .user-modal__info-block__header__badge {
-  margin: 0 4em 0 0;
+  margin: 0 3em 0 0;
+}
+
+/* Evidential degree badge image */
+
+.user-modal__info-block__header__badge img {
+  height: 100%;
+  width: auto;
 }
 
 /* modal close icon box */
 
 .user-modal__info-block__header__close-icon {
-  width: 2.2em;
-  height: 2.2em;
-  font-family: 'Source Sans Pro';
+  width: 2.3em;
+  height: 2.3em;
   position: absolute;
   background: #bbbcbd;
   color: #ffffff;
@@ -146,6 +160,10 @@
   align-items: center;
   top: 0;
   right: 0;
+}
+
+.user-modal__info-block__header__close-icon i {
+  font-size: 1.1em;
 }
 
 /* Student name h1 */
@@ -158,9 +176,12 @@
 
 /* Career path h3 */
 
-.career-path__subheader {
+.bio-info__subheader {
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  color: rgb(185, 194, 204);
+  margin-bottom: 0.5em;
 }
 
 
@@ -169,15 +190,50 @@
 .graduation-date {
   text-transform: uppercase;
   font-size: 0.8em;
+  font-weight: 200;
 }
 
 
 /* Bio info main section container */
 
 .user-modal__info-block__main-content {
-  height: 78%;
-  background: lightsalmon;
+  height: 75%;
+  background: #ffffff;
+  padding: 1em 3em 1em 2em;
 }
+
+/* Bio info main section p style */
+.student-bio-text {
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: rgb(79, 86, 95);
+  margin-top: 0.3em;
+}
+
+/* bio info h2 style */
+.bio-info__section-heading {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+/* bio info ul */
+.bio-info__list { 
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* bio info link styles */
+.bio-info__link {
+  text-decoration: none;
+  color: rgb(119, 205, 239);
+  font-size: 0.8em;
+}
+
+.bio-info__link i {
+  font-size: 1.2em;
+}
+
 
 /* modal background fade-in and cover div*/
 
