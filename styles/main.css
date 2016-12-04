@@ -22,7 +22,7 @@ header{
   display: flex;
   padding: 15px 15px 23px;
   align-items: center;
-
+  transition: all .4s;
 }
 
 .header__logo{
