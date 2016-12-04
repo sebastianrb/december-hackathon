@@ -241,9 +241,6 @@ main{
   margin-top: 30px;
 }
 
-=======
-}
-
 .main__header__search__h3::after {
   content: "";
   width: 0;
@@ -275,7 +272,7 @@ main{
 .main__header__registration {
   float: right;
   display: inline-block;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 
