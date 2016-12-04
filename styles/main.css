@@ -468,7 +468,7 @@ button.load-more-container__button:hover {
   top: 2px;
 }
 
-.footer__authors__title{
+/*.footer__authors__title{
   text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
@@ -499,9 +499,9 @@ button.load-more-container__button:hover {
   margin: 0 auto;
   font-weight: bolder;
   display: block;
-}
+}*/
 
-/*.footer__authorsContainer {
+.footer__authorsContainer {
   font-size: 12px;
   color: rgb(134, 156, 161);
   padding: 25px 0 10px;
@@ -520,9 +520,6 @@ button.load-more-container__button:hover {
   margin: 5px;
 }
 
-.footer__authorsContainer-author {
-
-}
 
 .footer__authorsContainer-list {
   display: flex;
@@ -550,7 +547,7 @@ button.load-more-container__button:hover {
 .footer__authorsContainer-list li > p {
   padding-top: 10px;
 }
-*/
+
 
 /*MEDIA QUERIES*/
 
