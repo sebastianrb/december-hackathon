@@ -25,13 +25,13 @@ for(i = 0; i < images.length; i++) {
 
         //append classes
         addClass(modalBackground, "user-modal__background-cover--active");
-        addClass(modalContainer, "user-modal__container--active");
+        // addClass(modalContainer, "user-modal__container--active");
         addClass(insideImage, "student-image-grid__image-cont__image--active");
 
         // GSAP timeline code
         var modalTime = new TimelineLite();
 
-        modalTime.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"}).to(modalContainer, 0.5, {opacity: "1"});
+        modalTime.to(clone, 0.5, {top:"3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)"}).to(modalContainer, 0.2, {opacity: "1", zIndex: 500});
 
     });
 }
