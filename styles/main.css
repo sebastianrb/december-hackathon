@@ -5,31 +5,38 @@
 body {
   margin: 0;
   background: #eee;
-    align-items: center;
+  align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-header,footer{
-    background-color: rgb(30, 34, 38);
+header,
+footer {
+  background-color: rgb(30, 34, 38);
 }
+
+
 /**********/
+
+
 /* HEADER */
+
+
 /**********/
 
-header{
+header {
   width: 100%;
   display: flex;
   padding: 5px;
   align-items: center;
-
 }
 
-.header__logo{
+.header__logo {
   width: 80px;
   padding: 10px;
 }
 
-.header__title{
+.header__title {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -38,23 +45,23 @@ header{
   font-weight: 200;
 }
 
-.header__title__main{
-  color: rgb(164,188,193);
+.header__title__main {
+  color: rgb(164, 188, 193);
 }
 
-.header__title__subtitle{
-    font-size: 0.35em;
-    color: rgb(134, 156, 161)
-;
+.header__title__subtitle {
+  font-size: 0.35em;
+  color: rgb(134, 156, 161);
 }
 
-.header__title__main--bovBlue{
+.header__title__main--bovBlue {
   color: #42bcda;
 }
 
+
 /* HEADER__DROPDOWN-NAV */
 
-.header__dropdown-nav{
+.header__dropdown-nav {
   padding: 7px;
   background-color: #272b30;
   border: 3px solid white;
@@ -65,18 +72,18 @@ header{
   align-items: center;
 }
 
-.header__dropdown-nav__dropdown-arrow{
+.header__dropdown-nav__dropdown-arrow {
   color: rgb(134, 156, 161);
   cursor: pointer;
 }
 
-.circles{
+.circles {
   width: 20px;
   margin-right: 5px;
   overflow: auto;
 }
 
-.circle{
+.circle {
   background-color: white;
   float: left;
   width: 6px;
@@ -84,53 +91,73 @@ header{
   border-radius: 50%;
 }
 
-/********/
-/* MAIN */
+
 /********/
 
-main{
+
+/* MAIN */
+
+
+/********/
+
+main {
   width: 100%;
 }
 
+
 /* MAIN_HEADER */
 
-.main__header{
+.main__header {
   display: flexbox;
 }
 
 
 /* STUDENT IMAGE GRID */
-.student-image-grid{
+
+.student-image-grid {
   display: flex;
   flex-flow: row wrap;
 }
 
-.student-image-grid__image-cont{
-  width: 10%;
+.student-image-grid__image-cont {
+  /*width: 10%;*/
   flex: 0 0 25%;
-/*  height: 190px;*/
+  /*  height: 190px;*/
+  position: relative; /* used to transform picture element on image click */
 }
 
-.student-image-grid__image-cont__image{
+.student-image-grid__image-cont__image {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-/**********/
-/* FOOTER */
+/* picture element containing student image */
+.student-image-grid__image-cont__picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /**********/
 
-footer{
+
+/* FOOTER */
+
+
+/**********/
+
+footer {
   padding: 20px;
   width: 100%;
 }
 
-.footer__nav{
-    font-size: 12px;
-    color: rgb(134, 156, 161);
+.footer__nav {
+  font-size: 12px;
+  color: rgb(134, 156, 161);
 }
 
-.footer__nav__list{
+.footer__nav__list {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -140,12 +167,12 @@ footer{
   padding-left: 0;
 }
 
-.footer__nav__list > li{
+.footer__nav__list > li {
   display: block;
   margin: 5px;
 }
 
-.footer__nav__social-media{
+.footer__nav__social-media {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -155,14 +182,14 @@ footer{
   padding-left: 0;
 }
 
-.footer__nav__social-media > li{
+.footer__nav__social-media > li {
   width: 1.4em;
   font-size: 1.4em;
   display: block;
   margin: 10px;
 }
 
-.footer__nav__social-media > li img{
+.footer__nav__social-media > li img {
   width: 70%;
   position: relative;
   top: 2px;
