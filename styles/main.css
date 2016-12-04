@@ -316,16 +316,16 @@ main{
   /*  height: 190px;*/
   position: relative;
   /* used to transform picture element on image click */
-  -webkit-transition: all .2s;
-  -moz-transition: all .2s;
-  -o-transition: all .2s;
-  -ms-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
   cursor: pointer;
 }
 
 .student-image-grid__image-cont:hover {
-  /*opacity: .7;*/
+  opacity: .7;
 }
 
 .student-image-grid__image-cont__image {
@@ -333,9 +333,9 @@ main{
   height: auto;
 }
 
-.student-image-grid__image-cont__image:hover {
+/*.student-image-grid__image-cont__image:hover {
   opacity: 0.7;
-}
+}*/
 
 /* class to be applied to .student-image-grid__image-cont__image when clicked */
 

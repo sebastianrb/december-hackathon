@@ -1,44 +1,78 @@
 {
-    "header": {
-        "icon": "/images/BovAcademy_logo_head_wider_stroke.png",
-        "title": {
-            "text": "Bov Academy Students",
-            "bov-color": "#42bcda",
-            "academy-color": "rgb(164,188,193)",
-            "students-color": "#d3e9ee"
+    "content": {
+        "header": {
+            "icon": "/images/BovAcademy_logo_head_wider_stroke.png",
+            "title": {
+                "text": "Bov Academy Students",
+                "bov-color": "#42bcda",
+                "academy-color": "rgb(164,188,193)",
+                "students-color": "#d3e9ee"
+            },
+            "sub-title": {
+                "text": "Of Programming and Futuristic Engineering",
+                "color": "rgb(134, 156, 161)"
+            },
+            "menu": {
+                "circle-colors": ["#489fef", "#75c36a", "#f15b5a", "#ed72aa", "#7b7def", "#a7c931", "#f7be26", "#fc8850", "#5ac9e3"],
+                "icon": "fa-caret-down",
+                "background-color": "#3f444a"
+            },
+            "background-color": "rgb(30, 34, 38)"
         },
-        "sub-title": {
-            "text": "Of Programming and Futuristic Engineering",
-            "color": "rgb(134, 156, 161)"
+        "sub-header": {
+            "cohort": {
+                "text": "First Cohort",
+                "color": "#415162"
+            },
+            "graduation": {
+                "text": "GRADUATING MARCH 2017 AND ONWARDS"
+            },
+            "search-field": {
+                "magnifying-glass-icon": "/images/magnifying-glass.svg",
+                "text": "Find Student"
+            },
+            "register-button": {
+                "text": "REGISTER FOR the 2nd COHORT ",
+                "background-color": "#4bc4e1",
+                "text-color": "white"
+            },
+            "background-color": "#a2b7bc",
+            "color": "#a2b7bc"
         },
-        "menu": {
-            "circle-colors": ["#489fef", "#75c36a", "#f15b5a", "#ed72aa", "#7b7def", "#a7c931", "#f7be26", "#fc8850", "#5ac9e3"],
-            "icon": "fa-caret-down",
-            "background-color": "#3f444a"
+        "image-grid": {
+            "images": ["https://unsplash.it/384/616?image=123", "https://unsplash.it/384/616?image=423", "https://unsplash.it/384/616?image=163", "https://unsplash.it/384/616?image=223", "https://unsplash.it/384/616?image=243", "https://unsplash.it/384/616?image=413", "https://unsplash.it/384/616?image=173", "https://unsplash.it/384/616?image=323", "https://unsplash.it/384/616?image=222", "https://unsplash.it/384/616?image=217", "https://unsplash.it/384/616?image=117", "https://unsplash.it/384/616?image=287"]
         },
-        "background-color": "rgb(30, 34, 38)"
+        "footer": {
+            "load-more-button": {
+                "text": "Load More",
+                "background-color": "#404b56",
+                "color": "#a2b7bc"
+            },
+            "nav-links": ["Bov Academy Home", "Programs And Career Paths", "Our Mission", "Careers", "Contact"],
+            "social-media-icons": ["fa-twitter", "fa-instagram", "/images/Enlightenment_temp_icon.png"],
+            "student-authors": [
+                {
+                    "caption": "Sam Chittenden",
+                    "image": "/images/sam.png"
+                },
+                {
+                    "caption": "Sebastian Ramirez-Brunner",
+                    "image": "/images/sebastian.jpg"
+                },
+                {
+                    "caption": "Tingting Chang",
+                    "image": "/images/ttc.jpg"
+                },
+                {
+                    "caption": "Brian Merriman",
+                    "image": "/images/btm.jpg"
+                }
+            ]
+        }
     },
-    "sub-header": {
-        "cohort": {
-            "text": "First Cohort",
-            "color": "#415162"
-        },
-        "graduation": {
-            "text": "GRADUATING MARCH 2017 AND ONWARDS"
-        },
-        "search-field": {
-            "magnifying-glass-icon": "/images/magnifying-glass.svg",
-            "text": "Find Student"
-        },
-        "register-button": {
-            "text": "REGISTER FOR the 2nd COHORT ",
-            "background-color": "#4bc4e1",
-            "text-color": "white"
-        },
-        "background-color": "#a2b7bc",
-        "color": "#a2b7bc"
-    },
-    "image-grid": {
-        "images": ["https://unsplash.it/384/616?image=123", "https://unsplash.it/384/616?image=423", "https://unsplash.it/384/616?image=163"]
-    }
+    "students": [
+        {
+
+        }
+    ]
 }
