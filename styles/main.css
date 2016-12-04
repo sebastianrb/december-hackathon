@@ -204,6 +204,31 @@ main{
   -ms-transition: all .3s;
   transition: all .3s;
   cursor: pointer;
+  position: relative;
+}
+
+.main__header__search__h3::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: transparent;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: width .4s linear, background-color .3s linear;
+  -moz-transition: width .4s linear, background-color .3s linear;
+  -o-transition: width .4s linear, background-color .3s linear;
+  -ms-transition: width .4s linear, background-color .3s linear;
+  transition: width .4s linear, background-color .3s linear;
+  position: absolute;
+  top: 95%;
+  border-radius: 2%;
+  left: 0;
+}
+
+.main__header__search__h3:hover::after {
+  width: 100%;
+  background: #4bc4e1;
+  transition: all .4s;
 }
 
 .main__header__search__h3:hover {
@@ -271,6 +296,7 @@ footer{
   padding: 20px;
   width: 100%;
   color: #a2b7bc;
+  padding: 20px 20px 40px;
 }
 
 button.load-more-container__button {
@@ -291,6 +317,7 @@ button.load-more-container__button {
     -o-transition: all .3s;
     -ms-transition: all .3s;
     transition: all .3s;
+    min-width: 200px;
 }
 
 button.load-more-container__button:hover {
@@ -385,3 +412,46 @@ button.load-more-container__button:hover {
     flex: 0 0 100%;
   }
 }
+
+@media only screen and (max-width: 1050px) {
+  .main__header {
+      padding: 50px 40px;
+  }
+  .main__header__title__main {
+      margin: 0 0 15px 0;
+  }
+  .main__header__title {
+      float: left;
+      display: inline-block;
+      width: 55%;
+      text-align: center;
+  }
+  .main__header__search {
+      display: inline-block;
+      margin: 1% auto 1%;
+      width: 45%;
+      text-align: center;
+  }
+  .main__header__search__h3 {
+      margin: 10px 0;
+      font-size: 1.8em;
+  }
+  .main__header__search__h3::after {
+    content: none;
+  }
+  .main__header__registration {
+      display: inline-block;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      width: 100%;
+      clear: both;
+      text-align: center;
+  }
+  .main__header__registration-button {
+    font-size: .9em;
+    padding: 15px 25px 15px 20px;
+    border-radius: 5px;
+    width: 40%;
+  }
+}
+
