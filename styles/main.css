@@ -415,6 +415,7 @@ button.load-more-container__button:hover {
 .footer__authors__authorsContainer__author{
   display: inline-block;
   margin: 15px;
+  cursor: pointer;
 }
 
 .footer__authors__authorsContainer__author > img{
@@ -436,13 +437,14 @@ button.load-more-container__button:hover {
 
 /*MEDIA QUERIES*/
 
-@media only screen and (max-width: 1200px) {
-  .student-image-grid__image-cont {
-    flex: 0 0 100%;
-  }
-}
+/*@media only screen and (max-width: 1200px) {
 
+}
+*/
 @media only screen and (max-width: 1050px) {
+  .student-image-grid__image-cont {
+    flex: 0 0 50%;
+  }
   .main__header {
       padding: 50px 40px;
   }
@@ -481,6 +483,22 @@ button.load-more-container__button:hover {
     padding: 15px 25px 15px 20px;
     border-radius: 5px;
     width: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main__header__search__h3 {
+        margin: 25px 0 0;
+        font-size: 1.8em;
+    }
+    .main__header__search {
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+  .student-image-grid__image-cont {
+    flex: 0 0 100%;
   }
 }
 
