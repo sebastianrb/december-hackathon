@@ -152,7 +152,7 @@ main{
 
 .main__header{
   display: flexbox;
-  padding: 50px 40px;
+  padding: 50px 0 50px 40px;
   overflow: auto;
   color: #a2b7bc;
 }
@@ -221,13 +221,9 @@ main{
   text-decoration: none;
   color: white;
   letter-spacing: 2px;
-  padding: 12px 45px 12px 25px;
+  padding: 12px 15px 12px 25px;
   text-align: center;
-  background-image: url("../images/right-arrow.svg");
-  background-repeat: no-repeat;
-  background-size: 15px;
-  background-position: 93% 48%;
-  border-radius: 35px;
+  border-radius: 35px 0 0 35px;
   font-size: .7em;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -264,6 +260,7 @@ main{
 footer{
   padding: 20px;
   width: 100%;
+  color: #a2b7bc;
 }
 
 button.load-more-container__button {
@@ -295,8 +292,9 @@ button.load-more-container__button:hover {
     color: rgb(134, 156, 161);
     padding: 25px 0 10px;
     width: 70%;
-    margin: 0 auto;
+    margin: 45px auto;
     border-top: 1px solid rgba(64, 75, 86, 0.6);
+    border-bottom: 1px solid rgba(64, 75, 86, 0.6);
 }
 
 .footer__nav__list{
@@ -337,11 +335,43 @@ button.load-more-container__button:hover {
   top: 2px;
 }
 
+.footer__authors__title{
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.footer__authors__authorsContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.footer__authors__authorsContainer__author{
+  display: inline-block;
+  margin: 15px;
+}
+
+.footer__authors__authorsContainer__author > img{
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  margin: 10px auto;
+  display: block;
+}
+
+.footer__authors__authorsContainer__author > p {
+  font-size: 1.1em;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bolder;
+  display: block;
+}
+
 
 /*MEDIA QUERIES*/
 
 @media only screen and (max-width: 1200px) {
   .student-image-grid__image-cont {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
   }
 }
