@@ -447,6 +447,31 @@
   .career-path__list li {
     margin-right: 0;
   }
+  .student-image-grid__image-cont__image--active {
+      height: 78vh;
+  }
+  .user-modal__info-block__header__text {
+    padding: 1.5em 1em 0 1.5em;
+  }
+  .bio-info__subheader {
+      font-size: 0.4em;
+  }
+  .student-name {
+      font-size: 1.5em;
+  }
+  .user-modal__info-block__main-content {
+      overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .user-modal__info-block__header__badge img {
+      position: relative;
+      right: 10px;
+  }
+  .user-modal__info-block__header__text {
+      flex: 0 0 75%;
+  }
   .user-modal__info-block {
     overflow-x: hidden;
   }
