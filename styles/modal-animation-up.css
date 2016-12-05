@@ -3,7 +3,7 @@
 .bio-info__section-heading,
 .bio-info__list, 
 .bio-info__section-heading, 
-.career-path__list, 
+.career-path__list > li, 
 .career-path-update__span{
     position: relative;
     top: 30px;
