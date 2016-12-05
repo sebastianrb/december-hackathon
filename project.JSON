@@ -72,7 +72,118 @@
     },
     "students": [
         {
-
+            "first-name": "Sam",
+            "last-name": "Chittenden",
+            "location": {
+                "city": "Carbondale",
+                "state": "Colorado",
+                "country": "USA"
+            },
+            "evidential-degree": "Master",
+            "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+            "photos": ["sam1.jpg", "sam2.jpg", "sam3.jpg", "sam4.jpg"],
+            "published-articles": [
+                {
+                    "title": "loops",
+                    "completion-date": "10/10/2016",
+                    "link": "http://encyclopedia.moderndeveloper.com/loops"
+                }
+            ],
+            "career-paths": [
+                {
+                    "career-path-ID": "careerpath_3",
+                    "career-path-progress": {
+                        "domain-knowledge": 10,
+                        "ui0dev-skill": 20,
+                        "courses-completed": [
+                            {
+                                "course-ID": "course1",
+                                "date-completed": "10/10/2016"
+                            },
+                            {
+                                "course-ID": "course2",
+                                "date-completed": "09/10/2016"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "first-name": "Sebastian",
+            "last-name": "Ramirez-Brunner",
+            "location": {
+                "city": "New York",
+                "state": "New York",
+                "country": "USA"
+            },
+            "evidential-degree": "Master",
+            "quote": "You miss 100? of the shots you don't take",
+            "photos": ["sebastian1.jpg", "sebastian2.jpg", "sebastian3.jpg", "sebastian4.jpg"],
+            "published-articles": [
+                {
+                    "title": "TCP Handshake",
+                    "completion-date": "10/10/2016",
+                    "link": "http://encyclopedia.moderndeveloper.com/TCP-handshake"
+                }
+            ],
+            "career-paths": [
+                {
+                    "career-path-ID": "careerpath_3",
+                    "career-path-progress": {
+                        "domain-knowledge": 10,
+                        "ui0dev-skill": 20,
+                        "courses-completed": [
+                            {
+                                "course-ID": "course1",
+                                "date-completed": "10/10/2016"
+                            },
+                            {
+                                "course-ID": "course2",
+                                "date-completed": "09/10/2016"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "first-name": "Tingting",
+            "last-name": "Chittenden",
+            "location": {
+                "city": "Carbondale",
+                "state": "Colorado",
+                "country": "USA"
+            },
+            "evidential-degree": "Master",
+            "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+            "photos": ["sam1.jpg", "sam2.jpg", "sam3.jpg", "sam4.jpg"],
+            "published-articles": [
+                {
+                    "title": "loops",
+                    "completion-date": "10/10/2016",
+                    "link": "http://encyclopedia.moderndeveloper.com/loops"
+                }
+            ],
+            "career-paths": [
+                {
+                    "career-path-ID": "careerpath_3",
+                    "career-path-progress": {
+                        "domain-knowledge": 10,
+                        "ui0dev-skill": 20,
+                        "courses-completed": [
+                            {
+                                "course-ID": "course1",
+                                "date-completed": "10/10/2016"
+                            },
+                            {
+                                "course-ID": "course2",
+                                "date-completed": "09/10/2016"
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     ]
 }
