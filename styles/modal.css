@@ -410,3 +410,15 @@
   }
 }
 
+@media only screen and (max-width: 560px) {
+  .user-modal__container,
+  .student-image-grid__image-cont__picture--active {
+    height: 78vh;
+  }
+  .user-modal__info-block__main-content {
+    padding: 1em;
+  }
+  .career-path__list {
+    width: 100%;
+  }
+}
