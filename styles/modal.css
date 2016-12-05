@@ -184,6 +184,7 @@
   align-items: center;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .user-modal__info-block__header__close-icon i {
