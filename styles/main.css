@@ -569,10 +569,16 @@ button.load-more-container__button:hover {
   width: 35%;
   position: relative;
   top: 10px;
+  transition: all .3s;
+}
+.footer__authorsContainer-list > li:hover img,
+.footer__authorsContainer-list > li:hover p{
+    transform: scale(1.2, 1.2);
 }
 
 .footer__authorsContainer-list li > p {
   padding-top: 10px;
+  transition: all .3s;
 }
 
 
