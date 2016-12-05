@@ -51,19 +51,19 @@ for (i = 0; i < images.length; i++) {
         closeButton.addEventListener('click', function(){
 
 
-            modalTime.reverse();
+            modalBackground.classList.remove( "user-modal__background-cover--active");
+            insideImage.classList.remove(  "student-image-grid__image-cont__image--active");
+
+            document.body.parentNode.removeChild(clone)
+
+            modalTime.reverse(0.1)
+            
+
             
            
 
-
-            
-            
-
-            
            
-
-           
-        })
+        });
   });
 }
 
