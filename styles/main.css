@@ -379,6 +379,10 @@ main{
   top: 3em;
   left: 40%;
   z-index: 500;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 60em;
   height: 38.5em;
@@ -408,6 +412,10 @@ animations for transitions from image click to modal
   100% {
     top: 3em;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     /*width: 60em;*/
     /*height: 38.5em;*/
@@ -416,10 +424,22 @@ animations for transitions from image click to modal
 
 @keyframes scaleImage {
   0% {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
     transform: scale(0.5);
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -o-transform-origin: center;
+    -ms-transform-origin: center;
     transform-origin: center;
   }
   100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
   }
 }
