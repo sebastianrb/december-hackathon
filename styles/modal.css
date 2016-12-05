@@ -406,20 +406,29 @@
   .user-modal__container,
   .student-image-grid__image-cont__picture--active {
     width: 98vw;
-    height: 76vh;
+    height: 78vh;
+  }
+  .career-path__list {
+    width: 100%;
+  }
+  .career-path__list li {
+    margin-right: 0;
   }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 605px) {
   .user-modal__container,
   .student-image-grid__image-cont__picture--active {
-    height: 78vh;
+    height: 85vh;
   }
   .user-modal__info-block__main-content {
     padding: 1em;
   }
-  .career-path__list {
-    width: 100%;
+  .user-modal__photo-block__photo {
+    height: 73%;
+  }
+  .user-modal__photo-block__quote {
+    height: 27%;
   }
 }
 
@@ -436,9 +445,6 @@
   }
   .user-modal__photo-block__quote {
     height: 30%;
-  }
-  .career-path__list li {
-    margin-right: 0;
   }
   .user-modal__info-block__header__badge {
     display: none;
