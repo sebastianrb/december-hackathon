@@ -402,10 +402,11 @@
 
 /*MODAL MEDIA QUERIES*/
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 976px) {
   .user-modal__container,
   .student-image-grid__image-cont__picture--active {
-
+    width: 98vw;
+    height: 76vh;
   }
 }
 
