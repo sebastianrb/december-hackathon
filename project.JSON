@@ -80,7 +80,7 @@
                 "country": "USA"
             },
             "evidential-degree": "Master",
-            "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+            "quote": "Love all, trust a few, do wrong to none. - Shakespeare",
             "photos": ["sam1.jpg", "sam2.jpg", "sam3.jpg", "sam4.jpg"],
             "published-articles": [
                 {
@@ -118,7 +118,7 @@
                 "country": "USA"
             },
             "evidential-degree": "Master",
-            "quote": "You miss 100? of the shots you don't take",
+            "quote": "You miss 100? of the shots you don't take. -Wayne Gretzky",
             "photos": ["sebastian1.jpg", "sebastian2.jpg", "sebastian3.jpg", "sebastian4.jpg"],
             "published-articles": [
                 {
@@ -149,20 +149,58 @@
         },
         {
             "first-name": "Tingting",
-            "last-name": "Chittenden",
+            "last-name": "Chang",
             "location": {
-                "city": "Carbondale",
-                "state": "Colorado",
+                "city": "Washington",
+                "state": "DC",
                 "country": "USA"
             },
             "evidential-degree": "Master",
-            "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
-            "photos": ["sam1.jpg", "sam2.jpg", "sam3.jpg", "sam4.jpg"],
+            "quote": "Now, or never.",
+            "photos": ["tingting1.jpg", "tingting2.jpg", "tingting3.jpg", "tingting4.jpg"],
             "published-articles": [
                 {
-                    "title": "loops",
+                    "title": "functions",
                     "completion-date": "10/10/2016",
-                    "link": "http://encyclopedia.moderndeveloper.com/loops"
+                    "link": "http://encyclopedia.moderndeveloper.com/functions"
+                }
+            ],
+            "career-paths": [
+                {
+                    "career-path-ID": "careerpath_3",
+                    "career-path-progress": {
+                        "domain-knowledge": 10,
+                        "ui0dev-skill": 20,
+                        "courses-completed": [
+                            {
+                                "course-ID": "course1",
+                                "date-completed": "10/10/2016"
+                            },
+                            {
+                                "course-ID": "course2",
+                                "date-completed": "09/10/2016"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "first-name": "Brian",
+            "last-name": "Merriman",
+            "location": {
+                "city": "New York",
+                "state": "New York",
+                "country": "USA"
+            },
+            "evidential-degree": "Master",
+            "quote": "Never, ever underestimate the importance of having fun. -Randy Pausch",
+            "photos": ["brian1.jpg", "brian2.jpg", "brian3.jpg", "brian4.jpg"],
+            "published-articles": [
+                {
+                    "title": "closures",
+                    "completion-date": "10/10/2016",
+                    "link": "http://encyclopedia.moderndeveloper.com/closures"
                 }
             ],
             "career-paths": [
