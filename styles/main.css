@@ -466,6 +466,20 @@ button.load-more-container__button:hover {
   padding-left: 0;
 }
 
+nav a.footer__nav___list__link {
+  color: #a2b7bc;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+  font-weight: lighter;
+}
+
+.footer__nav___list__link:hover {
+  color: #42bcda;
+}
+
 .footer__nav__list > li{
   display: block;
   margin: 5px 10px;
@@ -697,9 +711,9 @@ button.load-more-container__button:hover {
     float: none;
     border-radius: 0;
     width: 85%;
-    height: 4px;
+    height: 3px;
     margin-right: 1px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
   }
   .circle--5,
   .circle--6,
