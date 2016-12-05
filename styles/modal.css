@@ -422,3 +422,22 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .user-modal__container,
+  .student-image-grid__image-cont__picture--active {
+    height: 85vh;
+  }
+  .bio-info__section-heading {
+    font-size: 1em;
+  }
+  .user-modal__photo-block__photo {
+    height: 70%;
+  }
+  .user-modal__photo-block__quote {
+    height: 30%;
+  }
+  .career-path__list li {
+    margin-right: 0;
+  }
+}
