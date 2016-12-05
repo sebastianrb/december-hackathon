@@ -53,25 +53,6 @@ for (i = 0; i < images.length; i++) {
         for(var i = 0; i < elementsToTransUp.length; i++){
             modalTime.to(elementsToTransUp[i], 0.25, { opacity: "1", y: -30, zIndex: 500 } , "-=0.1")
         }
-
-    // EXIT
-         var closeButton = document.querySelectorAll('.user-modal__info-block__header__close-icon')[0];
-        closeButton.addEventListener('click', function(){
-
-
-            modalTime.reverse();
-            
-           
-
-
-            
-            
-
-            
-           
-
-           
-        })
   });
 }
 
