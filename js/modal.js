@@ -35,12 +35,15 @@ for (i = 0; i < images.length; i++) {
     // GSAP timeline code
     var modalTime = new TimelineLite();
 
-    modalTime.to(clone, 0.5, { top: "3em", left: cloneLeft, width: "60em", height: "38.5em", transform: "translateX(-50%)" }).to(modalContainer, 0.2, { opacity: "1", zIndex: 500 }).from(modalQuoteBox, 0.5, {bottom: "-12em"});
+    modalTime.to(clone, 0.7, { top: "3em", left: cloneLeft})
+    modalTime.to(clone,0.7,{ clonewidth: "60em", height: "38.5em"}, '-=0.69')
+    modalTime.to(modalContainer, 0.2, { opacity: "1", zIndex: 500 })
+    modalTime.from(modalQuoteBox, 0.5, {bottom: "-12em"});
 
-        var elementsToTransUp = document.querySelectorAll('.user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list, .career-path-update__span');
+        var elementsToTransUp = document.querySelectorAll('.user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span');
 
         for(var i = 0; i < elementsToTransUp.length; i++){
-            modalTime.to(elementsToTransUp[i], 0.2, { opacity: "1", y: -30, zIndex: 500 })
+            modalTime.to(elementsToTransUp[i], 0.25, { opacity: "1", y: -30, zIndex: 500 } , "-=0.1")
         }
   });
 }
@@ -69,8 +72,8 @@ function scaleMove(e) {
   clone.width = thisDim.width;
   clone.style.top = (thisDim.top).toString() + "px";
   clone.style.left = (thisDim.left).toString() + "px";
-  // clone.style.width = (picDim.width).toString() + 'px';
-  // clone.style.height = (picDim.height).toString() + 'px';
+  clone.style.width = (picDim.width).toString() + 'px';
+  clone.style.height = (picDim.height).toString() + 'px';
   clone.style.zIndex = "400";
 
   e.parentNode.appendChild(clone);
