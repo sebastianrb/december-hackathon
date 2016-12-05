@@ -440,4 +440,7 @@
   .career-path__list li {
     margin-right: 0;
   }
+  .user-modal__info-block__header__badge {
+    display: none;
+  }
 }
