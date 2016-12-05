@@ -34,6 +34,14 @@ for (i = 0; i < images.length; i++) {
 
     // GSAP timeline code
     var modalTime = new TimelineLite();
+    var modalElements = new TimelineLite(); // --> tt's
+
+  // All the elements need animatioin --> tt's
+    var userInfoHeader = modalContainer.querySelector(".user-modal__info-block__header__text");
+    var stuInfoBio = modalContainer.querySelector(".student-bio-text");
+    var stuBioHeading = modalContainer.querySelector(".bio-info__section-heading");
+    var stuInfoList = modalContainer.querySelector(".bio-info__list");
+    var careerPathList = modalContainer.querySelector(".career-path__list");
 
     modalTime.to(clone, 0.7, { top: "3em", left: cloneLeft})
     modalTime.to(clone,0.7,{ clonewidth: "60em", height: "38.5em"}, '-=0.69')
@@ -64,6 +72,7 @@ for (i = 0; i < images.length; i++) {
 
            
         });
+
   });
 }
 
