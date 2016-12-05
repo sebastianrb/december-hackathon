@@ -22,6 +22,10 @@ header{
   display: flex;
   padding: 15px 15px 23px;
   align-items: center;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  -ms-transition: all .4s;
   transition: all .4s;
 }
 
@@ -234,6 +238,10 @@ main{
 .main__header__search__h3:hover::after {
   width: 100%;
   background: #4bc4e1;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  -ms-transition: all .4s;
   transition: all .4s;
 }
 
@@ -268,6 +276,10 @@ main{
 .main__header__search__h3:hover::after {
   width: 100%;
   background: #4bc4e1;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  -ms-transition: all .4s;
   transition: all .4s;
 }
 
@@ -370,6 +382,10 @@ main{
   transform: translateX(-50%);
   width: 60em;
   height: 38.5em;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
   transition: all 0.5s;
   /*animation: 1s moveToModal ease-out forwards;*/
 }
@@ -508,6 +524,23 @@ nav a.footer__nav___list__link {
   top: 2px;
 }
 
+.footer__nav__social-media > li .fa-twitter:before,
+.footer__nav__social-media > li .fa-instagram:before,
+.footer__nav__social-media > li .fa.enlightenment {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.footer__nav__social-media > li:hover .fa-twitter:before,
+.footer__nav__social-media > li:hover .fa-instagram:before,
+.footer__nav__social-media > li:hover .fa.enlightenment {
+  color: #42bcda;
+}
+
 /*.footer__authors__title{
   text-align: center;
   font-size: 14px;
@@ -583,15 +616,27 @@ nav a.footer__nav___list__link {
   width: 35%;
   position: relative;
   top: 10px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
   transition: all .3s;
 }
 .footer__authorsContainer-list > li:hover img,
 .footer__authorsContainer-list > li:hover p{
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2);
 }
 
 .footer__authorsContainer-list li > p {
   padding-top: 10px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
   transition: all .3s;
 }
 
@@ -769,4 +814,5 @@ nav a.footer__nav___list__link {
       padding: 15px 8px 23px;
   }
 }
+
 
