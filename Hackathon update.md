@@ -121,3 +121,48 @@ button.load-more-container__button {
 
 <p><strong>Score: 32.5/39 from Josep</strong></p>
       </div>
+      
+      
+      
+
+
+
+### New features 
+1. Header and Drop Down Menu
+
+   - The header should be 104px tall.
+2. Homepage Layout and Size and Photos
+3. Space Between Photos.
+4. Actual Photo Size.
+5. Site's and Photo's Max Width. 
+6. 4 Columns to 2 Columns. 
+7. Minimum Four-Column Layout Width (browser at 722px)
+8. First Cohort Row:
+
+	- Use this color for the background color of the First Cohort row: #f3f7fd.
+	- Search textfield before the user clicks it
+	- When the user clicks the Search textfield, the "Find Student" placeholder text will disappear; notice the single vertical line in the screenshot below is the customary blinking cursor
+10. Notice we have changed the size and color of the Load More button.
+11. Browser and Device Compatibilities
+12. Modal Responsiveness
+	- “Degree in Progress” added: We added this over the degree insignia. Add it using HTML and CSS
+	- Colors: The modal background color is now #fafdff
+	- "Portfolio and Professional Site" heading removed: To recoup some vertical space and enhance the UI with more white space, we removed this header
+	- Quote section updated: The quote section has a new background color, #dae4ea, and it is taller to accommodate the new photo size.
+	- Updated photo size: The photo on the modal now has the correct size
+	- Nav arrows: We added navigation arrows to allow the user to navigate the profiles without leaving the modal. Below, I describe how the student’s profile will transition when using the nav arrows.
+18. Open Modal Animation
+	- photo
+	- text animation
+19. Swift and Buttery Smooth Animations
+
+	- TimelineMax
+
+20. Slightly Different Transition When Navigating Profiles on Modal
+22. Transitioning Between Profiles when Using Modal Arrows
+23. Close Modal Animation
+24. 
+
+
+
+
