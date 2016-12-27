@@ -11,95 +11,95 @@ var images = document.querySelectorAll(".student-image-grid__image-cont__image")
 
 for (var i = 0; i < images.length; i++) {
 
-    images[i].addEventListener("click", function(e) {
-      var orig = this;
-      var modalPosition = modalContainer.getBoundingClientRect();
-      modalImage.src = this.src;
-      var modalTransitionTimeline = new TimelineMax();
-      var imagesBesidesThis = []
-      for(var i = 0; i < images.length; i++){
-        if(images[i]!=this){
-          imagesBesidesThis.push(images[i]);
-        }
+  images[i].addEventListener("click", function(e) {
+    var orig = this;
+    var modalPosition = modalContainer.getBoundingClientRect();
+    modalImage.src = this.src;
+    var modalTransitionTimeline = new TimelineMax();
+    var imagesBesidesThis = []
+    for(var i = 0; i < images.length; i++){
+      if(images[i]!=this){
+        imagesBesidesThis.push(images[i]);
       }
+    }
 
 
-      var imgClone = cloneOverlayImg(orig);
-      
-      // === BEGIN 'TO MODAL'TRANSITION  ===
-      
-      //  BRING MODAL BACKGROUND UP
-      modalTransitionTimeline.to(modalBackground, 0.25, {ease: Power1.easeIn, zIndex: 300, opacity: 1,  height: '100%'})
-      
-      modalTransitionTimeline.to(imagesBesidesThis, 0.3, {transform: 'scale(0,0)', zIndex: -100, opacity: 0}, '-=0.3');
+    var imgClone = cloneOverlayImg(orig);
 
-      // MOVE MODAL INTO POSITION
-      modalTransitionTimeline.to(imgClone, 0.4, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
-      modalTransitionTimeline.to(imgClone,0.4,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
+    // === BEGIN 'TO MODAL'TRANSITION  ===
 
-      // SHRINK OTHER STUDENT IMAGES IN GRID
-      modalTransitionTimeline.to(orig, 0.2, {opacity: 0}, '-=0.4');
+    //  BRING MODAL BACKGROUND UP
+    modalTransitionTimeline.to(modalBackground, 0.25, {ease: Power1.easeIn, zIndex: 300, opacity: 1,  height: '100%'})
 
-      // BRING MODAL UP
-      modalTransitionTimeline.to(modalContainer, 0.1, { opacity: "1", zIndex: 500}, '-=0.2')
-      
-      modalTransitionTimeline.to(imgClone, 0.01, {opacity: 0},'+=0.2');
-     // MODAL ITEMS TRANSITION UP
-      for(var i = 0; i < elementsToTransUp.length; i++){
-        modalTransitionTimeline.to(elementsToTransUp[i], 0.12, { opacity: "1", y: -30, zIndex: 1000, ease: Power1.easeOut}, "-=0.05")
-      }
+    modalTransitionTimeline.to(imagesBesidesThis, 0.3, {transform: 'scale(0,0)', zIndex: -100, opacity: 0}, '-=0.3');
 
-      modalTransitionTimeline.add(function(){imgClone.remove()})
-      // === END 'TO MODAL' TRANSITION ===
-      
-      
+    // MOVE MODAL INTO POSITION
+    modalTransitionTimeline.to(imgClone, 0.4, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
+    modalTransitionTimeline.to(imgClone,0.4,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
 
-      //modalTransitionTimeline.add(function(){imgClone.remove()}) 
+    // SHRINK OTHER STUDENT IMAGES IN GRID
+    modalTransitionTimeline.to(orig, 0.2, {opacity: 0}, '-=0.4');
 
-      closeButton.addEventListener('click', function _close(e){
-        var revImgClone = cloneOverlayImg(modalImage);
-        modalImage.src = '';
-        // ====
-        
-              
-    
-        
+    // BRING MODAL UP
+    modalTransitionTimeline.to(modalContainer, 0.1, { opacity: "1", zIndex: 500}, '-=0.2')
 
-        
-        //  REVERSE MODAL BACKGROUND 
-        modalTransitionTimeline.to(modalBackground, 0.08, {zIndex: -300, height: 0})
-        
-       // MODAL ITEMS TRANSITION UP
-          modalTransitionTimeline.to(elementsToTransUp, 0.12, { opacity: 0, y: 30, zIndex: -500 }, '-=0.05' )
-          
+    modalTransitionTimeline.to(imgClone, 0.01, {opacity: 0},'+=0.2');
+    // MODAL ITEMS TRANSITION UP
+    for(var i = 0; i < elementsToTransUp.length; i++){
+      modalTransitionTimeline.to(elementsToTransUp[i], 0.12, { opacity: "1", y: -30, zIndex: 1000, ease: Power1.easeOut}, "-=0.05")
+    }
 
-        // KILL MODAL 
-        modalTransitionTimeline.to(modalContainer, 0.08, { opacity: 0, zIndex: -500 }, '-=0.13')
+    modalTransitionTimeline.add(function(){imgClone.remove()})
+    // === END 'TO MODAL' TRANSITION ===
 
-        modalTransitionTimeline.to(imagesBesidesThis, 0.01, {opacity: 0.8});
 
-        // RESIZE OTHER STUDENT IMAGES IN GRID TO NORMAL
-        modalTransitionTimeline.to(imagesBesidesThis, 0.2, {scale: 1, opacity: 1, zIndex: 500}, '-=0.08');
 
-        var origImagePos = orig.getBoundingClientRect();
+    //modalTransitionTimeline.add(function(){imgClone.remove()})
 
-        modalTransitionTimeline.to(revImgClone, 0.25, { top: origImagePos.top, left: origImagePos.left}, '-=0.25').to(revImgClone, 0.25,{ width: origImagePos.width, height: origImagePos.height}, '-=0.24');
+    closeButton.addEventListener('click', function _close(e){
+      var revImgClone = cloneOverlayImg(modalImage);
+      modalImage.src = '';
+      // ====
 
-        modalTransitionTimeline.to(orig, 0.1, {opacity: 1});
-        modalTransitionTimeline.add(function(){revImgClone.remove()}) 
 
-        // ====
-        
-        /*
-        var revModalTransitionTimeline = new TimelineMax();
-        var origImagePos = orig.getBoundingClientRect();
-        revModalTransitionTimeline.to(revImgClsone, 0.25, { top: origImagePos.top, left: origImagePos.left}, '+=0.09').to(revImgClone, 0.25,{ width: origImagePos.width, height: origImagePos.height}, '-=0.24');
 
-        revModalTransitionTimeline.add(function(){revImgClone.remove()}) 
-        */
-        modalTransitionTimeline = null  
-        this.removeEventListener('click', _close);
-      });
+
+
+
+      //  REVERSE MODAL BACKGROUND
+      modalTransitionTimeline.to(modalBackground, 0.08, {zIndex: -300, height: 0})
+
+      // MODAL ITEMS TRANSITION UP
+      modalTransitionTimeline.to(elementsToTransUp, 0.12, { opacity: 0, y: 30, zIndex: -500 }, '-=0.05' )
+
+
+      // KILL MODAL
+      modalTransitionTimeline.to(modalContainer, 0.08, { opacity: 0, zIndex: -500 }, '-=0.13')
+
+      modalTransitionTimeline.to(imagesBesidesThis, 0.01, {opacity: 0.8});
+
+      // RESIZE OTHER STUDENT IMAGES IN GRID TO NORMAL
+      modalTransitionTimeline.to(imagesBesidesThis, 0.2, {scale: 1, opacity: 1, zIndex: 500}, '-=0.08');
+
+      var origImagePos = orig.getBoundingClientRect();
+
+      modalTransitionTimeline.to(revImgClone, 0.25, { top: origImagePos.top, left: origImagePos.left}, '-=0.25').to(revImgClone, 0.25,{ width: origImagePos.width, height: origImagePos.height}, '-=0.24');
+
+      modalTransitionTimeline.to(orig, 0.1, {opacity: 1});
+      modalTransitionTimeline.add(function(){revImgClone.remove()})
+
+      // ====
+
+      /*
+      var revModalTransitionTimeline = new TimelineMax();
+      var origImagePos = orig.getBoundingClientRect();
+      revModalTransitionTimeline.to(revImgClsone, 0.25, { top: origImagePos.top, left: origImagePos.left}, '+=0.09').to(revImgClone, 0.25,{ width: origImagePos.width, height: origImagePos.height}, '-=0.24');
+
+      revModalTransitionTimeline.add(function(){revImgClone.remove()})
+      */
+      modalTransitionTimeline = null
+      this.removeEventListener('click', _close);
+    });
 
 
   });
@@ -130,4 +130,3 @@ function cloneOverlayImg(img) {
 
   return clone;
 }
-

@@ -43,114 +43,114 @@
 .student-photo {}
 
 
-/* quote mark circle */
+  /* quote mark circle */
 
-.user-modal__photo-block__quote:before {
-  content: '\201D';
-  width: 3rem;
-  height: 3rem;
-  font-size: 3rem;
-  text-align: center;
-  padding-top: 0.6rem;
-  border-radius: 50%;
-  background-color: black;
-  color: #ffffff;
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-
-/* user quote container */
-
-.user-modal__photo-block__quote {
-  height: 20%;
-  background: darkgray;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .user-modal__photo-block__quote:before {
+    content: '\201D';
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 0.6rem;
+    border-radius: 50%;
+    background-color: black;
+    color: #ffffff;
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
 
 
-/* student quote blockquote */
+  /* user quote container */
 
-.student-quote {
-  margin: 0;
-  width: 80%;
-}
-
-.student-quote p {
-  font-style: italic;
-}
-
-.student-quote cite {
-  font-style: normal;
-}
+  .user-modal__photo-block__quote {
+    height: 20%;
+    background: darkgray;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
-/* Bio info and career progress section containing block */
+  /* student quote blockquote */
 
-.user-modal__info-block {
-  background: mistyrose;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
+  .student-quote {
+    margin: 0;
+    width: 80%;
+  }
 
+  .student-quote p {
+    font-style: italic;
+  }
 
-/* Bio info section header (user name, career path, evidential badge) */
-
-.user-modal__info-block__header {
-  height: 22%;
-  display: flex;
-}
+  .student-quote cite {
+    font-style: normal;
+  }
 
 
-/* Student name, career path, grad date container */
+  /* Bio info and career progress section containing block */
 
-.user-modal__info-block__header__text {
-  padding: 2em;
-  flex: 2;
-}
-
-
-/* Evidential degree badge container */
-
-.user-modal__info-block__header__badge {
-  margin: 0 4em 0 0;
-}
+  .user-modal__info-block {
+    background: mistyrose;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
 
 
-/* Student name h1 */
+  /* Bio info section header (user name, career path, evidential badge) */
 
-.student-name {
-  font-weight: 400;
-  margin: 0;
-}
-
-
-/* Career path h3 */
-
-.career-path__subheader {
-  text-transform: uppercase;
-  font-size: 0.9em;
-}
+  .user-modal__info-block__header {
+    height: 22%;
+    display: flex;
+  }
 
 
-/* graduation date p */
+  /* Student name, career path, grad date container */
 
-.graduation-date {
-  text-transform: uppercase;
-  font-size: 0.8em;
-}
+  .user-modal__info-block__header__text {
+    padding: 2em;
+    flex: 2;
+  }
 
 
-/* Bio info main section container */
+  /* Evidential degree badge container */
 
-.user-modal__info-block__main-content {
-  height: 78%;
-  background: lightsalmon;
-}
+  .user-modal__info-block__header__badge {
+    margin: 0 4em 0 0;
+  }
+
+
+  /* Student name h1 */
+
+  .student-name {
+    font-weight: 400;
+    margin: 0;
+  }
+
+
+  /* Career path h3 */
+
+  .career-path__subheader {
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+
+
+  /* graduation date p */
+
+  .graduation-date {
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+
+  /* Bio info main section container */
+
+  .user-modal__info-block__main-content {
+    height: 78%;
+    background: lightsalmon;
+  }

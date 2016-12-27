@@ -63,452 +63,455 @@
 .student-photo {}
 
 
-/* quote mark circle */
-
-.user-modal__photo-block__quote:before {
-  content: '\201D';
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  width: 2.75rem;
-  height: 2.75rem;
-  font-size: 3rem;
-  text-align: center;
-  padding-top: 0.3rem;
-  border-radius: 50%;
-  background-color: rgb(79, 86, 95);
-  color: #ffffff;
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-
-/* user quote container */
-
-.user-modal__photo-block__quote {
-  height: 18%;
-  background: rgb(216, 225, 237);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.75em;
-  color: rgb(79, 86, 95);
-}
-
-
-/* student quote blockquote */
-
-.student-quote {
-  margin: 0;
-  width: 80%;
-  font-family: 'Roboto Slab';
-  font-weight: 400;
-}
-
-.student-quote p {
-  font-style: italic;
-}
-
-.student-quote cite {
-  font-style: normal;
-  font-family: 'Roboto';
-  font-weight: 400;
-}
-
-
-/* Bio info and career progress section containing block */
-
-.user-modal__info-block {
-  background: #ffffff;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  color: rgb(79, 86, 95);
-}
-
-
-/* Bio info section header (user name, career path, evidential badge) */
-
-
-/* ANIMATIN A */
-
-.user-modal__info-block__header {
-  position: relative;
-  top: 30px;
-  height: 25%;
-  display: flex;
-  border-bottom: solid 1px rgb(185, 194, 204);
-}
-
-
-/* Student name, career path, grad date container */
-
-.user-modal__info-block__header__text {
-  padding: 1.5em 1.5em 0 2em;
-  flex: 2;
-}
-
-
-/* Evidential degree badge container */
-
-.user-modal__info-block__header__badge {
-  margin: 0 3em 0 0;
-}
-
-
-/* Evidential degree badge image */
-
-.user-modal__info-block__header__badge img {
-  height: 100%;
-  width: auto;
-}
-
-
-/* modal close icon box */
-
-.user-modal__info-block__header__close-icon {
-  width: 2.3em;
-  height: 2.3em;
-  position: absolute;
-  background: #bbbcbd;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-
-.user-modal__info-block__header__close-icon i {
-  font-size: 1.1em;
-}
-
-
-/* Student name h1 */
-
-.student-name {
-  font-weight: 400;
-  margin: 0;
-}
-
-
-/* Career path h3 */
-
-.bio-info__subheader {
-  text-transform: uppercase;
-  font-size: 0.6em;
-  letter-spacing: 0.2em;
-  color: rgb(185, 194, 204);
-  margin-bottom: 0.5em;
-}
-
-
-/* graduation date p */
-
-.graduation-date {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  font-weight: 200;
-}
-
-
-/* Bio info main section container */
-
-.user-modal__info-block__main-content {
-  height: 75%;
-  background: #ffffff;
-  padding: 1em 3em 1em 2em;
-}
-
-
-/* Bio info main section p style */
-
-.student-bio-text {
-  position: relative;
-  top: 30px;
-  font-size: 0.8em;
-  line-height: 1.5;
-  color: rgb(79, 86, 95);
-  margin-top: 0.3em;
-}
-
-
-/* bio info h2 style */
-
-.bio-info__section-heading {
-  font-weight: 300;
-  margin-bottom: 0;
-  font-size: 1.3em;
-  margin-top: 25px;
-}
-
-
-/* bio info ul */
-
-.bio-info__list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.bio-info__list li {
-  display: inline-block;
-  margin-right: 2.3em;
-}
-
-
-/* model career Path Progress */
-
-.career-path__list {
-  list-style: none;
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
-  width: 75%;
-}
-
-.career-path__list li {
-  border: 1px solid #eee;
-  position: relative;
-  margin: 10px 15px 0px 0;
-  color: rgb(185, 194, 204);
-  border-radius: 3px;
-}
-
-.career-path-info__span {
-  display: block;
-  padding: 10px;
-  font-size: 0.9em;
-}
-
-.career-path-progress__span {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 2px;
-  bottom: 2px;
-  border-radius: 7%;
-  text-align: center;
-  color: #f5f5f5;
-  padding: 8px 4px 4px 4px;
-  margin: 1px 2px 2px 2px;
-}
-
-.career-path-progress__span--green {
-  background: #78f08e;
-  border: #78f08e;
-}
-
-.career-path-progress__span--blue {
-  background: #77cdef;
-  border: #77cdef;
-}
-
-.career-path-info__span--green {
-  border-bottom: 2px solid #78f08e;
-}
-
-.career-path-info__span--blue {
-  border-bottom: 2px solid #77cdef;
-}
-
-
-/*??? Have trouble with position */
-
-.career-path-progress__span i {
-  margin-top: -7px;
-}
-
-.career-path-update__span {
-  font-size: 12px;
-  display: block;
-  margin-top: 10px;
-  /*border: 1px solid green;*/
-}
-
-.career-path-page__div {
-  overflow: auto;
-  margin-right: 12%;
-  margin-bottom: 1%;
-}
-
-.career-path-pages-circles {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  background: #f5f5f5;
-  border: 1px solid #eee;
-  border-radius: 100%;
-  float: right;
-  margin-right: 8px;
-  cursor: pointer;
-  position: relative;
-}
-
-.career-path-pages-circles:hover {
-  background: #888;
-}
-
-.career-path-pages-circle--2 span {
-  border: 1px solid #eee;
-  color: rgb(185, 194, 204);
-  font-size: 10px;
-  letter-spacing: 1px;
-  height: 20px;
-  line-height: 20px;
-  position: relative;
-  text-align: center;
-  top: -30px;
-  left: -20px;
-  display: none;
-  padding: 0 2px;
-  background: #f8f8f8;
-}
-
-.career-path-pages-circle--2:hover span {
-  display: block;
-  z-index: 9;
-}
-
-.career-path-pages-circle--2 span:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  width: 10px;
-  height: 10px;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
-  background: #f8f8f8;
-}
-
-
-/* bio info link styles */
-
-.bio-info__link {
-  text-decoration: none;
-  color: rgb(119, 205, 239);
-  font-size: 0.8em;
-}
-
-.bio-info__link i {
-  font-size: 1.2em;
-}
-
-
-/* modal background fade-in and cover div*/
-
-.user-modal__background-cover {
-  background: rgba(35, 35, 35, 0.99);
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-
-}
-
-.user-modal__background-cover > a {
-  width: 100%;
-  height: 100%;
-}
-
-.user-modal__background-cover--active {
-  z-index: 300;
-  opacity: 1;
-  height: 100%;
-}
-
-
-/*MODAL MEDIA QUERIES*/
-
-@media only screen and (max-width: 976px) {
-  .user-modal__container,
-  .student-image-grid__image-cont__picture--active {
-    width: 98vw;
-    height: 78vh;
+  /* quote mark circle */
+
+  .user-modal__photo-block__quote:before {
+    content: '\201D';
+    font-family: 'Source Sans Pro';
+    font-weight: 200;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 0.3rem;
+    border-radius: 50%;
+    background-color: rgb(79, 86, 95);
+    color: #ffffff;
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2;
   }
-  .career-path__list {
-    width: 100%;
+
+
+  /* user quote container */
+
+  .user-modal__photo-block__quote {
+    height: 18%;
+    background: rgb(216, 225, 237);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+    color: rgb(79, 86, 95);
   }
-  .career-path__list li {
-    margin-right: 0;
+
+
+  /* student quote blockquote */
+
+  .student-quote {
+    margin: 0;
+    width: 80%;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
   }
+
+  .student-quote p {
+    font-style: italic;
+  }
+
+  .student-quote cite {
+    font-style: normal;
+    font-family: 'Roboto';
+    font-weight: 400;
+  }
+
+
+  /* Bio info and career progress section containing block */
+
+  .user-modal__info-block {
+    background: #ffffff;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    color: rgb(79, 86, 95);
+  }
+
+
+  /* Bio info section header (user name, career path, evidential badge) */
+
+
+  /* ANIMATIN A */
+
+  .user-modal__info-block__header {
+    position: relative;
+    top: 30px;
+    height: 25%;
+    display: flex;
+    border-bottom: solid 1px rgb(185, 194, 204);
+  }
+
+
+  /* Student name, career path, grad date container */
+
   .user-modal__info-block__header__text {
-    padding: 1.5em 1em 0 1.5em;
+    padding: 1.5em 1.5em 0 2em;
+    flex: 2;
   }
-  .bio-info__subheader {
-      font-size: 0.4em;
-  }
-  .student-name {
-      font-size: 1.5em;
-  }
-  .user-modal__info-block__main-content {
-      overflow: auto;
-  }
-}
 
-@media only screen and (max-width: 800px) {
+
+  /* Evidential degree badge container */
+
+  .user-modal__info-block__header__badge {
+    margin: 0 3em 0 0;
+  }
+
+
+  /* Evidential degree badge image */
+
   .user-modal__info-block__header__badge img {
+    height: 100%;
+    width: auto;
+  }
+
+
+  /* modal close icon box */
+
+  .user-modal__info-block__header__close-icon {
+    width: 2.3em;
+    height: 2.3em;
+    position: absolute;
+    background: #bbbcbd;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .user-modal__info-block__header__close-icon i {
+    font-size: 1.1em;
+  }
+
+
+  /* Student name h1 */
+
+  .student-name {
+    font-weight: 400;
+    margin: 0;
+  }
+
+
+  /* Career path h3 */
+
+  .bio-info__subheader {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    letter-spacing: 0.2em;
+    color: rgb(185, 194, 204);
+    margin-bottom: 0.5em;
+  }
+
+
+  /* graduation date p */
+
+  .graduation-date {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 200;
+  }
+
+
+  /* Bio info main section container */
+
+  .user-modal__info-block__main-content {
+    height: 75%;
+    background: #ffffff;
+    padding: 1em 3em 1em 2em;
+  }
+
+
+  /* Bio info main section p style */
+
+  .student-bio-text {
+    position: relative;
+    top: 30px;
+    font-size: 0.8em;
+    line-height: 1.5;
+    color: rgb(79, 86, 95);
+    margin-top: 0.3em;
+  }
+
+
+  /* bio info h2 style */
+
+  .bio-info__section-heading {
+    font-weight: 300;
+    margin-bottom: 0;
+    font-size: 1.3em;
+    margin-top: 25px;
+  }
+
+
+  /* bio info ul */
+
+  .bio-info__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bio-info__list li {
+    display: inline-block;
+    margin-right: 2.3em;
+  }
+
+
+  /* model career Path Progress */
+
+  .career-path__list {
+    list-style: none;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+  }
+
+  .career-path__list li {
+    border: 1px solid #eee;
+    position: relative;
+    margin: 10px 15px 0px 0;
+    color: rgb(185, 194, 204);
+    border-radius: 3px;
+  }
+
+  .career-path-info__span {
+    display: block;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .career-path-progress__span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 7%;
+    text-align: center;
+    color: #f5f5f5;
+    padding: 8px 4px 4px 4px;
+    margin: 1px 2px 2px 2px;
+  }
+
+  .career-path-progress__span--green {
+    background: #78f08e;
+    border: #78f08e;
+  }
+
+  .career-path-progress__span--blue {
+    background: #77cdef;
+    border: #77cdef;
+  }
+
+
+  .career-path-info__span--green {
+    border-bottom: 2px solid #78f08e;
+  }
+
+  .career-path-info__span--blue {
+    border-bottom: 2px solid #77cdef;
+  }
+
+
+  .career-path-progress__span i {
+    margin-top: -7px;
+  }
+
+  .career-path-update__span {
+    font-size: 12px;
+    display: block;
+    margin-top: 10px;
+    /*border: 1px solid green;*/
+  }
+
+  .career-path-page__div {
+    overflow: auto;
+    margin-right: 12%;
+    margin-bottom: 1%;
+  }
+
+  .career-path-pages-circles {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background: #f5f5f5;
+    border: 1px solid #eee;
+    border-radius: 100%;
+    float: right;
+    margin-right: 8px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .career-path-pages-circles:hover {
+    background: #888;
+  }
+
+  .career-path-pages-circle--2 span {
+    border: 1px solid #eee;
+    color: rgb(185, 194, 204);
+    font-size: 10px;
+    letter-spacing: 1px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    top: -30px;
+    left: -20px;
+    display: none;
+    padding: 0 2px;
+    background: #f8f8f8;
+  }
+
+  .career-path-pages-circle--2:hover span {
+    display: block;
+    z-index: 9;
+  }
+
+  .career-path-pages-circle--2 span:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    background: #f8f8f8;
+  }
+
+
+  /* bio info link styles */
+
+  .bio-info__link {
+    text-decoration: none;
+    color: rgb(119, 205, 239);
+    font-size: 0.8em;
+  }
+
+  .bio-info__link:hover {
+    color: rgb(185, 194, 204);
+  }
+
+  .bio-info__link i {
+    font-size: 1.2em;
+  }
+
+
+  /* modal background fade-in and cover div*/
+
+  .user-modal__background-cover {
+    background: rgba(35, 35, 35, 0.99);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+  }
+
+  .user-modal__background-cover > a {
+    width: 100%;
+    height: 100%;
+  }
+
+  .user-modal__background-cover--active {
+    z-index: 300;
+    opacity: 1;
+    height: 100%;
+  }
+
+
+  /*MODAL MEDIA QUERIES*/
+
+  @media only screen and (max-width: 976px) {
+    .user-modal__container,
+    .student-image-grid__image-cont__picture--active {
+      width: 98vw;
+      height: 78vh;
+    }
+    .career-path__list {
+      width: 100%;
+    }
+    .career-path__list li {
+      margin-right: 0;
+    }
+    .user-modal__info-block__header__text {
+      padding: 1.5em 1em 0 1.5em;
+    }
+    .bio-info__subheader {
+      font-size: 0.4em;
+    }
+    .student-name {
+      font-size: 1.5em;
+    }
+    .user-modal__info-block__main-content {
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .user-modal__info-block__header__badge img {
       position: relative;
       right: 10px;
-  }
-  .user-modal__info-block__header__text {
+    }
+    .user-modal__info-block__header__text {
       flex: 0 0 75%;
+    }
+    .user-modal__info-block {
+      overflow-x: hidden;
+    }
+    .user-modal__info-block__header__badge {
+      margin: 0;
+      z-index: -1;
+      position: absolute;
+      right: -4em;
+      top: 0.25em;
+      opacity: 0.5;
+    }
   }
-  .user-modal__info-block {
-    overflow-x: hidden;
-  }
-  .user-modal__info-block__header__badge {
-    margin: 0;
-    z-index: -1;
-    position: absolute;
-    right: -4em;
-    top: 0.25em;
-    opacity: 0.5;
-  }
-}
 
-@media only screen and (max-width: 605px) {
-  .user-modal__container,
-  .student-image-grid__image-cont__picture--active {
-    height: 85vh;
+  @media only screen and (max-width: 605px) {
+    .user-modal__container,
+    .student-image-grid__image-cont__picture--active {
+      height: 85vh;
+    }
+    .user-modal__info-block__main-content {
+      padding: 1em;
+    }
+    .user-modal__photo-block__photo {
+      height: 73%;
+    }
+    .user-modal__photo-block__quote {
+      height: 27%;
+    }
   }
-  .user-modal__info-block__main-content {
-    padding: 1em;
-  }
-  .user-modal__photo-block__photo {
-    height: 73%;
-  }
-  .user-modal__photo-block__quote {
-    height: 27%;
-  }
-}
 
-@media only screen and (max-width: 500px) {
-  .user-modal__container,
-  .student-image-grid__image-cont__picture--active {
-    height: 85vh;
+  @media only screen and (max-width: 500px) {
+    .user-modal__container,
+    .student-image-grid__image-cont__picture--active {
+      height: 85vh;
+    }
+    .bio-info__section-heading {
+      font-size: 1em;
+    }
+    .user-modal__photo-block__photo {
+      height: 70%;
+    }
+    .user-modal__photo-block__quote {
+      height: 30%;
+    }
+    .user-modal__info-block__header__badge {
+      display: none;
+    }
   }
-  .bio-info__section-heading {
-    font-size: 1em;
-  }
-  .user-modal__photo-block__photo {
-    height: 70%;
-  }
-  .user-modal__photo-block__quote {
-    height: 30%;
-  }
-  .user-modal__info-block__header__badge {
-    display: none;
-  }
-}
