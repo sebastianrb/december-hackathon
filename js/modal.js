@@ -34,14 +34,14 @@ for (var i = 0; i < images.length; i++) {
       modalTransitionTimeline.to(imagesBesidesThis, 0.3, {transform: 'scale(0,0)', zIndex: -100, opacity: 0}, '-=0.3');
 
       // MOVE MODAL INTO POSITION
-      modalTransitionTimeline.to(imgClone, 0.35, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
-      modalTransitionTimeline.to(imgClone,0.35,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
+      modalTransitionTimeline.to(imgClone, 0.4, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
+      modalTransitionTimeline.to(imgClone,0.4,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
 
       // SHRINK OTHER STUDENT IMAGES IN GRID
       modalTransitionTimeline.to(orig, 0.2, {opacity: 0}, '-=0.4');
 
       // BRING MODAL UP
-      modalTransitionTimeline.to(modalContainer, 0.1, { opacity: "1", zIndex: 500}, '-=0.3')
+      modalTransitionTimeline.to(modalContainer, 0.1, { opacity: "1", zIndex: 500}, '-=0.2')
       
       modalTransitionTimeline.to(imgClone, 0.01, {opacity: 0},'+=0.2');
      // MODAL ITEMS TRANSITION UP
