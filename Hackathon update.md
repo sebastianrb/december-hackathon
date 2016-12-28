@@ -146,8 +146,8 @@ button.load-more-container__button {
 11. Browser and Device Compatibilities
 12. Modal Responsiveness
 	- “Degree in Progress” added: We added this over the degree insignia. Add it using HTML and CSS <em> --- done but font-family needs to be changed </em>
-	- Colors: The modal background color is now #fafdff
-	- "Portfolio and Professional Site" heading removed: To recoup some vertical space and enhance the UI with more white space, we removed this header
+	- Colors: The modal background color is now #fafdff <em> Done </em>
+	- "Portfolio and Professional Site" heading removed: To recoup some vertical space and enhance the UI with more white space, we removed this header <em> Done </em>
 	- Quote section updated: The quote section has a new background color, #dae4ea, and it is taller to accommodate the new photo size.
 	- Updated photo size: The photo on the modal now has the correct size
 	- Nav arrows: We added navigation arrows to allow the user to navigate the profiles without leaving the modal. Below, I describe how the student’s profile will transition when using the nav arrows.
