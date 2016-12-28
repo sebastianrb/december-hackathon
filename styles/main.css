@@ -8,6 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Roboto", Arial, sans-serif;
+  max-width: 1443px;
 }
 
 
@@ -169,6 +170,8 @@ main{
   padding: 50px 0 50px 40px;
   overflow: auto;
   color: #a2b7bc;
+  background-color: #f3f7fd;
+
 }
 
 .main__header__title {
@@ -349,6 +352,7 @@ main{
 .student-image-grid__image-cont__image {
   width: 100%;
   height: auto;
+  margin-right: 1px;
 }
 
 /*.student-image-grid__image-cont__image:hover {

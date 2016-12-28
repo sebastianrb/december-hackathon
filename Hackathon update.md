@@ -52,7 +52,7 @@ button.load-more-container__button {
 <li>The height of the modal in the UI design is 826px, while the height of the HTML/CSS UI is 616px. The overall size of the modal is small on the webpage. Since I am in the holiday spirit, I won't penalize for every smaller dimension. Literally every element on the webpage modal is smaller than its corresponding element on the UI design.</li>
 <li>The First Cohort section, the entire second row, is 184px on the UI design, while it is 196px on the web page.</li>
 <li>The font size for content on the modal appears in smaller font than the same content on the UI design. For example, the font for the text under the student's name appears in 10px font on the site, but that same font appears in 12px on the UI design.</li>
-<li>The texts on the modal that show 20% and 10% don't correspond to the width of the percent bars they represent. For example, one of the elements has "20%," but its corresponding percent bar appears to be the full width at 100%.</li>
+<li>The texts on the modal that show 20% and 10% don't correspond to the width of the percent bars they represent. For example, one of the elements has "20%," but its corresponding percent bar appears to be the full width at 100%. <em> Half way. Need adjustments </em> </li>
 <li>The height of the gray quotation box is considerably shorter on the web page than it is on the UI design.</li>
 <li>The font weight for the font in quotes (Albert Einstein quote) is less than the corresponding font-weight in the UI design.</li>
 <li>The green checkmark box/blue percent box on the UI design has equal height and width (a square with rounded edge) but on the web page the same element does not have equal height and width.</li>
