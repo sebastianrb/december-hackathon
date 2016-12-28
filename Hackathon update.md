@@ -145,7 +145,7 @@ button.load-more-container__button {
 10. Notice we have changed the size and color of the Load More button.
 11. Browser and Device Compatibilities
 12. Modal Responsiveness
-	- “Degree in Progress” added: We added this over the degree insignia. Add it using HTML and CSS
+	- “Degree in Progress” added: We added this over the degree insignia. Add it using HTML and CSS <em> --- done but font-family needs to be changed </em>
 	- Colors: The modal background color is now #fafdff
 	- "Portfolio and Professional Site" heading removed: To recoup some vertical space and enhance the UI with more white space, we removed this header
 	- Quote section updated: The quote section has a new background color, #dae4ea, and it is taller to accommodate the new photo size.
@@ -154,6 +154,8 @@ button.load-more-container__button {
 18. Open Modal Animation
 	- photo
 	- text animation
+
+	<em> Modefied to `ease: Expo.easeInOut`, but not sure whether it worked.
 19. Swift and Buttery Smooth Animations
 
 	- TimelineMax

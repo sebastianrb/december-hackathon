@@ -168,8 +168,23 @@
   .user-modal__info-block__header__badge img {
     height: 100%;
     width: auto;
+    position: relative;
   }
 
+  /* degree progress */
+  .degree-progress__badge {
+    z-index: 50;
+    position: absolute;
+    bottom: 36%;
+    right: 9%;
+    padding: 3px 25px;
+    font-size: 12px;
+    color: #FFFFF7;
+    background: #67BFD2;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    opacity: 0.9;
+  }
 
   /* modal close icon box */
 
@@ -219,7 +234,6 @@
     font-weight: 200;
   }
 
-
   /* Bio info main section container */
 
   .user-modal__info-block__main-content {
@@ -227,6 +241,7 @@
     background: #ffffff;
     padding: 1em 3em 1em 2em;
   }
+
 
 
   /* Bio info main section p style */

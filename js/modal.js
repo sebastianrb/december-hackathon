@@ -29,13 +29,16 @@ for (var i = 0; i < images.length; i++) {
     // === BEGIN 'TO MODAL'TRANSITION  ===
 
     //  BRING MODAL BACKGROUND UP
-    modalTransitionTimeline.to(modalBackground, 0.25, {ease: Power1.easeIn, zIndex: 300, opacity: 1,  height: '100%'})
+    // modalTransitionTimeline.to(modalBackground, 0.25, {ease: Power1.easeIn, zIndex: 300, opacity: 1,  height: '100%'})
+    modalTransitionTimeline.to(modalBackground, 0.25, {ease: Expo.easeInOut, zIndex: 300, opacity: 1,  height: '100%'})
 
-    modalTransitionTimeline.to(imagesBesidesThis, 0.3, {transform: 'scale(0,0)', zIndex: -100, opacity: 0}, '-=0.3');
+    modalTransitionTimeline.to(imagesBesidesThis, 0.3, {transform: 'scale(0,0)', zIndex: -100, opacity: 0}, '-=0.15');
 
     // MOVE MODAL INTO POSITION
-    modalTransitionTimeline.to(imgClone, 0.4, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
-    modalTransitionTimeline.to(imgClone,0.4,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
+    // modalTransitionTimeline.to(imgClone, 0.4, { ease: Power1.easeOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
+    modalTransitionTimeline.to(imgClone, 0.4, { ease: Expo.easeInOut, top: modalPosition.top, left: modalPosition.left, zIndex: 600}, '-=0.3')
+    // modalTransitionTimeline.to(imgClone,0.4,{ ease: Power1.easeOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
+    modalTransitionTimeline.to(imgClone,0.4,{ ease: Expo.easeInOut, width: modalImage.width, height: modalImage.height}, '-=0.34')
 
     // SHRINK OTHER STUDENT IMAGES IN GRID
     modalTransitionTimeline.to(orig, 0.2, {opacity: 0}, '-=0.4');
@@ -43,10 +46,10 @@ for (var i = 0; i < images.length; i++) {
     // BRING MODAL UP
     modalTransitionTimeline.to(modalContainer, 0.1, { opacity: "1", zIndex: 500}, '-=0.2')
 
-    modalTransitionTimeline.to(imgClone, 0.01, {opacity: 0},'+=0.2');
+    // modalTransitionTimeline.to(imgClone, 0.01, {opacity: 0},'+=0.2');
     // MODAL ITEMS TRANSITION UP
     for(var i = 0; i < elementsToTransUp.length; i++){
-      modalTransitionTimeline.to(elementsToTransUp[i], 0.12, { opacity: "1", y: -30, zIndex: 1000, ease: Power1.easeOut}, "-=0.05")
+      modalTransitionTimeline.to(elementsToTransUp[i], 0.12, { opacity: "1", y: -30, zIndex: 1000, ease: Power1.easeOut}, "-=0.005")
     }
 
     modalTransitionTimeline.add(function(){imgClone.remove()})
