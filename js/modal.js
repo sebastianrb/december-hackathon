@@ -49,8 +49,8 @@ function transitionModal(e) {
 
 
     // MODAL ITEMS TRANSITION UP
-    for(var i = 0; i < elementsToTransUp.length-4; i++){
-      modalTransitionTimeline.to(elementsToTransUp[i], 0.2, { opacity: "1", top: '0px'}, "-=0.13");
+    for(var k = 0; k < elementsToTransUp.length-4; k++){
+      modalTransitionTimeline.to(elementsToTransUp[k], 0.2, { opacity: "1", top: '0px'}, "-=0.13");
     }
 
     for(var j =  elementsToTransUp.length-4; j < elementsToTransUp.length; j++){
