@@ -1,3 +1,5 @@
+(function(){
+
 var modalBackground = document.querySelector(".user-modal__background-cover");
 var modalImage = document.querySelector(".user-modal__photo-block__photo");
 var modalContainer = document.querySelector(".user-modal__container");
@@ -135,3 +137,9 @@ function cloneOverlayImg(img) {
 
   return clone;
 }
+
+})();
+
+
+
+
