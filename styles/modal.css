@@ -8,9 +8,8 @@
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 38.5em;
-  width: 60em;
-  max-width: 70em;
+  height: 51.625em;
+  width: 75em;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
@@ -44,7 +43,7 @@
 
 .user-modal__photo-block {
   height: 100%;
-  width: 40%;
+  width: 30em;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -54,7 +53,7 @@
 /* user photo container */
 
 .user-modal__photo-block__photo {
-  height: 82%;
+  height: 40.125em;
 }
 
 
@@ -69,13 +68,13 @@
     content: '\201D';
     font-family: 'Source Sans Pro';
     font-weight: 200;
-    width: 2.75rem;
-    height: 2.75rem;
-    font-size: 3rem;
+    width: 3.563rem;
+    height: 3.563rem;
+    font-size: 4rem;
     text-align: center;
     padding-top: 0.3rem;
     border-radius: 50%;
-    background-color: rgb(79, 86, 95);
+    background-color: #91abba;
     color: #ffffff;
     position: absolute;
     top: -1.5rem;
@@ -91,14 +90,13 @@
   /* user quote container */
 
   .user-modal__photo-block__quote {
-    height: 18%;
-    background: rgb(216, 225, 237);
+    height: 11.500em;
+    background-color: #dae4ea;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.75em;
-    color: rgb(79, 86, 95);
+    color: #61869b;
   }
 
 
@@ -107,12 +105,16 @@
   .student-quote {
     margin: 0;
     width: 80%;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto';
     font-weight: 400;
   }
 
   .student-quote p {
     font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .student-quote cite {
@@ -126,7 +128,7 @@
 
   .user-modal__info-block {
     background: #fafdff;
-    width: 60%;
+    width: 45em;
     display: flex;
     flex-direction: column;
     color: rgb(79, 86, 95);
@@ -141,7 +143,7 @@
   .user-modal__info-block__header {
     position: relative;
     top: 30px;
-    height: 25%;
+    height: 11.2em;
     display: flex;
     border-bottom: solid 1px rgb(185, 194, 204);
   }
@@ -150,15 +152,19 @@
   /* Student name, career path, grad date container */
 
   .user-modal__info-block__header__text {
-    padding: 1.5em 1.5em 0 2em;
+    padding-left: 3em;
     flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 
   /* Evidential degree badge container */
 
   .user-modal__info-block__header__badge {
-    margin: 0 3em 0 0;
+    margin: 0;
+    margin-right: 4.2em;
   }
 
 
@@ -174,10 +180,10 @@
   .degree-progress__badge {
     z-index: 50;
     position: absolute;
-    bottom: 36%;
-    right: 9%;
+    bottom: 34%;
+    right: 10.2%;
     padding: 3px 25px;
-    font-size: 12px;
+    font-size: 15px;
     color: #FFFFF7;
     background: #67BFD2;
     font-family: 'Roboto', sans-serif;
@@ -188,10 +194,10 @@
   /* modal close icon box */
 
   .user-modal__info-block__header__close-icon {
-    width: 2.3em;
-    height: 2.3em;
+    width: 3.1em;
+    height: 3.1em;
     position: absolute;
-    background: #bbbcbd;
+    background-color: #91abba;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -202,7 +208,7 @@
   }
 
   .user-modal__info-block__header__close-icon i {
-    font-size: 1.1em;
+    font-size: 1.5em;
   }
 
 
@@ -210,59 +216,83 @@
 
   .student-name {
     font-weight: 400;
-    margin: 0;
+    margin-bottom: 0.25em;
+    font-size: 2.75em;
   }
 
 
   /* Career path h3 */
 
-  .bio-info__subheader {
+  .bio-info__subheader--header {
     text-transform: uppercase;
-    font-size: 0.6em;
-    letter-spacing: 0.2em;
+    font-size: 0.78em;
+    letter-spacing: 0.156rem;
     color: rgb(185, 194, 204);
-    margin-bottom: 0.5em;
+    margin-top: 0;
+    margin-bottom: 1.25em;
   }
+
 
 
   /* graduation date p */
 
   .graduation-date {
     text-transform: uppercase;
-    font-size: 0.8em;
     font-weight: 200;
+    margin-left: 0.55em;
   }
 
   /* Bio info main section container */
 
   .user-modal__info-block__main-content {
-    height: 75%;
+    height: 40.425em;
     background: #ffffff;
-    padding: 1em 3em 1em 2em;
+    padding: 2.1em 3em;
+    display: flex;
+    flex-direction: column;
   }
 
+/* bio info wrapper */
+.user-modal__info-block__main-content--bio-info-wrapper {
+
+}
 
 
   /* Bio info main section p style */
 
   .student-bio-text {
-    position: relative;
-    top: 30px;
-    font-size: 0.8em;
-    line-height: 1.5;
+    font-size: 0.95em;
+    line-height: 1.55;
     color: rgb(79, 86, 95);
-    margin-top: 0.3em;
+    margin: 0;
+    margin-bottom: 1.6em;
   }
 
+ /* bio info main section h3 */
+
+  .bio-info__subheader--main {
+    text-transform: uppercase;
+    font-size: 0.78em;
+    letter-spacing: 0.156rem;
+    color: rgb(185, 194, 204);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   /* bio info h2 style */
 
   .bio-info__section-heading {
     font-weight: 300;
     margin-bottom: 0;
-    font-size: 1.3em;
+    font-size: 1.73em;
     margin-top: 45px;
   }
+
+/* carousel wrapper */
+
+.user-modal__info-block__main-content--carousel-wrapper {
+  margin-top: 1.25em;
+}
 
 
   /* bio info ul */
@@ -275,7 +305,7 @@
 
   .bio-info__list li {
     display: inline-block;
-    margin-right: 2.3em;
+    margin-right: 3.3em;
   }
 
 
@@ -283,38 +313,45 @@
 
   .career-path__list {
     list-style: none;
-    font-size: 12px;
     margin: 0;
     padding: 0;
-    width: 75%;
+    width: 24.375em;
   }
 
   .career-path__list li {
     border: 1px solid #eee;
-    border-bottom: none;
     position: relative;
-    margin: 10px 15px 0px 0;
+    margin-top: 1.25em;
     color: rgb(185, 194, 204);
     border-radius: 3px;
+    height: 2.688em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .career-path__list li:first-of-type {
+    margin-top: 1em;
   }
 
   .career-path-info__span {
     display: block;
-    padding: 10px;
-    font-size: 0.9em;
+    padding-left: 0.625rem;
+    font-size: 0.75em;
   }
 
   .career-path-progress__span {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 2px;
-    bottom: 2px;
-    border-radius: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
     text-align: center;
     color: #f5f5f5;
-    padding: 8px 4px 4px 4px;
-    margin: 1px 2px 2px 2px;
+    /*padding: 8px 4px 4px 4px;*/
+    margin-right: 2px;
+    width: 2.188rem;
+    height: 2.188rem;
+    font-size: 0.813em;
   }
 
   .career-path-progress__span--green {
@@ -350,13 +387,20 @@
     color: #78f08e;
   }
 
+/* positioning for all progress bars */
+
+[class^="career-path-progress__span--"] {
+  position: absolute;
+  bottom: -1px;
+}
+
   /*100% done progress bar*/
-  progress::-webkit-progress-bar.career-path-progress__span--100  {
+  progress.career-path-progress__span--100::-webkit-progress-bar {
     background: #f5f5f5;
     width: 100%;
     height: 2px;
   }
-  progress::-webkit-progress-value.career-path-progress__span--100  {
+  progress.career-path-progress__span--100::-webkit-progress-value  {
     background: #78f08e;
   }
 
@@ -394,14 +438,8 @@
   }
 
 
-
-
-  .career-path-progress__span i {
-    margin-top: -7px;
-  }
-
   .career-path-update__span {
-    font-size: 12px;
+    font-size: 0.688em;
     display: block;
     margin-top: 10px;
     /*border: 1px solid green;*/
@@ -468,7 +506,6 @@
   .bio-info__link {
     text-decoration: none;
     color: rgb(119, 205, 239);
-    font-size: 0.8em;
   }
 
   .bio-info__link:hover {
@@ -477,6 +514,7 @@
 
   .bio-info__link i {
     font-size: 1.2em;
+    transform: translateY(4px);
   }
 
 
