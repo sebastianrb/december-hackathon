@@ -8,9 +8,8 @@
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 38.5em;
-  width: 60em;
-  max-width: 70em;
+  height: 51.625em;
+  width: 75em;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
@@ -44,7 +43,7 @@
 
 .user-modal__photo-block {
   height: 100%;
-  width: 40%;
+  width: 30em;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -54,7 +53,7 @@
 /* user photo container */
 
 .user-modal__photo-block__photo {
-  height: 82%;
+  height: 40.125em;
 }
 
 
@@ -69,13 +68,13 @@
     content: '\201D';
     font-family: 'Source Sans Pro';
     font-weight: 200;
-    width: 2.75rem;
-    height: 2.75rem;
-    font-size: 3rem;
+    width: 3.563rem;
+    height: 3.563rem;
+    font-size: 4rem;
     text-align: center;
     padding-top: 0.3rem;
     border-radius: 50%;
-    background-color: rgb(79, 86, 95);
+    background-color: #91abba;
     color: #ffffff;
     position: absolute;
     top: -1.5rem;
@@ -91,13 +90,12 @@
   /* user quote container */
 
   .user-modal__photo-block__quote {
-    height: 18%;
-    background: rgb(216, 225, 237);
+    height: 11.500em;
+    background-color: #dae4ea;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.75em;
     color: rgb(79, 86, 95);
   }
 
@@ -107,12 +105,16 @@
   .student-quote {
     margin: 0;
     width: 80%;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto';
     font-weight: 400;
   }
 
   .student-quote p {
     font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .student-quote cite {
@@ -126,7 +128,7 @@
 
   .user-modal__info-block {
     background: #fafdff;
-    width: 60%;
+    width: 45em;
     display: flex;
     flex-direction: column;
     color: rgb(79, 86, 95);
