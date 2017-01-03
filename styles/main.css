@@ -4,11 +4,12 @@
 
 body {
   margin: 0;
-  background: #dfe7e9;
+  background: rgb(30, 34, 38);
   align-items: center;
   justify-content: center;
   font-family: "Roboto", Arial, sans-serif;
   max-width: 1443px;
+  margin: 0 auto;
 }
 
 
@@ -307,11 +308,11 @@ main{
   background-color: #4bc4e1;
   text-decoration: none;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   padding: 15px 20px 12px 25px;
   text-align: center;
   border-radius: 35px 0 0 35px;
-  font-size: .7em;
+  font-size: .78em;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   -o-transition: all .3s;
@@ -325,16 +326,18 @@ main{
 }
 
 /* STUDENT IMAGE GRID */
+.student-image-grid-wrapper {
+  overflow: hidden;
+}
 
 .student-image-grid {
   display: flex;
   flex-flow: row wrap;
+  margin-right: -1px;
 }
 
 .student-image-grid__image-cont {
-  /*width: 10%;*/
-  flex: 0 0 25%;
-  /*  height: 190px;*/
+  flex: 1 1 calc(25% - 1px);
   position: relative;
   /* used to transform picture element on image click */
   -webkit-transition: all .3s;
@@ -343,16 +346,39 @@ main{
   -ms-transition: all .3s;
   transition: all .3s;
   cursor: pointer;
+  margin-right: 1px;
+  margin-bottom: 1px;
 }
 
-.student-image-grid__image-cont:hover {
+.student-image-grid__image-cont__full {
+  flex: 1 1 100%;
+  max-height: 482.5px;
+  overflow-y: hidden;
+  cursor: pointer;
+  transition: all .3s;
+  margin-bottom: 1px;
+}
+
+.student-image-grid__image-cont__half {
+  flex: 1 1 calc(50% - 1px);
+  max-height: 482.5px;
+  overflow-y: hidden;
+  cursor: pointer;
+  transition: all .3s;
+  margin-right: 1px;
+  margin-bottom: 1px;
+}
+
+
+.student-image-grid__image-cont:hover,
+.student-image-grid__image-cont__half:hover,
+.student-image-grid__image-cont__full:hover {
   opacity: .7;
 }
 
 .student-image-grid__image-cont__image {
   width: 100%;
   height: auto;
-  margin-right: 1px;
 }
 
 /*.student-image-grid__image-cont__image:hover {
@@ -361,17 +387,16 @@ opacity: 0.7;
 
 /* class to be applied to .student-image-grid__image-cont__image when clicked */
 
-.student-image-grid__image-cont__image--active {
+/*.student-image-grid__image-cont__image--active {
   width: auto;
   height: 100%;
   position: absolute;
   left: 0;
-  /*animation: 0.4s scaleImage ease-out;*/
-}
+}*/
 
-.student-image-grid__image-cont__image--active:hover {
+/*.student-image-grid__image-cont__image--active:hover {
   opacity: 1;
-}
+}*/
 
 /* picture element containing student image */
 
