@@ -1,60 +1,60 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 /* flex container for the user modal */
 
 .user-modal__container {
-  height: 51.625em;
-  width: 75em;
-  display: flex;
-  flex-wrap: wrap;
-  font-family: 'Roboto', sans-serif;
-  position: absolute;
-  top: 3em;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: -500;
-  opacity: 0;
-  -webkit-transition: z-index 0s, opacity 1s;
-  -moz-transition: z-index 0s, opacity 1s;
-  -o-transition: z-index 0s, opacity 1s;
-  -ms-transition: z-index 0s, opacity 1s;
-  transition: z-index 0s, opacity 1s;
-  margin-bottom: 2em;
+    height: 51.625em;
+    width: 75em;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: -500;
+    opacity: 0;
+    -webkit-transition: z-index 0s, opacity 1s;
+    -moz-transition: z-index 0s, opacity 1s;
+    -o-transition: z-index 0s, opacity 1s;
+    -ms-transition: z-index 0s, opacity 1s;
+    transition: z-index 0s, opacity 1s;
+    margin-bottom: 2em;
 }
 
 
 /* class to be applied when modal is active (image is clicked) */
 
 .user-modal__container--active {
-  z-index: 500;
-  opacity: 1;
+    z-index: 500;
+    opacity: 1;
 }
 
 
 /* photo and quote section containing block */
 
 .user-modal__photo-block {
-  height: 100%;
-  width: 30em;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+    height: 100%;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 
 /* user photo container */
 
 .user-modal__photo-block__photo {
-  height: 40.125em;
+    height: 40.125em;
 }
 
 
@@ -63,9 +63,9 @@
 .student-photo {}
 
 
-  /* quote mark circle */
+/* quote mark circle */
 
-  .user-modal__photo-block__quote:before {
+.user-modal__photo-block__quote:before {
     content: '\201D';
     font-family: 'Source Sans Pro';
     font-weight: 200;
@@ -85,12 +85,12 @@
     -o-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-  }
+}
 
 
-  /* user quote container */
+/* user quote container */
 
-  .user-modal__photo-block__quote {
+.user-modal__photo-block__quote {
     height: 11.500em;
     background-color: #dae4ea;
     position: relative;
@@ -98,87 +98,89 @@
     justify-content: center;
     align-items: center;
     color: #61869b;
-  }
+}
 
 
-  /* student quote blockquote */
+/* student quote blockquote */
 
-  .student-quote {
+.student-quote {
     margin: 0;
     width: 80%;
     font-family: 'Roboto';
     font-weight: 400;
-  }
+}
 
-  .student-quote p {
+.student-quote p {
     font-style: italic;
     font-size: 0.95em;
     line-height: 1.5;
     margin-top: 1em;
     margin-bottom: 1em;
-  }
+}
 
-  .student-quote cite {
+.student-quote cite {
     font-style: normal;
     font-family: 'Roboto';
     font-weight: 400;
-  }
+}
 
 
-  /* Bio info and career progress section containing block */
+/* Bio info and career progress section containing block */
 
-  .user-modal__info-block {
+.user-modal__info-block {
     background: #fafdff;
     width: 45em;
     display: flex;
     flex-direction: column;
     color: rgb(79, 86, 95);
-  }
+}
 
 
-  /* Bio info section header (user name, career path, evidential badge) */
+/* Bio info section header (user name, career path, evidential badge) */
 
 
-  /* ANIMATIN A */
+/* ANIMATIN A */
 
-  .user-modal__info-block__header {
+.user-modal__info-block__header {
     position: relative;
     top: 30px;
     height: 11.2em;
     display: flex;
     border-bottom: solid 1px rgb(185, 194, 204);
-  }
+}
 
 
-  /* Student name, career path, grad date container */
+/* Student name, career path, grad date container */
 
-  .user-modal__info-block__header__text {
+.user-modal__info-block__header__text {
     padding-left: 3em;
     flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
 
 
-  /* Evidential degree badge container */
+/* Evidential degree badge container */
 
-  .user-modal__info-block__header__badge {
+.user-modal__info-block__header__badge {
     margin: 0;
     margin-right: 4.2em;
-  }
+}
 
 
-  /* Evidential degree badge image */
+/* Evidential degree badge image */
 
-  .user-modal__info-block__header__badge img {
+.user-modal__info-block__header__badge img {
     height: 100%;
     width: auto;
     position: relative;
-  }
+}
 
-  /* degree progress */
-  .degree-progress__badge {
+
+/* degree progress */
+
+.degree-progress__badge {
     z-index: 50;
     position: absolute;
     bottom: 34%;
@@ -190,11 +192,12 @@
     font-family: 'Roboto', sans-serif;
     border-radius: 20px;
     opacity: 0.9;
-  }
+}
 
-  /* modal close icon box */
 
-  .user-modal__info-block__header__close-icon {
+/* modal close icon box */
+
+.user-modal__info-block__header__close-icon {
     width: 3.1em;
     height: 3.1em;
     position: absolute;
@@ -206,212 +209,222 @@
     top: 0;
     right: 0;
     cursor: pointer;
-  }
+}
 
-  .user-modal__info-block__header__close-icon i {
+.user-modal__info-block__header__close-icon i {
     font-size: 1.5em;
-  }
+}
 
 
-  /* Student name h1 */
+/* Student name h1 */
 
-  .student-name {
+.student-name {
     font-weight: 400;
     margin-bottom: 0.25em;
     font-size: 2.75em;
-  }
+}
 
 
-  /* Career path h3 */
+/* Career path h3 */
 
-  .bio-info__subheader--header {
+.bio-info__subheader--header {
     text-transform: uppercase;
     font-size: 0.78em;
     letter-spacing: 0.156rem;
     color: rgb(185, 194, 204);
     margin-top: 0;
     margin-bottom: 1.25em;
-  }
-
-
-
-  /* graduation date p */
-
-  .graduation-date {
-    text-transform: uppercase;
-    font-weight: 200;
-    margin-left: 0.55em;
-  }
-
-  /* Bio info main section container */
-
-  .user-modal__info-block__main-content {
-    height: 40.425em;
-    background: #ffffff;
-    padding: 2.1em 3em;
-    display: flex;
-    flex-direction: column;
-  }
-
-/* bio info wrapper */
-.user-modal__info-block__main-content--bio-info-wrapper {
-
 }
 
 
-  /* Bio info main section p style */
+/* graduation date p */
 
-  .student-bio-text {
+.graduation-date {
+    text-transform: uppercase;
+    font-weight: 200;
+    margin-left: 0.55em;
+}
+
+
+/* Bio info main section container */
+
+.user-modal__info-block__main-content {
+    height: 40.425em;
+    background: #ffffff;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* bio info wrapper */
+
+.user-modal__info-block__main-content--bio-info-wrapper {}
+
+
+/* Bio info main section p style */
+
+.student-bio-text {
     font-size: 0.95em;
     line-height: 1.55;
     color: rgb(79, 86, 95);
     margin: 0;
     margin-bottom: 1.6em;
-  }
+}
 
- /* bio info main section h3 */
 
-  .bio-info__subheader--main {
+/* bio info main section h3 */
+
+.bio-info__subheader--main {
     text-transform: uppercase;
     font-size: 0.78em;
     letter-spacing: 0.156rem;
     color: rgb(185, 194, 204);
     margin-top: 0;
     margin-bottom: 0;
-  }
+}
 
-  /* bio info h2 style */
 
-  .bio-info__section-heading {
+/* bio info h2 style */
+
+.bio-info__section-heading {
     font-weight: 300;
     margin-bottom: 0;
     font-size: 1.73em;
     margin-top: 45px;
-  }
+}
 
 
 /* ------------------ 
  modal carousel
 -------------------- */
 
+
 /* carousel wrapper */
 
 .user-modal__info-block__main-content--carousel-wrapper {
-  margin-top: 1.25em;
-  /*border: solid 1px red;*/
-  height: 100%;
-  position: relative;
+    margin-top: 1.25em;
+    /*border: solid 1px red;*/
+    min-height: 60%;
+    position: relative;
 }
 
+
 /* carousel slide wrapper styles */
+
 .user-modal__carousel__slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
 
 
 /* active slide in modal carousel */
 
 .user-modal__carousel__slide--selected {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .user-modal__carousel__nav__container {
-  /*border: solid 1px green;*/
-  text-align: center;
-  margin-top: 0.5em;
+    /*border: solid 1px green;*/
+    text-align: center;
+    margin-top: 0.5em;
 }
 
 .user-modal__carousel__nav__buttons {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.user-modal__carousel__nav__buttons li {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  border: solid 1px #acbac3;
-  margin-right: 0.5em;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.user-modal__carousel__nav__buttons li:hover, .modal__nav__button--active {
-  background-color: #acbac3;
-}
-
-.user-modal__carousel__nav--tooltip {
-  min-width: 8em;
-  position: absolute;
-  z-index: 1;
-  top: -2.55em;
-  left: -2em;
-  /*transform: translateX(-50%);*/
-  padding: 0.25em;
-  border: solid 1px #acbac3;
-  border-radius: 3px;
-  background-color: #fafdff;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.user-modal__carousel__nav--tooltip:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 0.7em;
-  height: 0.7em;
-  background-color: #fafdff;
-  border-right: solid 1px #acbac3;
-  border-bottom: solid 1px #acbac3;
-  border-radius: 0 0 3px 0;
-  transform: rotate(45deg) translateX(-50%);
-  bottom: -0.65em;
-  left: 28.5%;
-}
-
-.user-modal__carousel__nav--tooltip > span {
-  font-size: 0.7em;
-}
-
-.user-modal__carousel__nav__buttons li:hover .user-modal__carousel__nav--tooltip {
-  opacity: 1;
-}
-
-  /* bio info ul */
-
-  .bio-info__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .bio-info__list li {
+.user-modal__carousel__nav__buttons li {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: solid 1px #acbac3;
+    margin-right: 0.5em;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-modal__carousel__nav__buttons li:hover,
+.modal__nav__button--active {
+    background-color: #acbac3;
+}
+
+.user-modal__carousel__nav--tooltip {
+    min-width: 8em;
+    position: absolute;
+    z-index: 1;
+    top: -2.55em;
+    left: -2em;
+    /*transform: translateX(-50%);*/
+    padding: 0.25em;
+    border: solid 1px #acbac3;
+    border-radius: 3px;
+    background-color: #fafdff;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.user-modal__carousel__nav--tooltip:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #fafdff;
+    border-right: solid 1px #acbac3;
+    border-bottom: solid 1px #acbac3;
+    border-radius: 0 0 3px 0;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -0.65em;
+    left: 28.5%;
+}
+
+.user-modal__carousel__nav--tooltip > span {
+    font-size: 0.7em;
+}
+
+.user-modal__carousel__nav__buttons li:hover .user-modal__carousel__nav--tooltip {
+    opacity: 1;
+}
+
+
+/* bio info ul */
+
+.bio-info__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bio-info__list li {
     display: inline-block;
     margin-right: 3.3em;
-  }
+}
 
 
-  /* model career Path Progress */
+/* modal career Path Progress */
 
-  .career-path__list {
+.career-path__list {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 24.375em;
-  }
+}
 
-  .career-path__list li {
+.career-path__list li {
     border: 1px solid #eee;
     position: relative;
     margin-top: 1.25em;
@@ -421,19 +434,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .career-path__list li:first-of-type {
+.career-path__list li:first-of-type {
     margin-top: 1em;
-  }
+}
 
-  .career-path-info__span {
+.career-path-info__span {
     display: block;
     padding-left: 0.625rem;
     font-size: 0.75em;
-  }
+}
 
-  .career-path-progress__span {
+.career-path-progress__span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -445,106 +458,116 @@
     width: 2.188rem;
     height: 2.188rem;
     font-size: 0.813em;
-  }
+}
 
-  .career-path-progress__span--green {
+.career-path-progress__span--green {
     background: #78f08e;
     border: #78f08e;
-  }
+}
 
-  .career-path-progress__span--blue {
+.career-path-progress__span--blue {
     background: #77cdef;
     border: #77cdef;
-  }
+}
 
-
-  .career-path-info__span--green {
+.career-path-info__span--green {
     border-bottom: 2px solid #78f08e;
-  }
+}
 
-  .career-path-info__span--blue {
+.career-path-info__span--blue {
     /*border-bottom: 2px solid #77cdef;*/
-  }
+}
 
-  /*.career-path-progress__span--20 {
+
+/*.career-path-progress__span--20 {
     height: 2px;
     width: 100%;
 
   }*/
 
-  .career-path-progress__span--100 {
+.career-path-progress__span--100 {
     width: 100%;
     height: 2px;
     background: #f5f5f5;
     border: none;
     color: #78f08e;
-  }
+}
+
 
 /* positioning for all progress bars */
 
 [class^="career-path-progress__span--"] {
-  position: absolute;
-  bottom: -1px;
+    position: absolute;
+    bottom: -1px;
 }
 
-  /*100% done progress bar*/
-  progress.career-path-progress__span--100::-webkit-progress-bar {
+
+/*100% done progress bar*/
+
+progress.career-path-progress__span--100::-webkit-progress-bar {
     background: #f5f5f5;
     width: 100%;
     height: 2px;
-  }
-  progress.career-path-progress__span--100::-webkit-progress-value  {
-    background: #78f08e;
-  }
+}
 
-  progress {
+progress.career-path-progress__span--100::-webkit-progress-value {
+    background: #78f08e;
+}
+
+progress {
     width: 100%;
     height: 2px;
     background: #f5f5f5;
     border: none;
     color: #77cdef;
     margin-top: -5px;
-  }
+}
 
-  /*Chrome and Safari*/
-  progress::-webkit-progress-bar {
+
+/*Chrome and Safari*/
+
+progress::-webkit-progress-bar {
     background: #f5f5f5;
     width: 100%;
     height: 2px;
-  }
-  progress::-webkit-progress-value {
-    background: #77cdef;
-  }
+}
 
-  /*Firefox*/
-  progress::-moz-progress-bar {
+progress::-webkit-progress-value {
+    background: #77cdef;
+}
+
+
+/*Firefox*/
+
+progress::-moz-progress-bar {
     background: #f5f5f5;
-  }
+}
 
-  progress::-moz-progress-value {
+progress::-moz-progress-value {
     background: #77cdef;
-  }
+}
 
-  /*IE10*/
-  progress {
+
+/*IE10*/
+
+progress {
     color: #77cdef;
-  }
+}
 
-
-  .career-path-update__span {
+.career-path-update__span {
     font-size: 0.688em;
     display: block;
     margin-top: 10px;
     /*border: 1px solid green;*/
-  }
+}
 
-  .career-path-page__div {
+.career-path-page__div {
     overflow: auto;
     margin-right: 12%;
     margin-bottom: 1%;
-  }
+}
 
-  .career-path-pages-circles {
+.career-path-pages-circles {
     width: 15px;
     height: 15px;
     margin-right: 5px;
@@ -555,13 +578,13 @@
     margin-right: 8px;
     cursor: pointer;
     position: relative;
-  }
+}
 
-  .career-path-pages-circles:hover {
+.career-path-pages-circles:hover {
     background: #888;
-  }
+}
 
-  .career-path-pages-circle--2 span {
+.career-path-pages-circle--2 span {
     border: 1px solid #eee;
     color: rgb(185, 194, 204);
     font-size: 10px;
@@ -575,14 +598,14 @@
     display: none;
     padding: 0 2px;
     background: #f8f8f8;
-  }
+}
 
-  .career-path-pages-circle--2:hover span {
+.career-path-pages-circle--2:hover span {
     display: block;
     z-index: 9;
-  }
+}
 
-  .career-path-pages-circle--2 span:after {
+.career-path-pages-circle--2 span:after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -591,30 +614,77 @@
     border-bottom: 1px solid #eee;
     border-right: 1px solid #eee;
     background: #f8f8f8;
-  }
+}
 
 
+/* bio info link styles */
 
-  /* bio info link styles */
-
-  .bio-info__link {
+.bio-info__link {
     text-decoration: none;
     color: rgb(119, 205, 239);
-  }
+}
 
-  .bio-info__link:hover {
+.bio-info__link:hover {
     color: rgb(185, 194, 204);
-  }
+}
 
-  .bio-info__link i {
+.bio-info__link i {
     font-size: 1.2em;
     transform: translateY(4px);
-  }
+}
 
 
-  /* modal background fade-in and cover div*/
+/*---------------------------------------
+published articles list styles
+----------------------------------------*/
 
-  .user-modal__background-cover {
+/* published articles list wrapper*/
+.published-articles__list--wrapper {
+  overflow: scroll;
+  max-height: 75%;
+}
+
+/* published articles ul */
+
+.published-articles__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+}
+
+
+/* published articles list item */
+
+.published-articles__list--list-item {
+    width: 50%;
+}
+
+
+/* published articles title h3 */
+
+.published-articles__title {
+    margin-top: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+
+/* published articles subheader h4 */
+
+.published-articles__subheader {
+    font-size: 0.9em;
+    padding-left: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(185, 194, 204);
+}
+
+
+/* modal background fade-in and cover div*/
+
+.user-modal__background-cover {
     background: rgba(35, 35, 35, 0.99);
     width: 100%;
     height: 100%;
@@ -624,100 +694,100 @@
     left: 0;
     opacity: 0;
     overflow: scroll;
-  }
+}
 
-  .user-modal__background-cover > a {
+.user-modal__background-cover > a {
     width: 100%;
     height: 100%;
-  }
+}
 
-  .user-modal__background-cover--active {
+.user-modal__background-cover--active {
     z-index: 300;
     opacity: 1;
     height: 100%;
-  }
+}
 
 
-  /*MODAL MEDIA QUERIES*/
+/*MODAL MEDIA QUERIES*/
 
-  @media only screen and (max-width: 976px) {
+@media only screen and (max-width: 976px) {
     .user-modal__container,
     .student-image-grid__image-cont__picture--active {
-      width: 98vw;
-      height: 78vh;
+        width: 98vw;
+        height: 78vh;
     }
     .career-path__list {
-      width: 100%;
+        width: 100%;
     }
     .career-path__list li {
-      margin-right: 0;
+        margin-right: 0;
     }
     .user-modal__info-block__header__text {
-      padding: 1.5em 1em 0 1.5em;
+        padding: 1.5em 1em 0 1.5em;
     }
     .bio-info__subheader {
-      font-size: 0.4em;
+        font-size: 0.4em;
     }
     .student-name {
-      font-size: 1.5em;
+        font-size: 1.5em;
     }
     .user-modal__info-block__main-content {
-      overflow: auto;
+        overflow: auto;
     }
-  }
+}
 
-  @media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .user-modal__info-block__header__badge img {
-      position: relative;
-      right: 10px;
+        position: relative;
+        right: 10px;
     }
     .user-modal__info-block__header__text {
-      flex: 0 0 75%;
+        flex: 0 0 75%;
     }
     .user-modal__info-block {
-      overflow-x: hidden;
+        overflow-x: hidden;
     }
     .user-modal__info-block__header__badge {
-      margin: 0;
-      z-index: -1;
-      position: absolute;
-      right: -4em;
-      top: 0.25em;
-      opacity: 0.5;
+        margin: 0;
+        z-index: -1;
+        position: absolute;
+        right: -4em;
+        top: 0.25em;
+        opacity: 0.5;
     }
-  }
+}
 
-  @media only screen and (max-width: 605px) {
+@media only screen and (max-width: 605px) {
     .user-modal__container,
     .student-image-grid__image-cont__picture--active {
-      height: 85vh;
+        height: 85vh;
     }
     .user-modal__info-block__main-content {
-      padding: 1em;
+        padding: 1em;
     }
     .user-modal__photo-block__photo {
-      height: 73%;
+        height: 73%;
     }
     .user-modal__photo-block__quote {
-      height: 27%;
+        height: 27%;
     }
-  }
+}
 
-  @media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
     .user-modal__container,
     .student-image-grid__image-cont__picture--active {
-      height: 85vh;
+        height: 85vh;
     }
     .bio-info__section-heading {
-      font-size: 1em;
+        font-size: 1em;
     }
     .user-modal__photo-block__photo {
-      height: 70%;
+        height: 70%;
     }
     .user-modal__photo-block__quote {
-      height: 30%;
+        height: 30%;
     }
     .user-modal__info-block__header__badge {
-      display: none;
+        display: none;
     }
-  }
+}
