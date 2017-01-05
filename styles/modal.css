@@ -300,6 +300,25 @@
   margin-top: 1.25em;
   /*border: solid 1px red;*/
   height: 100%;
+  position: relative;
+}
+
+/* carousel slide wrapper styles */
+.user-modal__carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+
+/* active slide in modal carousel */
+
+.user-modal__carousel__slide--selected {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .user-modal__carousel__nav__container {
