@@ -201,6 +201,11 @@ main{
   font-weight: lighter;
 }
 
+.i__search_magnifying-glass {
+  margin-right: 10px;
+}
+
+
 .main__header__search {
   display: inline-block;
   margin-top: 1%;
@@ -213,7 +218,7 @@ main{
   display: inline-block;
   margin: 10px 0 0 25px;
   font-size: 1.3em;
-  background-image: url(../images/magnifying-glass.svg);
+  /*background-image: url(../images/magnifying-glass.svg);*/
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: 5% 50%;
@@ -241,7 +246,7 @@ main{
 
 .main__header__search__input::after {
   /* change this to #44B7D7 */
-  background-image: url(../images/magnifying-glass.svg);
+  /*background-image: url(../images/magnifying-glass.svg);*/
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: 5% 50%;
@@ -283,38 +288,6 @@ main{
   float: right;
   display: inline-block;
   margin-top: 30px;
-}
-
-.main__header__search__input::after {
-  content: "";
-  width: 0;
-  height: 4px;
-  background: transparent;
-  margin: 0 auto;
-  display: block;
-  -webkit-transition: width .4s linear, background-color .3s linear;
-  -moz-transition: width .4s linear, background-color .3s linear;
-  -o-transition: width .4s linear, background-color .3s linear;
-  -ms-transition: width .4s linear, background-color .3s linear;
-  transition: width .4s linear, background-color .3s linear;
-  position: absolute;
-  top: 95%;
-  border-radius: 2%;
-  left: 0;
-}
-
-.main__header__search__input:hover::after {
-  width: 100%;
-  background: #4bc4e1;
-  -webkit-transition: all .4s;
-  -moz-transition: all .4s;
-  -o-transition: all .4s;
-  -ms-transition: all .4s;
-  transition: all .4s;
-}
-
-.main__header__search__input:hover {
-  background-color: white;
 }
 
 .main__header__registration {
