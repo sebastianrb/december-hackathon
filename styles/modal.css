@@ -345,7 +345,7 @@
   transition: all 0.3s ease;
 }
 
-.user-modal__carousel__nav__buttons li:hover, .user-modal__carousel__nav__buttons li.active {
+.user-modal__carousel__nav__buttons li:hover, .modal__nav__button--active {
   background-color: #acbac3;
 }
 
