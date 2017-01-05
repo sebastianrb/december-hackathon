@@ -13,7 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
-  position: fixed;
+  position: absolute;
   top: 3em;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -28,6 +28,7 @@
   -o-transition: z-index 0s, opacity 1s;
   -ms-transition: z-index 0s, opacity 1s;
   transition: z-index 0s, opacity 1s;
+  margin-bottom: 2em;
 }
 
 
@@ -603,7 +604,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-
+    overflow: scroll;
   }
 
   .user-modal__background-cover > a {
