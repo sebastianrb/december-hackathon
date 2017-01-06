@@ -1,15 +1,10 @@
-.user-modal__photo-block__quote{
-    opacity: 1;
-    z-index: 1000;
-}
-
 .hide_modal_items{
     top: -50px;
     opacity: 0;
 }
 
 .shrink_grid_images{
-    transform: 'scale(0,0)';
+    transform: scale(0,0);
     z-index: -100;
     opacity: 0;
 }

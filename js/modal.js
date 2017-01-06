@@ -44,7 +44,6 @@
         var studentImagesBesidesClicked = [];
 
         var modalEnterTransitionTimeline = new TimelineMax();
-        var modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
 
         // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL 
         // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
@@ -70,10 +69,10 @@
         // SHRINK OTHER STUDENT IMAGES IN GRID
         modalEnterTransitionTimeline.to(studentImageGridImages, 0.3, { className: '+=shrink_grid_images'}, '-=0.1');
 
+        var modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
         // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
-        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, zIndex: 300 }, '-=0.25');
-        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalImagePosition.width, height: modalImagePosition.height }, '-=0.69');
-        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
+        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left}, '-=0.25');
+        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
 
 
         // BRING MODAL FORWARD AND OPAQUE7
@@ -81,14 +80,11 @@
 
 
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
+        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
         // MODAL ITEMS TRANSITION PART 1 - FAST TRANSITION FOR MAJORITY OF ITEMS TO SPOOF LONGER TRANSITION ANIMATION
-        for (var k = 0; k < elementsToTransUp.length-5; k++) {
+        for (var k = 0; k < elementsToTransUp.length; k++) {
             modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.25");
-        }
-
-        for (var k = elementsToTransUp.length-5; k < elementsToTransUp.length; k++) {
-            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.1");
         }
 
         // REMOVE CLONED IMAGE USED IN TRANSTION 
@@ -145,10 +141,11 @@
         // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
         modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.38');
         
-
+        modalExitTransitionTimeline.add(function(){selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
+})
         // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
         modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
-        modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.69');
+        modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
 
         // REMOVE CLONE 
