@@ -39,6 +39,62 @@
   opacity: 1;
 }
 
+/* modal navigation arrows */
+
+.user-modal__container:before {
+    content: "";
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    border-top: solid 3px #394345;
+    border-left: solid 3px #394345;
+    border-radius: 2px 0 0 0;
+    transform: rotate(-45deg) translateY(-50%);
+    top: 50%;
+    left: -3.25em;
+    cursor: pointer;
+}
+
+.user-modal__container:after {
+    content: "";
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    border-top: solid 3px #394345;
+    border-right: solid 3px #394345;
+    border-radius: 2px 0 0 0;
+    transform: rotate(45deg) translateY(-50%);
+    top: 50%;
+    right: -3.25em;
+    cursor: pointer;
+}
+
+.intermodal__nav__target {
+    display: inline-block;
+    width: 4.5em;
+    height: 7em;
+    /*border: solid 1px red;*/
+}
+
+#intermodal--prev {
+    position: absolute;
+    top: 51.5%;
+    transform: translateY(-52%);
+    z-index: 550;
+    left: -6em;
+    cursor: pointer;
+}
+
+#intermodal--next {
+    position: absolute;
+    top: 51.5%;
+    transform: translateY(-50%);
+    z-index: 550;
+    right: -6em;
+    cursor: pointer;
+}
+
+
 
 /* photo and quote section containing block */
 
