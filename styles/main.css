@@ -183,7 +183,9 @@ main {
 /* MAIN_HEADER */
 
 .main__header {
-    display: flexbox;
+    /*display: flexbox;*/
+    display: flex;
+    justify-content: space-between;
     padding: 50px 0 50px 40px;
     overflow: auto;
     color: #a2b7bc;
@@ -217,7 +219,7 @@ main {
 }
 
 .i__search_magnifying-glass {
-    margin: 1em 1em 0 0;
+    margin: 0.5em 1em;
     order: 1;
     transition: color 0.2s ease;
 }
@@ -232,7 +234,8 @@ main {
     order: 2;
     outline: none;
     letter-spacing: 2px;
-    padding: 15px 10px 15px 15px;
+    padding: 15px 10px 15px 0px;
+    margin-left: -15px;
     display: inline-block;
     font-size: 1.3em;
     background-size: 25px;
