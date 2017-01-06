@@ -80,7 +80,6 @@
 
 
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
-        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
         // MODAL ITEMS TRANSITION PART 1 - FAST TRANSITION FOR MAJORITY OF ITEMS TO SPOOF LONGER TRANSITION ANIMATION
         for (var k = 0; k < elementsToTransUp.length; k++) {
@@ -91,6 +90,7 @@
         // NOTE: THIS CAUSES SLIGHT FLICKERING
 
         //KILL TRANSITION TIMELIN
+        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
         modalEnterTransitionTimeline = null;
 
 
@@ -113,11 +113,10 @@
 
         // THIS FUNCTION NEEDS TO BE GENERALIZED FOR WHEN EXITING AFTER SWITCHING PROFILES IN MODAL FUNCTION exitModalTransition(IMG)
 
+
         var modalExitTransitionTimeline = new TimelineMax();
         var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
         var selectedStudentImage = studentImageGridImages[currentProfileID]
-        var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
-
 
         modalStudentProfileImage.src = '';
 
@@ -125,7 +124,9 @@
         // re-enable scroll on body when modal is closed
         // ============================================
         bodyElement.classList.remove('disable-scroll');
-        modalExitTransitionTimeline.set(selectedStudentImage, {className: '+=currentProfile_grid_image'})
+        selectedStudentImage.classList.remove('shrink_grid_images');
+        selectedStudentImage.classList.add('currentProfile_grid_image');
+        var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 
         // =====================================
         // === START 'EXIT MODAL' TRANSITION ===
@@ -176,9 +177,21 @@
       selectedStudentImage = studentImageGridImages[currentProfileID]
       var modalNextProfileTransitionTimeline = new TimelineMax();
       var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
-      
 
-      modalStudentProfileImage.src = selectedStudentImage.src;
+      var imgClone =  selectedStudentImage.cloneNode(true);
+      imgClone.className = "";
+      imgClone.style.position = "fixed";
+      imgClone.style.width = modalStudentProfileImagePos.width + 'px';
+      imgClone.style.height = modalStudentProfileImagePos.height + 'px' ;
+      imgClone.style.top = modalStudentProfileImagePos.top + 'px';
+      imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
+      imgClone.style.zIndex = 500;
+      document.body.parentNode.appendChild(imgClone);
+      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left})
+      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
+      modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
+
     }
 
     function goToNext(){
@@ -192,9 +205,22 @@
       selectedStudentImage = studentImageGridImages[currentProfileID]
       var modalNextProfileTransitionTimeline = new TimelineMax();
       var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
-      
 
-      modalStudentProfileImage.src = selectedStudentImage.src;
+      var imgClone =  selectedStudentImage.cloneNode(true);
+      imgClone.className = "";
+      imgClone.style.position = "fixed";
+      imgClone.style.width = modalStudentProfileImagePos.width + 'px';
+      imgClone.style.height = modalStudentProfileImagePos.height + 'px' ;
+      imgClone.style.top = modalStudentProfileImagePos.top + 'px';
+      imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
+      imgClone.style.zIndex = 500;
+      document.body.parentNode.appendChild(imgClone);
+      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left})
+      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
+      modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
+
+
     }
 
     function imgCloneOverlayImg(imgToClone) {
@@ -215,7 +241,7 @@
         imgClone.style.height = (thisDim.height).toString() + 'px';
 
         // OVERLAY IMAGE (SHOULD CALCLUATE ZINDEX BASED ON ORIG IMAGE INDEX + N)
-        imgClone.style.zIndex = "1000";
+        imgClone.style.zIndex = "300";
         imgClone.style.opacity = "1";
 
         // ADD CLONE TO HTML SO IT APPEARS!

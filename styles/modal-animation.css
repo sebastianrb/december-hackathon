@@ -16,5 +16,5 @@
 
 .currentProfile_grid_image{
 	opacity: 0;
-	height: 0;
+	transform: scale(1,1);
 }

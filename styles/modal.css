@@ -47,6 +47,7 @@
     display: inline-block;
     width: 4.5em;
     height: 7em;
+    color: white;
     /*border: solid 1px red;*/
 }
 
@@ -96,26 +97,7 @@
 /* quote mark circle */
 
 .user-modal__photo-block__quote:before {
-  content: '\201D';
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  width: 3.563rem;
-  height: 3.563rem;
-  font-size: 4rem;
-  text-align: center;
-  padding-top: 0.3rem;
-  border-radius: 50%;
-  background-color: #91abba;
-  color: #ffffff;
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
+ }
 
 
 /* user quote container */
@@ -173,7 +155,6 @@
 
 .user-modal__info-block__header {
   position: relative;
-  top: 30px;
   height: 11.2em;
   display: flex;
   border-bottom: solid 1px rgb(185, 194, 204);
