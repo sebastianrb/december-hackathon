@@ -1,20 +1,16 @@
+.user-modal__photo-block__quote, .user-modal__info-block__header,
+.student-bio-text, 
+.bio-info__section-heading,
+.bio-info__list, 
+.bio-info__section-heading, 
+.career-path__list > li, 
+.career-path-update__span{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
+
 .user-modal__photo-block__quote{
     opacity: 1;
     z-index: 1000;
-}
-
-.hide_modal_items{
-    top: -50px;
-    opacity: 0;
-}
-
-.shrink_grid_images{
-    transform: 'scale(0,0)';
-    z-index: -100;
-    opacity: 0;
-}
-
-.user-modal__container--active {
-  z-index: 500;
-  opacity: 1;
 }

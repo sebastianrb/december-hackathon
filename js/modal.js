@@ -14,14 +14,6 @@
     var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span');
 
     var bodyElement = document.querySelector('body');
-    
-    var prev = document.getElementById('intermodal--prev');
-    var next = document.getElementById('intermodal--next');
-
-
-    prev.addEventListener('click', goToPrev);
-    next.addEventListener('click', goToNext);
-    var currentProfileID = null;
 
     // ADD EVENT LISTENER TO STUDENT IMAGE GRID
     studentImageGrid.addEventListener('click', transitionModal);
@@ -31,14 +23,6 @@
     function transitionModal(e) {
 
         var selectedStudentImage = e.target;
-
-        for(var i = 0; i < studentImageGridImages.length; i++){
-            if(studentImageGridImages[i] === selectedStudentImage){
-                currentProfileID = i;
-                break;
-            }
-        }
-
         var studentImageClone = imgCloneOverlayImg(selectedStudentImage);
         var studentImagesBesidesClicked = [];
 
@@ -47,9 +31,15 @@
 
         // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL 
         // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
+
         modalStudentProfileImage.src = selectedStudentImage.src;
 
-
+        // GET ALL STUDENT IMAGES ON GRIB BESIDES CLICKED STUDENT IMAGE FOR USE IN TRANSITION
+        for (var i = 0; i < studentImageGridImages.length; i++) {
+            if (studentImageGridImages[i] != selectedStudentImage) {
+                studentImagesBesidesClicked.push(studentImageGridImages[i]);
+            }
+        }
 
         // ============================================
         // disable scroll on body when modal is visible
@@ -59,32 +49,35 @@
         // ===================================
         // === ENTER 'TO MODAL'TRANSITION  ===
         // ===================================
-        
-        //
-        
-        modalEnterTransitionTimeline.set(elementsToTransUp,{className: '+=hide_modal_items'})
+
         //  BRING MODAL BACKGROUND FORWARD
-        modalEnterTransitionTimeline.to(modalBackground, 0.15, { className: '+=user-modal__background-cover--active' });
+        modalEnterTransitionTimeline.to(modalBackground, 0.15, { zIndex: 300, opacity: 1, height: '100%' });
 
         // SHRINK OTHER STUDENT IMAGES IN GRID
-        modalEnterTransitionTimeline.to(studentImageGridImages, 0.3, { className: '+=shrink_grid_images'}, '-=0.1');
+        modalEnterTransitionTimeline.to(studentImagesBesidesClicked, 0.3, { transform: 'scale(0,0)', zIndex: -100, opacity: 0 }, '-=0.1');
 
         // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
         modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalPosition.top, left: modalPosition.left, zIndex: 300 }, '-=0.25');
         modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
 
+        // SEND 
+        modalEnterTransitionTimeline.to(selectedStudentImage, 0.01, { opacity: 0, zIndex: -500 }, '-=0.72');
 
-        // BRING MODAL FORWARD AND OPAQUE7
-        modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.2');
+        // BRING MODAL FORWARD AND OPAQUE
+        modalEnterTransitionTimeline.to(modalContainer, 0.2, { opacity: "1", zIndex: 500 }, '-=0.2');
 
 
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
 
         // MODAL ITEMS TRANSITION PART 1 - FAST TRANSITION FOR MAJORITY OF ITEMS TO SPOOF LONGER TRANSITION ANIMATION
-        for (var k = 0; k < elementsToTransUp.length; k++) {
-            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.2, { className: '-=hide_modal_items' }, "-=0.13");
+        for (var k = 0; k < elementsToTransUp.length - 4; k++) {
+            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.2, { opacity: "1", top: '0px' }, "-=0.13");
         }
 
+        // MODAL ITEMS TRANSITION PART 2 - SLOWER TRANSITION FOR LAST FEW ITESM TO SPOOF LONGER TRANSITION ANIMATION
+        for (var j = elementsToTransUp.length - 4; j < elementsToTransUp.length; j++) {
+            modalEnterTransitionTimeline.to(elementsToTransUp[j], 0.3, { opacity: "1", top: '0px' }, "-=0.15");
+        }
 
         // REMOVE CLONED IMAGE USED IN TRANSTION 
         // NOTE: THIS CAUSES SLIGHT FLICKERING
@@ -103,95 +96,69 @@
         // FROM POSITION X,Y TO ORIGINAL POS
         // BTM - SHOULD PROBABLY CLEAR APPLIED STYLES DUE TO TRANSTIONS AFTER/MIGHT BE BETTER TO TRANSITION ITEMS TO OTHER CLASSES INSTEAD OF DIRECTLY MODIFYING CSS PROPERTIES?
 
+        // ================================================
+        // === MODAL EXIT BUTTON 'CLICK' EVENT LISTENER ===
+        // ================================================
 
-        
+        modalExitButton.addEventListener('click', function _close(e) {
+
+            // THIS FUNCTION NEEDS TO BE GENERALIZED FOR WHEN EXITING AFTER SWITCHING PROFILES IN MODAL FUNCTION exitModalTransition(IMG)
+
+            var modalExitTransitionTimeline = new TimelineMax();
+            var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
+            var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
+
+            modalStudentProfileImage.src = '';
+
+            // ============================================
+            // re-enable scroll on body when modal is closed
+            // ============================================
+            bodyElement.classList.remove('disable-scroll');
+
+
+            // =====================================
+            // === START 'EXIT MODAL' TRANSITION ===
+            // =====================================
+
+            // REVERSE MODAL BACKGROUND
+            modalExitTransitionTimeline.to(modalBackground, 0.4, { zIndex: -300, height: 0, opacity: 0 });
+
+            // FADE OUT/UP MODAL ITEMS AND CONTAINER 
+            modalExitTransitionTimeline.to(elementsToTransUp, 0.35, { opacity: 0, top: '-50px' }, '-=0.25');
+            modalExitTransitionTimeline.to(modalContainer, 0.35, { opacity: 0, zIndex: -500 }, '-=0.30');
+
+
+
+            // PRE-FADE IN OTHER STUDENT IMAGES ON GRID
+            modalExitTransitionTimeline.to(studentImagesBesidesClicked, 0.01, { opacity: 0.8 });
+
+            // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
+            modalExitTransitionTimeline.to(studentImagesBesidesClicked, 0.25, { scale: 1, opacity: 1, zIndex: 500 }, '-=0.38');
+
+            // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
+            modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
+            modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.69');
+
+            // BRING SELECTED STUDENT IMAGE BACK INTO PLACE ON GRID
+            modalExitTransitionTimeline.to(selectedStudentImage, 0.2, { opacity: 1, zIndex: 500 });
+
+            // REMOVE CLONE 
+            // NOTE THIS MAY CAUSE FLICKERING
+            modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
+
+            // KILL EXIT MODAL TIMELINE
+            modalExitTransitionTimeline = null;
+
+            // ==================================
+            // === END 'EXIT MODAL TRANSTION' ===
+            // ==================================
+
+            this.removeEventListener('click', _close);
+
+        }); // END OF EXIT MODAL BUTTON EVENT LISTENER
+
     } // END OF MODAL TRANSITION EVENT LISTENER
 
-
-
-    modalExitButton.addEventListener('click', function _close(e) {
-
-        // THIS FUNCTION NEEDS TO BE GENERALIZED FOR WHEN EXITING AFTER SWITCHING PROFILES IN MODAL FUNCTION exitModalTransition(IMG)
-
-        var modalExitTransitionTimeline = new TimelineMax();
-        var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
-        var selectedStudentImage = studentImageGridImages[currentProfileID]
-        var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
-
-
-        modalStudentProfileImage.src = '';
-
-        // ============================================
-        // re-enable scroll on body when modal is closed
-        // ============================================
-        bodyElement.classList.remove('disable-scroll');
-
-
-        // =====================================
-        // === START 'EXIT MODAL' TRANSITION ===
-        // =====================================
-
-        // REVERSE MODAL BACKGROUND
-        modalExitTransitionTimeline.to(modalBackground, 0.4, { className:'-=user-modal__background-cover--active' });
-
-        // FADE OUT/UP MODAL ITEMS AND CONTAINER 
-        modalExitTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' }, '-=0.25');
-        modalExitTransitionTimeline.to(modalContainer, 0.35, { className: '-=user-modal__container--active'}, '-=0.30');
-
-        // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
-        modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.38');
-
-        // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
-        modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
-        modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.69');
-
-
-        // REMOVE CLONE 
-        // NOTE THIS MAY CAUSE FLICKERING
-        modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
-
-        currentProfileID = null;
-        // KILL EXIT MODAL TIMELINE
-        modalExitTransitionTimeline = null;
-
-        // ==================================
-        // === END 'EXIT MODAL TRANSTION' ===
-        // ==================================
-
-
-    }); // END OF EXIT MODAL BUTTON EVENT LISTENER
-
-
-
-    function goToPrev(){
-      currentProfileID-=1;
-      if(currentProfileID < 0){
-          currentProfileID = studentImageGridImages.length;
-      }
-
-
-      selectedStudentImage = studentImageGridImages[currentProfileID]
-      var modalNextProfileTransitionTimeline = new TimelineMax();
-      var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
-      
-
-      modalStudentProfileImage.src = selectedStudentImage.src;
-    }
-
-    function goToNext(){
-      currentProfileID+=1;
-      if(currentProfileID >= studentImageGridImages.length){
-          currentProfileID = 0;
-      }
-
-
-      selectedStudentImage = studentImageGridImages[currentProfileID]
-      var modalNextProfileTransitionTimeline = new TimelineMax();
-      var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
-      
-
-      modalStudentProfileImage.src = selectedStudentImage.src;
-    }
 
     function imgCloneOverlayImg(imgToClone) {
 
