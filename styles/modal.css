@@ -326,7 +326,7 @@
     border-radius: 3px;
     height: 2.688em;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -338,6 +338,7 @@
     display: block;
     padding-left: 0.625rem;
     font-size: 0.75em;
+    margin-right: auto;
   }
 
   .career-path-progress__span {
@@ -379,6 +380,7 @@
 
   }*/
 
+/*progress bars*/
   .career-path-progress__span--100 {
     width: 100%;
     height: 2px;
@@ -392,16 +394,23 @@
 [class^="career-path-progress__span--"] {
   position: absolute;
   bottom: -1px;
+  left: 0;
 }
 
   /*100% done progress bar*/
-  progress.career-path-progress__span--100::-webkit-progress-bar {
+/*  progress.career-path-progress__span--100 {
     background: #f5f5f5;
     width: 100%;
     height: 2px;
-  }
-  progress.career-path-progress__span--100::-webkit-progress-value  {
+  }*/
+  progress.career-path-progress__span--100::-webkit-progress-value {
     background: #78f08e;
+    border-color: #78f08e;
+  }
+
+  progress.career-path-progress__span--100::-moz-progress-bar {
+    background-color: #78f08e;
+    border-color: #78f08e;
   }
 
   progress {
@@ -412,6 +421,7 @@
     color: #77cdef;
     margin-top: -5px;
   }
+
 
   /*Chrome and Safari*/
   progress::-webkit-progress-bar {
@@ -424,11 +434,11 @@
   }
 
   /*Firefox*/
-  progress::-moz-progress-bar {
+ /* progress::-moz-progress-bar {
     background: #f5f5f5;
-  }
+  }*/
 
-  progress::-moz-progress-value {
+  progress::-moz-progress-bar {
     background: #77cdef;
   }
 
