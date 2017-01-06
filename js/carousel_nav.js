@@ -3,7 +3,12 @@ var navButtonList = document.querySelector('.user-modal__carousel__nav__buttons'
 navButtonList.addEventListener('click', switchSlide);
 
 function switchSlide(e) {
-			
+
+    // make sure li is the click target
+    if (e.target.nodeName !== 'LI') {
+      return null;
+    }
+
     var currentSlide = document.querySelector('.user-modal__carousel__slide--selected');
     var currentNav = document.querySelector('.modal__nav__button--active');
     var clickedNav = e.target;
@@ -15,7 +20,7 @@ function switchSlide(e) {
     currentSlide.classList.remove('user-modal__carousel__slide--selected');
     newSlide.classList.add('user-modal__carousel__slide--selected');
 
-    // switch current slide indicator (bullet nav fill color)
+    // update current slide indicator (bullet nav fill color)
     currentNav.classList.remove('modal__nav__button--active');
     clickedNav.classList.add('modal__nav__button--active');
 
