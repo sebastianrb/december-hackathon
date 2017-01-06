@@ -183,7 +183,9 @@ main {
 /* MAIN_HEADER */
 
 .main__header {
-    display: flexbox;
+    /*display: flexbox;*/
+    display: flex;
+    justify-content: space-between;
     padding: 50px 0 50px 40px;
     overflow: auto;
     color: #a2b7bc;
