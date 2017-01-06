@@ -1,0 +1,131 @@
+{
+  "footer": {},
+  "underLogo": {},
+  "students": [
+    {
+      "firstName": "Sam",
+      "lastName": "Chittenden",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": ""
+      },
+      // evidentialDegree Options: "Adv" "Master" "Elite"
+
+      "evidentialDegree": "Master",
+      "quote": "",
+      "photos": [
+        "SamChittenden.gif",
+        "SamChittenden_1.jpg",
+        "SamChittenden_2.jpg",
+        "SamChittenden_3.jpg",
+        "SamChittenden_4.jpg"
+      ],
+      "publishedArticles": [
+        {
+          "tile": "Article Title",
+          "publishedDated": "",
+          "link": "",
+          // "role" for publishedArticles can be "author" or "coauthor"
+
+          "role": "author"
+        }
+      ],
+      "pinnacleProject": {
+        "title": "",
+        "completionDate": "",
+        "problemSolving": "",
+        "humanityImpact": "",
+        "link": ""
+      },
+      "careerPaths": [
+        {
+          // careerPathID Options: "careerPath_1" "careerPath_2" "careerPath_3" "careerPath_3" "careerPath_3E" "careerPath_5E"
+          "careerPathID": "careerPath_3",
+          "careerPathProgress": {
+            "domainKnowledge": 10,
+            "uiDevSkills": 20,
+            "coursesCompleted": [
+              {
+                // For courseID, we will provide a list of all the courses to help you will this out
+                "courseID": "course_1",
+                "dateCompleted": ""
+              },
+              {
+                "courseID": "course_2",
+                "dateCompleted": ""
+              }
+            ]
+          }
+        },
+        {
+          "careerPathID": "careerPath_4",
+          "careerPathTitle": "Advanced Backend Developer",
+          "careerPathProgress": {}
+        }
+      ]
+    },
+    {
+      "firstName": "Sebastian",
+      "lastName": "Ramirez-Brunner",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": ""
+      },
+      // evidentialDegree Options: "Adv" "Master" "Elite"
+      "evidentialDegree": "Master",
+      "quote": "",
+      "photos": [
+        "SebastianRamirez-Brunner.gif",
+        "SebastianRamirez-Brunner_1.jpg",
+        "SebastianRamirez-Brunner_2.jpg",
+        "SebastianRamirez-Brunner_3.jpg",
+        "SebastianRamirez-Brunner_4.jpg"
+      ],
+      "publishedArticles": [
+        {
+          "tile": "Article Title",
+          "publishedDated": "",
+          "link": "",
+          // "role" for publishedArticles can be "author" or "coauthor"
+
+          "role": "author"
+        }
+      ],
+      "pinnacleProject": {
+        "title": "",
+        "completionDate": "",
+        "problemSolving": "",
+        "humanityImpact": "",
+        "link": ""
+      },
+      "careerPaths": [
+        {
+          // careerPathID Options: "careerPath_1" "careerPath_2" "careerPath_3" "careerPath_3" "careerPath_3E" "careerPath_5E"
+          "careerPathID": "careerPath_3",
+          "careerPathProgress": {
+            "domainKnowledge": 10,
+            "uiDevSkills": 20,
+            "coursesCompleted": [
+              {
+                // For courseID, we will provide a list of all the courses to help you will this out
+                "courseID": "course_1",
+                "dateCompleted": ""
+              },
+              {
+                "courseID": "course_2",
+                "dateCompleted": ""
+              }
+            ]
+          }
+        },
+        {
+          "careerPathID": "careerPath_4",
+          "careerPathTitle": "Advanced Backend Developer",
+          "careerPathProgress": {}
+        }
+      ]
+    }
+  ]
+}
