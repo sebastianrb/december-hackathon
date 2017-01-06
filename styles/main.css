@@ -183,13 +183,13 @@ main {
 /* MAIN_HEADER */
 
 .main__header {
-    /*display: flexbox;*/
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 50px 0 50px 40px;
     overflow: auto;
     color: #a2b7bc;
     background-color: #f3f7fd;
+    align-items: center;
 }
 
 .main__header__title {
@@ -225,18 +225,20 @@ main {
 }
 
 .main__header__search {
-    /*display: inline-block;*/
     display: flex;
-    margin-top: 1%;
+    /*margin-top: 1%;*/
+    margin-right: 0;
+    align-items: center;
 }
 
 .main__header__search__input {
     order: 2;
     outline: none;
     letter-spacing: 2px;
-    padding: 15px 10px 15px 0px;
+    padding: 15px 0px 15px 0px;
     margin-left: -15px;
     display: inline-block;
+    font-family: 'Roboto';
     font-size: 1.3em;
     background-size: 25px;
     background-position: 5% 50%;
@@ -332,15 +334,8 @@ main {
 }
 
 .main__header__registration {
-    float: right;
-    display: inline-block;
-    margin-top: 30px;
-}
-
-.main__header__registration {
-    float: right;
-    display: inline-block;
-    margin-top: 30px;
+    margin: 0;
+    margin-left: auto;
 }
 
 .main__header__registration-button {
@@ -542,31 +537,8 @@ footer {
 }
 
 button.load-more-container__button {
-<<<<<<< HEAD
-  /*background: #404b56;*/
-  background: #1C1E22;
-  border: none;
-  padding: 15px;
-  /*width: 20%;*/
-  width: 25%;
-  margin: 30px auto 40px;
-  display: inherit;
-  /*color: #a2b7bc;*/
-  color: #566377;
-  font-size: 1.5em;
-  font-weight: lighter;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  cursor: pointer;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -o-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;
-  min-width: 200px;
-=======
     /*background: #404b56;*/
-    background: #1C1E22;
+    background: #25282d;
     border: none;
     padding: 15px;
     /*width: 20%;*/
@@ -587,11 +559,11 @@ button.load-more-container__button {
     -ms-transition: all .3s;
     transition: all .3s;
     min-width: 200px;
->>>>>>> e7606cc734ec458d8544d0f9366956134ca03588
 }
 
 button.load-more-container__button:hover {
     background: #5e6e7d;
+    color: #25282d;
 }
 
 .footer__nav {
