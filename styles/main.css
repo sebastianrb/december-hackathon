@@ -249,6 +249,7 @@ main {
     font-weight: lighter;
     border: none;
     background-color: inherit;
+    line-height: 0;
 }
 
 
