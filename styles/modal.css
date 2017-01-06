@@ -594,7 +594,13 @@
     border-color: #78f08e;
   }
 
-  progress.career-path-progress__span--100::-moz-progress-bar {
+
+    progress[class^="career-path-progress__span--"]::-moz-progress-bar {
+    background-color: #77cdef;
+    border-color: #77cdef;
+  }
+
+   progress.career-path-progress__span--100::-moz-progress-bar {
     background-color: #78f08e;
     border-color: #78f08e;
   }
@@ -614,7 +620,8 @@
   }
 
   progress::-moz-progress-bar {
-    background: #77cdef;
+    background-color: #77cdef;
+    border-color: #77cdef;
   }
 
 progress.career-path-progress__span--100::-webkit-progress-bar {
