@@ -183,13 +183,13 @@ main {
 /* MAIN_HEADER */
 
 .main__header {
-    /*display: flexbox;*/
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 50px 0 50px 40px;
     overflow: auto;
     color: #a2b7bc;
     background-color: #f3f7fd;
+    align-items: center;
 }
 
 .main__header__title {
@@ -225,18 +225,20 @@ main {
 }
 
 .main__header__search {
-    /*display: inline-block;*/
     display: flex;
-    margin-top: 1%;
+    /*margin-top: 1%;*/
+    margin-right: 0;
+    align-items: center;
 }
 
 .main__header__search__input {
     order: 2;
     outline: none;
     letter-spacing: 2px;
-    padding: 15px 10px 15px 0px;
+    padding: 15px 0px 15px 0px;
     margin-left: -15px;
     display: inline-block;
+    font-family: 'Roboto';
     font-size: 1.3em;
     background-size: 25px;
     background-position: 5% 50%;
@@ -332,15 +334,8 @@ main {
 }
 
 .main__header__registration {
-    float: right;
-    display: inline-block;
-    margin-top: 30px;
-}
-
-.main__header__registration {
-    float: right;
-    display: inline-block;
-    margin-top: 30px;
+    margin: 0;
+    margin-left: auto;
 }
 
 .main__header__registration-button {
