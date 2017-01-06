@@ -187,9 +187,9 @@
       imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
       imgClone.style.zIndex = 500;
       document.body.parentNode.appendChild(imgClone);
-      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
+      modalNextProfileTransitionTimeline.to([elementsToTransUp, modalStudentProfileImage], 0.35, { className:'+=hide_modal_items' });
       modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left})
-      modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
+      modalNextProfileTransitionTimeline.to([elementsToTransUp,modalStudentProfileImage], 0.35, { className:'-=hide_modal_items' }, '-=0.25');
       modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
 
     }
