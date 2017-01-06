@@ -18,3 +18,9 @@
   z-index: 500;
   opacity: 1;
 }
+
+.currentProfile_grid_image{
+	opacity: 0;
+	height: 0;
+}
+

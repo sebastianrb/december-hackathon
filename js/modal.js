@@ -7,11 +7,12 @@
 
     var modalBackground = document.querySelector(".user-modal__background-cover");
     var modalStudentProfileImage = document.querySelector(".user-modal__photo-block__photo");
+    var modalStudentProfileImageBlock = document.querySelector(".user-modal__photo-block");
     var modalContainer = document.querySelector(".user-modal__container");
 
     var modalExitButton = document.querySelector('.user-modal__info-block__header__close-icon');
 
-    var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span');
+    var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__buttons');
 
     var bodyElement = document.querySelector('body');
     
@@ -43,7 +44,7 @@
         var studentImagesBesidesClicked = [];
 
         var modalEnterTransitionTimeline = new TimelineMax();
-        var modalPosition = modalContainer.getBoundingClientRect();
+        var modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
 
         // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL 
         // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
@@ -52,7 +53,7 @@
 
 
         // ============================================
-        // disable scroll on body when modal is visible
+        // disable scroll on body when modal is visible1
         // ============================================
         bodyElement.classList.add('disable-scroll');
 
@@ -70,8 +71,9 @@
         modalEnterTransitionTimeline.to(studentImageGridImages, 0.3, { className: '+=shrink_grid_images'}, '-=0.1');
 
         // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
-        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalPosition.top, left: modalPosition.left, zIndex: 300 }, '-=0.25');
-        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
+        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, zIndex: 300 }, '-=0.25');
+        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalImagePosition.width, height: modalImagePosition.height }, '-=0.69');
+        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
 
         // BRING MODAL FORWARD AND OPAQUE7
@@ -81,16 +83,18 @@
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
 
         // MODAL ITEMS TRANSITION PART 1 - FAST TRANSITION FOR MAJORITY OF ITEMS TO SPOOF LONGER TRANSITION ANIMATION
-        for (var k = 0; k < elementsToTransUp.length; k++) {
-            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.2, { className: '-=hide_modal_items' }, "-=0.13");
+        for (var k = 0; k < elementsToTransUp.length-5; k++) {
+            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.25");
         }
 
+        for (var k = elementsToTransUp.length-5; k < elementsToTransUp.length; k++) {
+            modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.1");
+        }
 
         // REMOVE CLONED IMAGE USED IN TRANSTION 
         // NOTE: THIS CAUSES SLIGHT FLICKERING
-        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
-        //KILL TRANSITION TIMELINE
+        //KILL TRANSITION TIMELIN
         modalEnterTransitionTimeline = null;
 
 
@@ -125,21 +129,22 @@
         // re-enable scroll on body when modal is closed
         // ============================================
         bodyElement.classList.remove('disable-scroll');
-
+        modalExitTransitionTimeline.set(selectedStudentImage, {className: '+=currentProfile_grid_image'})
 
         // =====================================
         // === START 'EXIT MODAL' TRANSITION ===
         // =====================================
 
         // REVERSE MODAL BACKGROUND
-        modalExitTransitionTimeline.to(modalBackground, 0.4, { className:'-=user-modal__background-cover--active' });
 
         // FADE OUT/UP MODAL ITEMS AND CONTAINER 
         modalExitTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' }, '-=0.25');
         modalExitTransitionTimeline.to(modalContainer, 0.35, { className: '-=user-modal__container--active'}, '-=0.30');
 
+        modalExitTransitionTimeline.to(modalBackground, 0.4, { className:'-=user-modal__background-cover--active' });
         // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
         modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.38');
+        
 
         // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
         modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
@@ -148,6 +153,7 @@
 
         // REMOVE CLONE 
         // NOTE THIS MAY CAUSE FLICKERING
+        modalExitTransitionTimeline.to(selectedStudentImage, 0.1, {className: '-=currentProfile_grid_image'})
         modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
 
         currentProfileID = null;
@@ -179,6 +185,7 @@
     }
 
     function goToNext(){
+
       currentProfileID+=1;
       if(currentProfileID >= studentImageGridImages.length){
           currentProfileID = 0;
