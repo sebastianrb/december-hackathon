@@ -52,6 +52,7 @@
     // ***********************************************************************//
 
     var studentImageClone = imgCloneOverlayImg(selectedStudentImage);
+
     var studentImagesBesidesClicked = [];
 
     var modalEnterTransitionTimeline = new TimelineMax();
@@ -124,7 +125,6 @@
 
     // THIS FUNCTION NEEDS TO BE GENERALIZED FOR WHEN EXITING AFTER SWITCHING PROFILES IN MODAL FUNCTION exitModalTransition(IMG)
 
-
     var modalExitTransitionTimeline = new TimelineMax();
     var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
     var selectedStudentImage = studentImageGridImages[currentProfileID];
@@ -138,6 +138,12 @@
     selectedStudentImage.classList.remove('shrink_grid_images');
     selectedStudentImage.classList.add('currentProfile_grid_image');
     var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
+
+    // *********** SBC proposal ******************************* //
+    // move window to position of active picture at time of exit
+    window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset - 100));
+    // ******************************************************* //
+
 
     // =====================================
     // === START 'EXIT MODAL' TRANSITION ===
@@ -157,13 +163,13 @@
       selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
     });
     // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
-    modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
+    // ********************************************* changed to top: 100 **************** //
+    modalExitTransitionTimeline.to(revImgClone, 0.7, { top: 100, left: selectedStudentImagePosDim.left }, '-=0.42');
     modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
-
 
     // REMOVE CLONE
     // NOTE THIS MAY CAUSE FLICKERING
-    modalExitTransitionTimeline.to(selectedStudentImage, 0.1, { className: '-=currentProfile_grid_image' })
+    modalExitTransitionTimeline.to(selectedStudentImage, 0.1, { className: '-=currentProfile_grid_image' });
     modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
 
     currentProfileID = null;
