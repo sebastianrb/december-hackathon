@@ -246,6 +246,9 @@
         imgClone.style.width = (thisDim.width).toString() + 'px';
         imgClone.style.height = (thisDim.height).toString() + 'px';
 
+        //set object-fit
+        imgClone.style.objectFit = 'cover';
+
         // OVERLAY IMAGE (SHOULD CALCLUATE ZINDEX BASED ON ORIG IMAGE INDEX + N)
         imgClone.style.zIndex = "300";
         imgClone.style.opacity = "1";
