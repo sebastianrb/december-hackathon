@@ -111,6 +111,7 @@
 
 .user-modal__photo-block__photo {
   height: 40.125em;
+  object-fit: cover;
 }
 
 
