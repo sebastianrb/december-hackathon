@@ -12,7 +12,7 @@
 
     var modalExitButton = document.querySelector('.user-modal__info-block__header__close-icon');
 
-    var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__buttons');
+    var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
 
     var bodyElement = document.querySelector('body');
     
@@ -71,12 +71,13 @@
 
         var modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
         // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
-        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left}, '-=0.25');
+        modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, ease: Power2.easeOut}, '-=0.25');
         modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
 
 
-        // BRING MODAL FORWARD AND OPAQUE7
-        modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.2');
+        // BRING MODAL FORWARD AND OPAQUE
+        modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.1');
+        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
 
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
@@ -90,7 +91,6 @@
         // NOTE: THIS CAUSES SLIGHT FLICKERING
 
         //KILL TRANSITION TIMELIN
-        modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
         modalEnterTransitionTimeline = null;
 
 
@@ -135,18 +135,18 @@
         // REVERSE MODAL BACKGROUND
 
         // FADE OUT/UP MODAL ITEMS AND CONTAINER 
-        modalExitTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' }, '-=0.25');
-        modalExitTransitionTimeline.to(modalContainer, 0.35, { className: '-=user-modal__container--active'}, '-=0.30');
+        modalExitTransitionTimeline.to(elementsToTransUp, 0.25, { className:'+=hide_modal_items' }, '-=0.25');
+        modalExitTransitionTimeline.to(modalContainer, 0.25, { className: '-=user-modal__container--active'}, '-=0.30');
 
         modalExitTransitionTimeline.to(modalBackground, 0.4, { className:'-=user-modal__background-cover--active' });
         // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
-        modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.38');
+        modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.48');
         
         modalExitTransitionTimeline.add(function(){selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 })
         // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
-        modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left }, '-=0.42');
-        modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
+        modalExitTransitionTimeline.to(revImgClone, 0.8, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Back.easeOut, }, '-=0.25');
+        modalExitTransitionTimeline.to(revImgClone, 0.8, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
 
         // REMOVE CLONE 
