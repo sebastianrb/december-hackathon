@@ -83,7 +83,8 @@
 
     var modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
     // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
-    modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left }, '-=0.25');
+    // modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left }, '-=0.25');
+    modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, ease: Power2.easeOut}, '-=0.25');
     modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
 
 
@@ -141,8 +142,14 @@
 
     // *********** SBC proposal ******************************* //
     // move window to position of active picture at time of exit
-    window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset - 100));
+    // window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset - 100));
     // ******************************************************* //
+
+   // SCROLL TO POSITION OF CURRENT IMAGE ON GRID
+       window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset - 100));
+
+       // RECALCULATE IMAGE POSITION AFTER SCROLL
+       selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 
 
     // =====================================
@@ -164,7 +171,7 @@
     });
     // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
     // ********************************************* changed to top: 100 **************** //
-    modalExitTransitionTimeline.to(revImgClone, 0.7, { top: 100, left: selectedStudentImagePosDim.left }, '-=0.42');
+    modalExitTransitionTimeline.to(revImgClone, 0.7, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Power2.easeOut}, '-=0.42');
     modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
     // REMOVE CLONE
@@ -259,6 +266,9 @@
     imgClone.style.left = (thisDim.left).toString() + "px";
     imgClone.style.width = (thisDim.width).toString() + 'px';
     imgClone.style.height = (thisDim.height).toString() + 'px';
+
+    // add object-fit property:
+    imgClone.style.objectFit = 'cover';
 
     // OVERLAY IMAGE (SHOULD CALCLUATE ZINDEX BASED ON ORIG IMAGE INDEX + N)
     imgClone.style.zIndex = "300";
