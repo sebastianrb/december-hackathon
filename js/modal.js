@@ -15,7 +15,7 @@
     var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .student-bio-text, .bio-info__section-heading, .bio-info__list, .bio-info__section-heading, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__buttons');
 
     var bodyElement = document.querySelector('body');
-    
+
     var prev = document.getElementById('intermodal--prev');
     var next = document.getElementById('intermodal--next');
 
@@ -45,7 +45,7 @@
 
         var modalEnterTransitionTimeline = new TimelineMax();
 
-        // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL 
+        // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL
         // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
         modalStudentProfileImage.src = selectedStudentImage.src;
 
@@ -59,9 +59,9 @@
         // ===================================
         // === ENTER 'TO MODAL'TRANSITION  ===
         // ===================================
-        
+
         //
-        
+
         modalEnterTransitionTimeline.set(elementsToTransUp,{className: '+=hide_modal_items'})
         //  BRING MODAL BACKGROUND FORWARD
         modalEnterTransitionTimeline.to(modalBackground, 0.15, { className: '+=user-modal__background-cover--active' });
@@ -86,7 +86,7 @@
             modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.25");
         }
 
-        // REMOVE CLONED IMAGE USED IN TRANSTION 
+        // REMOVE CLONED IMAGE USED IN TRANSTION
         // NOTE: THIS CAUSES SLIGHT FLICKERING
 
         //KILL TRANSITION TIMELIN
@@ -104,7 +104,7 @@
         // BTM - SHOULD PROBABLY CLEAR APPLIED STYLES DUE TO TRANSTIONS AFTER/MIGHT BE BETTER TO TRANSITION ITEMS TO OTHER CLASSES INSTEAD OF DIRECTLY MODIFYING CSS PROPERTIES?
 
 
-        
+
     } // END OF MODAL TRANSITION EVENT LISTENER
 
 
@@ -134,14 +134,14 @@
 
         // REVERSE MODAL BACKGROUND
 
-        // FADE OUT/UP MODAL ITEMS AND CONTAINER 
+        // FADE OUT/UP MODAL ITEMS AND CONTAINER
         modalExitTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' }, '-=0.25');
         modalExitTransitionTimeline.to(modalContainer, 0.35, { className: '-=user-modal__container--active'}, '-=0.30');
 
         modalExitTransitionTimeline.to(modalBackground, 0.4, { className:'-=user-modal__background-cover--active' });
         // RESIZE/FULLY FADE-IN/BRING FORWARD OTHER STUDENT IMAGES ON GRID
         modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.38');
-        
+
         modalExitTransitionTimeline.add(function(){selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 })
         // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
@@ -149,7 +149,7 @@
         modalExitTransitionTimeline.to(revImgClone, 0.7, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
 
-        // REMOVE CLONE 
+        // REMOVE CLONE
         // NOTE THIS MAY CAUSE FLICKERING
         modalExitTransitionTimeline.to(selectedStudentImage, 0.1, {className: '-=currentProfile_grid_image'})
         modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
@@ -257,11 +257,11 @@
 // NEED GLOBAL VAR CURRENTPROFILE TO TRACK CURRENT PROFILE
 // RIGHT ARROW 'CLICK' EVENT LISTENER
 // LEFT ARROW 'CLICK' EVENT LISTENER
-// 1. GET NEXT/PREV PROFILE IMAGE 
+// 1. GET NEXT/PREV PROFILE IMAGE
 // 2. TRANSITION CURRENT PROFILE OUT
 // 3. TRANSITION NEW PROFILE IN
-// 4. DELETE OLD EVENT LISTENER 
+// 4. DELETE OLD EVENT LISTENER
 // 5. UPDATE NEW/OLD IMAGES ON GRID FOR TRANSITION DOWN
 // 6. UPDATE CURRENTPROFILE GLOBAL -> THIS IS REQUIRED SO IMAGE GOES TO PROPER POSITION WHEN EXITING
-// 7. UPDATE MODAL EXIT BUTTON EVENT LISTENER 
+// 7. UPDATE MODAL EXIT BUTTON EVENT LISTENER
 // 6. THATS ALL FOLKS
