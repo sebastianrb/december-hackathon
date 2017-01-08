@@ -50,7 +50,7 @@
         // ============================================
         // disable scroll on body when modal is visible1
         // ============================================
-        bodyElement.classList.add('disable-scroll');
+        // bodyElement.classList.add('disable-scroll');
 
         // ===================================
         // === ENTER 'TO MODAL'TRANSITION  ===
@@ -87,6 +87,9 @@
         // NOTE: THIS CAUSES SLIGHT FLICKERING
         modalEnterTransitionTimeline.add(function() { studentImageClone.remove(); });
 
+        //adjust body scrolling toggle
+        modalEnterTransitionTimeline.add(function(){bodyElement.classList.add('disable-scroll');});
+
         //KILL TRANSITION TIMELIN
         modalEnterTransitionTimeline = null;
 
@@ -118,7 +121,7 @@
         // ============================================
         // re-enable scroll on body when modal is closed
         // ============================================
-        bodyElement.classList.remove('disable-scroll');
+        // bodyElement.classList.remove('disable-scroll');
 
 
         selectedStudentImage.classList.remove('shrink_grid_images');
@@ -157,6 +160,9 @@
         // NOTE THIS MAY CAUSE FLICKERING
         modalExitTransitionTimeline.to(selectedStudentImage, 0.1, {className: '-=currentProfile_grid_image'})
         modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
+
+        //adjust body scrolling toggle
+        modalExitTransitionTimeline.add(function(){bodyElement.classList.remove('disable-scroll');});
 
         // RESET PROFILE ID
         currentProfileID = null;
