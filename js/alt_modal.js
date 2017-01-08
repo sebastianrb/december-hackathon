@@ -35,6 +35,11 @@
   // BEGIN MODAL TRANSITION FUNCTION
   function transitionModal(e) {
 
+    // ============================================
+    // disable scroll on body when modal is visible1
+    // ============================================
+    bodyElement.classList.add('disable-scroll');
+
     var selectedStudentImage = e.target;
 
     // for(var i = 0; i < studentImageGridImages.length; i++){
@@ -63,10 +68,6 @@
 
 
 
-    // ============================================
-    // disable scroll on body when modal is visible1
-    // ============================================
-    bodyElement.classList.add('disable-scroll');
 
     // ===================================
     // === ENTER 'TO MODAL'TRANSITION  ===
@@ -132,10 +133,7 @@
 
     modalStudentProfileImage.src = '';
 
-    // ============================================
-    // re-enable scroll on body when modal is closed
-    // ============================================
-    bodyElement.classList.remove('disable-scroll');
+
     selectedStudentImage.classList.remove('shrink_grid_images');
     selectedStudentImage.classList.add('currentProfile_grid_image');
     var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
@@ -178,6 +176,11 @@
     // NOTE THIS MAY CAUSE FLICKERING
     modalExitTransitionTimeline.to(selectedStudentImage, 0.1, { className: '-=currentProfile_grid_image' });
     modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
+
+    // ============================================
+    // re-enable scroll on body when modal is closed
+    // ============================================
+    modalExitTransitionTimeline.add(function(){bodyElement.classList.remove('disable-scroll');});
 
     currentProfileID = null;
     // KILL EXIT MODAL TIMELINE
@@ -275,7 +278,8 @@
     imgClone.style.opacity = "1";
 
     // ADD CLONE TO HTML SO IT APPEARS!
-    document.body.parentNode.appendChild(imgClone);
+    // document.body.parentNode.appendChild(imgClone);
+    modalBackground.appendChild(imgClone);
 
     return imgClone;
 
