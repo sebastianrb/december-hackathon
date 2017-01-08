@@ -33,10 +33,10 @@
     function transitionModal(e) {
         var selectedStudentImage = e.target;
 
-        // ============================================
-        // disable scroll on body when modal is visible1
-        // ============================================
-        bodyElement.classList.add('disable-scroll');
+        // // ============================================
+        // // disable scroll on body when modal is visible1
+        // // ============================================
+        // bodyElement.classList.add('disable-scroll');
 
         studentImageGridImages = Array.prototype.slice.call(document.querySelectorAll(".student-image-grid__image-cont__image"));
         currentProfileID = studentImageGridImages.indexOf(selectedStudentImage);
@@ -174,7 +174,7 @@
     function goToPrev(){
       currentProfileID-=1;
       if(currentProfileID < 0){
-          currentProfileID = studentImageGridImages.length;
+          currentProfileID = studentImageGridImages.length - 1;
       }
 
 
@@ -189,6 +189,7 @@
       imgClone.style.height = modalStudentProfileImagePos.height + 'px' ;
       imgClone.style.top = modalStudentProfileImagePos.top + 'px';
       imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
+      imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
       document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to([elementsToTransUp, modalStudentProfileImage], 0.35, { className:'+=hide_modal_items' });
@@ -217,6 +218,7 @@
       imgClone.style.height = modalStudentProfileImagePos.height + 'px' ;
       imgClone.style.top = modalStudentProfileImagePos.top + 'px';
       imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
+      imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
       document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
