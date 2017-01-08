@@ -111,6 +111,7 @@
 
 .user-modal__photo-block__photo {
   height: 40.125em;
+  
 }
 
 
@@ -315,7 +316,9 @@
 
 /* bio info wrapper */
 
-.user-modal__info-block__main-content--bio-info-wrapper {}
+.user-modal__info-block__main-content--bio-info-wrapper {
+  position: relative;
+}
 
 
 /* Bio info main section p style */
@@ -352,6 +355,7 @@
   margin-bottom: 0;
   font-size: 1.73em;
   margin-top: 1.5rem;
+  position: relative;
 }
 
 
@@ -381,7 +385,7 @@
   transition: opacity 0.3s ease;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 
@@ -396,6 +400,7 @@
   /*border: solid 1px green;*/
   text-align: center;
   margin-top: 1em;
+  position: relative;
 }
 
 
@@ -674,6 +679,7 @@ progress {
   font-size: 0.688em;
   display: block;
   margin-top: 10px;
+  position: relative;
   /*border: 1px solid green;*/
 }
 

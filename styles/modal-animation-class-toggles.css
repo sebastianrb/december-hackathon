@@ -1,0 +1,20 @@
+.hide_modal_items{
+    top: -50px;
+    opacity: 0;
+}
+
+.shrink_grid_images{
+    transform: scale(0,0);
+    z-index: -100;
+    opacity: 0;
+}
+
+.user-modal__container--active {
+  z-index: 500;
+  opacity: 1;
+}
+
+.currentProfile_grid_image{
+	opacity: 0;
+	transform: scale(1,1);
+}
