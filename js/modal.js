@@ -33,6 +33,11 @@
     function transitionModal(e) {
         var selectedStudentImage = e.target;
 
+        // ============================================
+        // disable scroll on body when modal is visible1
+        // ============================================
+        bodyElement.classList.add('disable-scroll');
+
         studentImageGridImages = Array.prototype.slice.call(document.querySelectorAll(".student-image-grid__image-cont__image"));
         currentProfileID = studentImageGridImages.indexOf(selectedStudentImage);
 
@@ -45,20 +50,13 @@
         // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
         modalStudentProfileImage.src = selectedStudentImage.src;
 
-
-
-        // ============================================
-        // disable scroll on body when modal is visible1
-        // ============================================
-        // bodyElement.classList.add('disable-scroll');
-
         // ===================================
         // === ENTER 'TO MODAL'TRANSITION  ===
         // ===================================
 
         //
 
-        modalEnterTransitionTimeline.set(elementsToTransUp,{className: '+=hide_modal_items'})
+        modalEnterTransitionTimeline.set(elementsToTransUp,{className: '+=hide_modal_items'});
         //  BRING MODAL BACKGROUND FORWARD
         modalEnterTransitionTimeline.to(modalBackground, 0.15, { className: '+=user-modal__background-cover--active' });
 
@@ -114,15 +112,9 @@
         var modalExitTransitionTimeline = new TimelineMax();
         var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
         mainElement.appendChild(revImgClone);
-        var selectedStudentImage = studentImageGridImages[currentProfileID]
+        var selectedStudentImage = studentImageGridImages[currentProfileID];
 
         modalStudentProfileImage.src = '';
-
-        // ============================================
-        // re-enable scroll on body when modal is closed
-        // ============================================
-        // bodyElement.classList.remove('disable-scroll');
-
 
         selectedStudentImage.classList.remove('shrink_grid_images');
         selectedStudentImage.classList.add('currentProfile_grid_image');
@@ -158,10 +150,10 @@
 
         // REMOVE CLONE
         // NOTE THIS MAY CAUSE FLICKERING
-        modalExitTransitionTimeline.to(selectedStudentImage, 0.1, {className: '-=currentProfile_grid_image'})
+        modalExitTransitionTimeline.to(selectedStudentImage, 0.1, {className: '-=currentProfile_grid_image'});
         modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
 
-        //adjust body scrolling toggle
+        // RE-ENABLE BODY SCROLL AFTER TRANSITION IS COMPLETE
         modalExitTransitionTimeline.add(function(){bodyElement.classList.remove('disable-scroll');});
 
         // RESET PROFILE ID
@@ -186,7 +178,7 @@
       }
 
 
-      selectedStudentImage = studentImageGridImages[currentProfileID]
+      selectedStudentImage = studentImageGridImages[currentProfileID];
       var modalNextProfileTransitionTimeline = new TimelineMax();
       var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
 
@@ -200,7 +192,7 @@
       imgClone.style.zIndex = 500;
       document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to([elementsToTransUp, modalStudentProfileImage], 0.35, { className:'+=hide_modal_items' });
-      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left})
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left});
       modalNextProfileTransitionTimeline.to([elementsToTransUp,modalStudentProfileImage], 0.35, { className:'-=hide_modal_items' }, '-=0.25');
       modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
 
@@ -214,7 +206,7 @@
       }
 
 
-      selectedStudentImage = studentImageGridImages[currentProfileID]
+      selectedStudentImage = studentImageGridImages[currentProfileID];
       var modalNextProfileTransitionTimeline = new TimelineMax();
       var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
 
@@ -228,7 +220,7 @@
       imgClone.style.zIndex = 500;
       document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
-      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left})
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: modalStudentProfileImagePos.left});
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
       modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
 
