@@ -15,6 +15,7 @@
     var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
 
     var bodyElement = document.querySelector('body');
+    var mainElement = document.querySelector('main');
 
     var prev = document.getElementById('intermodal--prev');
     var next = document.getElementById('intermodal--next');
@@ -30,7 +31,6 @@
 
     // BEGIN MODAL TRANSITION FUNCTION
     function transitionModal(e) {
-
         var selectedStudentImage = e.target;
 
         studentImageGridImages = Array.prototype.slice.call(document.querySelectorAll(".student-image-grid__image-cont__image"));
@@ -78,6 +78,7 @@
         // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
 
         // MODAL ITEMS TRANSITION PART 1 - FAST TRANSITION FOR MAJORITY OF ITEMS TO SPOOF LONGER TRANSITION ANIMATION
+
         for (var k = 0; k < elementsToTransUp.length; k++) {
             modalEnterTransitionTimeline.to(elementsToTransUp[k], 0.3, { className: '-=hide_modal_items' }, "-=0.25");
         }
@@ -109,6 +110,7 @@
 
         var modalExitTransitionTimeline = new TimelineMax();
         var revImgClone = imgCloneOverlayImg(modalStudentProfileImage);
+        mainElement.appendChild(revImgClone);
         var selectedStudentImage = studentImageGridImages[currentProfileID]
 
         modalStudentProfileImage.src = '';
@@ -249,7 +251,8 @@
         imgClone.style.opacity = "1";
 
         // ADD CLONE TO HTML SO IT APPEARS!
-        document.body.parentNode.appendChild(imgClone);
+        // document.body.parentNode.appendChild(imgClone);
+        modalBackground.appendChild(imgClone);
 
         return imgClone;
 
