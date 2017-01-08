@@ -33,6 +33,11 @@
     function transitionModal(e) {
         var selectedStudentImage = e.target;
 
+        // ============================================
+        // disable scroll on body when modal is visible1
+        // ============================================
+        bodyElement.classList.add('disable-scroll');
+
         studentImageGridImages = Array.prototype.slice.call(document.querySelectorAll(".student-image-grid__image-cont__image"));
         currentProfileID = studentImageGridImages.indexOf(selectedStudentImage);
 
@@ -47,10 +52,6 @@
 
 
 
-        // ============================================
-        // disable scroll on body when modal is visible1
-        // ============================================
-        bodyElement.classList.add('disable-scroll');
 
         // ===================================
         // === ENTER 'TO MODAL'TRANSITION  ===
