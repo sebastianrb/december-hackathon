@@ -192,7 +192,6 @@
       imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
       modalStudentProfileImageBlock.appendChild(imgClone);
-      // document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to([elementsToTransUp, modalStudentProfileImage], 0.35, { className:'+=hide_modal_items' });
       modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0});
       modalNextProfileTransitionTimeline.to([elementsToTransUp,modalStudentProfileImage], 0.35, { className:'-=hide_modal_items' }, '-=0.25');
@@ -217,14 +216,11 @@
       imgClone.style.position = "fixed";
       imgClone.style.width = modalStudentProfileImagePos.width + 'px';
       imgClone.style.height = modalStudentProfileImagePos.height + 'px' ;
-      // imgClone.style.top = modalStudentProfileImagePos.top + 'px';
-      // imgClone.style.left = (modalStudentProfileImagePos.width*-1) + 'px';
       imgClone.style.top = "0";
       imgClone.style.left = (modalStudentProfileImagePos.width*-1.5) + 'px';
       imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
       modalStudentProfileImageBlock.appendChild(imgClone);
-      // document.body.parentNode.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
       modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0});
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
