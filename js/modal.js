@@ -65,14 +65,14 @@
 
     modalEnterTransitionTimeline.set(elementsToTransUp, { className: '+=hide_modal_items' });
     //  BRING MODAL BACKGROUND FORWARD
-    modalEnterTransitionTimeline.to(modalBackground, 0.15, { className: '+=user-modal__background-cover--active' });
+    modalEnterTransitionTimeline.to(modalBackground, 0.4, { className: '+=user-modal__background-cover--active' });
 
     // SHRINK OTHER STUDENT IMAGES IN GRID
     modalEnterTransitionTimeline.to(studentImageGridImages, 0.3, { className: '+=shrink_grid_images' }, '-=0.1');
 
     modalImagePosition = modalStudentProfileImage.getBoundingClientRect();
     // MOVE CLONED STUDENT IMAGE INTO POSITION OVERLAYING MODAL PROFILE IMAGE
-    modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, ease: Power2.easeOut }, '-=0.25');
+    modalEnterTransitionTimeline.to(studentImageClone, 0.7, { top: modalImagePosition.top, left: modalImagePosition.left, ease: Power2.easeInOutExpo }, '-=0.25');
     modalEnterTransitionTimeline.to(studentImageClone, 0.7, { width: modalStudentProfileImage.width, height: modalStudentProfileImage.height }, '-=0.69');
 
 

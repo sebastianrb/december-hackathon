@@ -135,25 +135,25 @@
 
 .intermodal__profile-preview--prev {
     left: 0;
-    padding-left: 100px;
+    padding-left: 105px;
     transform: translateX(-132%);
 }
 
 .intermodal__profile-preview--prev--active {
     left: 0;
-    padding-left: 100px;
+    padding-left: 105px;
     transform: translateX(-20%);
 }
 
 .intermodal__profile-preview--next {
     right: 0;
-    padding-right: 100px;
+    padding-right: 105px;
     transform: translateX(132%);
 }
 
 .intermodal__profile-preview--next--active {
     right: 0;
-    padding-right: 100px;
+    padding-right: 105px;
     transform: translateX(20%);
 }
 
