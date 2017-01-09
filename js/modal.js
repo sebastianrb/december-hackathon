@@ -191,9 +191,10 @@
       imgClone.style.left = (modalStudentProfileImagePos.width*-1.5) + 'px';
       imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
+      imgClone.style.opacity = 0; // added an initial opacity of 0
       modalStudentProfileImageBlock.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to([elementsToTransUp, modalStudentProfileImage], 0.35, { className:'+=hide_modal_items' });
-      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0});
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0, opacity: 1}); // added opacity: 1
       modalNextProfileTransitionTimeline.to([elementsToTransUp,modalStudentProfileImage], 0.35, { className:'-=hide_modal_items' }, '-=0.25');
       modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
 
@@ -220,9 +221,10 @@
       imgClone.style.left = (modalStudentProfileImagePos.width*-1.5) + 'px';
       imgClone.style.objectFit = "cover";
       imgClone.style.zIndex = 500;
+      imgClone.style.opacity = 0; // added an initial opacity of 0
       modalStudentProfileImageBlock.appendChild(imgClone);
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'+=hide_modal_items' });
-      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0});
+      modalNextProfileTransitionTimeline.to(imgClone, 0.3, {left: 0, opacity: 1}); // added opacity: 1
       modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className:'-=hide_modal_items' }, '-=0.25');
       modalNextProfileTransitionTimeline.add(function() { imgClone.remove(); modalStudentProfileImage.src = selectedStudentImage.src;});
 
