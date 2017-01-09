@@ -11,6 +11,10 @@
   var mainElement = document.querySelector('main');
   var prev = document.getElementById('intermodal--prev');
   var next = document.getElementById('intermodal--next');
+  var prevPreviewPanel = document.querySelector(".intermodal__profile-preview--prev");
+  var nextPreviewPanel = document.querySelector(".intermodal__profile-preview--next");
+  var prevPreviewPanelImage = document.querySelector(".intermodal__profile-preview--prev img");
+  var nextPreviewPanelImage = document.querySelector(".intermodal__profile-preview--next img");
   var currentProfileID = null;
   var studentImageGridImages;
 
@@ -25,6 +29,10 @@
   // EVENT LISTENERS FOR INTER-MODAL NAVIGATION
   prev.addEventListener('click', goToPrev);
   next.addEventListener('click', goToNext);
+  prev.addEventListener('mouseover', previewPrevProfile);
+  next.addEventListener('mouseover', previewNextProfile);
+  prev.addEventListener('mouseout', closePreviewPrevProfile);
+  next.addEventListener('mouseout', closePreviewNextProfile);
 
   //*********************************//
   //        EVENT HANDLERS           //
@@ -46,6 +54,10 @@
     // SET MODAL STUDENT PROFILE IMAGE TO CLICKED/SELECTED IMAGE - THIS NEEDS TO BE DONE BEFORE ANIMATION STARTS SO PROPER IMAGE IS PRESET IN MODAL
     // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
     modalStudentProfileImage.src = selectedStudentImage.src;
+
+    //ASSIGN IMAGES IN THE PROFILE PREVIEW PANELS
+    setPreviewNextImage(currentProfileID);
+    setPreviewPrevImage(currentProfileID);
 
     // ===================================
     // === ENTER 'TO MODAL'TRANSITION  ===
@@ -83,7 +95,7 @@
     //adjust body scrolling toggle
     modalEnterTransitionTimeline.add(function() { bodyElement.classList.add('disable-scroll'); });
 
-    //KILL TRANSITION TIMELIN
+    //KILL TRANSITION TIMELINE
     modalEnterTransitionTimeline = null;
 
 
@@ -171,6 +183,19 @@
       currentProfileID = studentImageGridImages.length - 1;
     }
 
+    //SMOTTH TRANSITION PREVIEW PANEL IMAGES
+    var changePreviewPrevImage = new TimelineMax();
+    changePreviewPrevImage.to(prevPreviewPanelImage, .3, {
+      opacity: .3
+    });
+    changePreviewPrevImage.to(prevPreviewPanelImage, .3, {
+      opacity: 1
+    }, "-=.2");
+
+    //ASSIGN IMAGES IN THE PROFILE PREVIEW PANELS
+    setPreviewNextImage(currentProfileID);
+    setPreviewPrevImage(currentProfileID);
+
     _switchModal(currentProfileID);
 
   }
@@ -182,6 +207,19 @@
     if (currentProfileID >= studentImageGridImages.length) {
       currentProfileID = 0;
     }
+
+    //SMOTTH TRANSITION PREVIEW PANEL IMAGES
+    var changePreviewNextImage = new TimelineMax();
+    changePreviewNextImage.to(nextPreviewPanelImage, .2, {
+      opacity: .3
+    });
+    changePreviewNextImage.to(nextPreviewPanelImage, .2, {
+      opacity: 1
+    }, "-=.1");
+
+    //ASSIGN IMAGES IN THE PROFILE PREVIEW PANELS
+    setPreviewNextImage(currentProfileID);
+    setPreviewPrevImage(currentProfileID);
 
     _switchModal(currentProfileID);
 
@@ -211,6 +249,7 @@
     // APPEND THE CLONE TO THE MODAL IMAGE CONTAINER
     modalStudentProfileImageBlock.appendChild(imgClone);
 
+
     // TRANSITION ANIMATION TIMELINE
     modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className: '+=hide_modal_items' });
     modalNextProfileTransitionTimeline.to(imgClone, 0.3, { left: 0, opacity: 1 });
@@ -220,6 +259,33 @@
       modalStudentProfileImage.src = selectedStudentImage.src;
     });
   }
+
+  // ********************************** //
+  //         ARROW HOVER FUNCTIONS      //
+  //       used to show preview of next/previous  //
+  //       profiles when user hovers over arrows  //
+  // ********************************** //
+
+  function previewNextProfile(event) {
+      nextPreviewPanel.classList.remove("intermodal__profile-preview--next");
+      nextPreviewPanel.classList.add("intermodal__profile-preview--next--active");
+  }
+
+  function previewPrevProfile(event) {
+      prevPreviewPanel.classList.remove("intermodal__profile-preview--prev");
+      prevPreviewPanel.classList.add("intermodal__profile-preview--prev--active");
+  }
+
+  function closePreviewNextProfile(event) {
+      nextPreviewPanel.classList.remove("intermodal__profile-preview--next--active");
+      nextPreviewPanel.classList.add("intermodal__profile-preview--next");
+  }
+
+  function closePreviewPrevProfile(event) {
+      prevPreviewPanel.classList.remove("intermodal__profile-preview--prev--active");
+      prevPreviewPanel.classList.add("intermodal__profile-preview--prev");
+  }
+
 
   // ********************************** //
   //         IMAGE CLONE FUNCTION       //
@@ -256,6 +322,24 @@
 
     return imgClone;
 
+  }
+
+  function setPreviewNextImage(ID) {
+      //handle next scenarios: currentProfileID + 1 is greather than studentImageGridImages.length - 1
+      if((ID + 1) <= (studentImageGridImages.length - 1)) {
+        nextPreviewPanelImage.src = studentImageGridImages[ID + 1].src;
+      } else {
+        nextPreviewPanelImage.src = studentImageGridImages[0].src;
+    }
+  }
+
+  function setPreviewPrevImage(ID) {
+      //handle prev scenarios: currentProfileID - 1 is less than 0
+      if((ID - 1) >= 0) {
+        prevPreviewPanelImage.src = studentImageGridImages[ID - 1].src;
+      } else {
+        prevPreviewPanelImage.src = studentImageGridImages[studentImageGridImages.length - 1].src;
+      }
   }
 
 })();
