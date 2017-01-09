@@ -122,7 +122,7 @@
         var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 
         // SCROLL TO POSITION OF CURRENT IMAGE ON GRID
-        window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset - 100));
+        window.scrollTo(0, (selectedStudentImagePosDim.top + window.pageYOffset + 100));
 
         // RECALCULATE IMAGE POSITION AFTER SCROLL
         selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
