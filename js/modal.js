@@ -47,6 +47,10 @@
     // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
     modalStudentProfileImage.src = selectedStudentImage.src;
 
+    //******************************************************************//
+    modalStudentProfileImage.classList.add('u__modal-crop__left-middle');
+    //******************************************************************//
+
     // ===================================
     // === ENTER 'TO MODAL'TRANSITION  ===
     // ===================================
@@ -106,7 +110,7 @@
     var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 
     modalStudentProfileImage.src = '';
-
+    // revImgClone.style.objectPosition = '50% 50%';
     mainElement.appendChild(revImgClone);
 
     selectedStudentImage.classList.remove('shrink_grid_images');
@@ -135,7 +139,9 @@
     modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.48');
 
     // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
-    modalExitTransitionTimeline.to(revImgClone, 0.8, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Back.easeOut, }, '-=0.25');
+
+    //******************************************************************************************************//
+    modalExitTransitionTimeline.to(revImgClone, 0.8, { objectPosition: 'left', top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Back.easeOut, }, '-=0.25');
     modalExitTransitionTimeline.to(revImgClone, 0.8, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
 
@@ -191,7 +197,7 @@
   // SWITCH MODALS ANIMATION FUNCTION  //
   //**********************************//
 
-  function _switchModal(profileID) {
+  function _switchModal(profileID, cropAmt) {
     var selectedStudentImage = studentImageGridImages[profileID];
     var modalNextProfileTransitionTimeline = new TimelineMax();
     var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
@@ -205,6 +211,12 @@
     imgClone.style.top = "0";
     imgClone.style.left = (modalStudentProfileImagePos.width * -1.5) + 'px';
     imgClone.style.objectFit = "cover";
+    // set object-position property here
+    // imgClone.style.objectPosition = modalStudentProfileImagePos.width * -0.166 * 2 + 'px';
+
+    //******************************************************************//
+    imgClone.classList.add('u__modal-crop__left-middle');
+    //******************************************************************//
     imgClone.style.zIndex = 500;
     imgClone.style.opacity = 0;
 
@@ -218,6 +230,9 @@
     modalNextProfileTransitionTimeline.add(function() {
       imgClone.remove();
       modalStudentProfileImage.src = selectedStudentImage.src;
+      // modalStudentProfileImage.style.objectPosition = modalStudentProfileImagePos.width * -0.166 * 2 + 'px';
+      modalStudentProfileImage.classList.add('u__modal-crop__left-middle');
+
     });
   }
 
@@ -227,7 +242,7 @@
   //     transition from grid to modal  //
   // ********************************** //
 
-  function imgCloneOverlayImg(imgToClone) {
+  function imgCloneOverlayImg(imgToClone, cropAmt) {
 
     //GET POSITION/DIMENSIONS OF IMAGE
     thisDim = imgToClone.getBoundingClientRect();
@@ -246,6 +261,13 @@
 
     //set object-fit
     imgClone.style.objectFit = 'cover';
+
+    // set object-position property here
+    // imgClone.style.objectPosition = ((thisDim.width * -0.166) * 2) + 'px';
+
+    //******************************************************************//
+    imgClone.classList.add('u__modal-crop__left-middle');
+    //******************************************************************//
 
     // OVERLAY IMAGE (SHOULD CALCLUATE ZINDEX BASED ON ORIG IMAGE INDEX + N)
     imgClone.style.zIndex = "300";
