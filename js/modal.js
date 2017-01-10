@@ -77,7 +77,7 @@
 
 
     // BRING MODAL FORWARD AND OPAQUE
-    modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.20');
+    modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.23');
 
 
     // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
@@ -136,6 +136,7 @@
     // === START 'EXIT MODAL' TRANSITION ===
     // =====================================
 
+
     // REVERSE MODAL BACKGROUND
 
     // FADE OUT/UP MODAL ITEMS AND CONTAINER
@@ -157,7 +158,7 @@
     modalExitTransitionTimeline.to(selectedStudentImage, 0.1, { className: '-=currentProfile_grid_image' });
     modalExitTransitionTimeline.add(function() { revImgClone.remove(); });
 
-    // RE-ENABLE BODY SCROLL AFTER TRANSITION IS COMPLETE
+    // // RE-ENABLE BODY SCROLL AFTER TRANSITION IS COMPLETE
     modalExitTransitionTimeline.add(function() { bodyElement.classList.remove('disable-scroll'); });
 
     // RESET PROFILE ID
