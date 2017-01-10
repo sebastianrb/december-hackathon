@@ -1,0 +1,34 @@
+/*left*/
+.u__modal-crop__left {
+object-position: left;
+}
+
+/*left-middle*/
+.u__modal-crop__left-middle {
+object-position: -240px;
+}
+
+/* middle-left */
+.u__modal-crop__middle-left {
+object-position: -480px;
+}
+
+/* middle (default position) */
+/*.u__modal-crop__middle {
+object-position: -720px
+}*/
+
+/* middle-right */
+.u__modal-crop__middle-right {
+object-position: -960px;
+}
+
+/* right-middle */
+.u__modal-crop__right-middle {
+object-position: -1200px;
+}
+
+/*right*/
+.u__modal-crop__right {
+object-position: right;
+}
