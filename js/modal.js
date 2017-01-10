@@ -77,7 +77,7 @@
 
 
     // BRING MODAL FORWARD AND OPAQUE
-    modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.1');
+    modalEnterTransitionTimeline.to(modalContainer, 0.2, { className: '+=user-modal__container--active' }, '-=0.20');
 
 
     // MODAL ITMES TRANSITION - IN THIS TRANSITION WE QUICKLY TRANSITION UP THE MAJORITY OF PROFILE ITEMS IN THE MODAL BEFORE SLOWLY TRANSITIONING UP THE LAST FEW PROFILE ITEMS; THIS GIVES THE USER A SENSE THAT THE ITEMS WERE ALL TRANSITIONED AT THE SAME SPEED. OTHERWISE, WHEN THE ITEMS ARE TRANSITIONED UP AT THE SAME SPEED THE TRANSITION APPEARS TOO FAST OR TOO SLOW TO THE USER
@@ -87,6 +87,7 @@
     for (i = 0; i < elementsToTransUp.length; i++) {
       modalEnterTransitionTimeline.to(elementsToTransUp[i], 0.3, { className: '-=hide_modal_items' }, "-=0.25");
     }
+
 
     // REMOVE CLONED IMAGE USED IN TRANSTION
     // NOTE: THIS CAUSES SLIGHT FLICKERING

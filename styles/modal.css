@@ -126,11 +126,12 @@
     align-items: center;
     justify-content: space-between;
     z-index: 540;
-    -webkit-transition: all .4s;
-    -moz-transition: all .4s;
-    -o-transition: all .4s;
-    -ms-transition: all .4s;
-    transition: all .4s;
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    -o-transition: all .45s;
+    -ms-transition: all .45s;
+    transition: all .45s;
+    opacity: 0;
 }
 
 .intermodal__profile-preview--prev {
@@ -143,6 +144,7 @@
     left: 0;
     padding-left: 105px;
     transform: translateX(-20%);
+    opacity: 1;
 }
 
 .intermodal__profile-preview--next {
@@ -155,6 +157,7 @@
     right: 0;
     padding-right: 105px;
     transform: translateX(20%);
+    opacity: 1;
 }
 
 p[class^="intermodal__profile-preview"] {
