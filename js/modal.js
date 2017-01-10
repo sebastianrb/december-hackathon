@@ -237,7 +237,7 @@
 
   function _switchModal(profileID) {
     var selectedStudentImage = studentImageGridImages[profileID];
-    var newTransUp = document.querySelectorAll('.user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
+    var newTransUp = document.querySelectorAll('.user-modal__photo-block__quote blockquote.student-quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
     var modalNextProfileTransitionTimeline = new TimelineMax();
     var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
     var imgClone = modalStudentProfileImage.cloneNode(true);
