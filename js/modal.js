@@ -55,9 +55,11 @@
     // HERE WILL ALSO SET MODAL PROFILE DATA TO STUDENT'S JSON DATA
     modalStudentProfileImage.src = selectedStudentImage.src;
 
+
     //ASSIGN IMAGES IN THE PROFILE PREVIEW PANELS
     setPreviewNextImage(currentProfileID);
     setPreviewPrevImage(currentProfileID);
+
 
     // ===================================
     // === ENTER 'TO MODAL'TRANSITION  ===
@@ -119,7 +121,7 @@
     var selectedStudentImagePosDim = selectedStudentImage.getBoundingClientRect();
 
     modalStudentProfileImage.src = '';
-
+    // revImgClone.style.objectPosition = '50% 50%';
     mainElement.appendChild(revImgClone);
 
     selectedStudentImage.classList.remove('shrink_grid_images');
@@ -149,7 +151,9 @@
     modalExitTransitionTimeline.to(studentImageGridImages, 0.25, { className: '-=shrink_grid_images' }, '-=0.48');
 
     // TRANSITION CLONED IMAGE TO SELECTED STUDENT IMAGE'S CURRENT POSITION
-    modalExitTransitionTimeline.to(revImgClone, 0.8, { top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Back.easeOut, }, '-=0.25');
+
+    //******************************************************************************************************//
+    modalExitTransitionTimeline.to(revImgClone, 0.8, { /*objectPosition: 'center',*/ top: selectedStudentImagePosDim.top, left: selectedStudentImagePosDim.left, ease: Back.easeOut, }, '-=0.25');
     modalExitTransitionTimeline.to(revImgClone, 0.8, { width: selectedStudentImagePosDim.width, height: selectedStudentImagePosDim.height }, '-=0.71');
 
 
@@ -187,10 +191,10 @@
 
     //SMOTTH TRANSITION PREVIEW PANEL IMAGES
     var changePreviewPrevImage = new TimelineMax();
-    changePreviewPrevImage.to(prevPreviewPanelImage, .3, {
-      opacity: .3
+    changePreviewPrevImage.to(prevPreviewPanelImage, 0.3, {
+      opacity: 0.3
     });
-    changePreviewPrevImage.to(prevPreviewPanelImage, .3, {
+    changePreviewPrevImage.to(prevPreviewPanelImage, 0.3, {
       opacity: 1
     }, "-=.2");
 
@@ -212,10 +216,10 @@
 
     //SMOTTH TRANSITION PREVIEW PANEL IMAGES
     var changePreviewNextImage = new TimelineMax();
-    changePreviewNextImage.to(nextPreviewPanelImage, .2, {
-      opacity: .3
+    changePreviewNextImage.to(nextPreviewPanelImage, 0.2, {
+      opacity: 0.3
     });
-    changePreviewNextImage.to(nextPreviewPanelImage, .2, {
+    changePreviewNextImage.to(nextPreviewPanelImage, 0.2, {
       opacity: 1
     }, "-=.1");
 
@@ -233,9 +237,10 @@
 
   function _switchModal(profileID) {
     var selectedStudentImage = studentImageGridImages[profileID];
+    var newTransUp = document.querySelectorAll('.user-modal__photo-block__quote blockquote.student-quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
     var modalNextProfileTransitionTimeline = new TimelineMax();
     var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
-    var imgClone = selectedStudentImage.cloneNode(true);
+    var imgClone = modalStudentProfileImage.cloneNode(true);
 
     // STYLE THE CLONE
     imgClone.className = "";
@@ -243,22 +248,23 @@
     imgClone.style.width = modalStudentProfileImagePos.width + 'px';
     imgClone.style.height = modalStudentProfileImagePos.height + 'px';
     imgClone.style.top = "0";
-    imgClone.style.left = (modalStudentProfileImagePos.width * -1.5) + 'px';
+    imgClone.style.left = 0;
     imgClone.style.objectFit = "cover";
     imgClone.style.zIndex = 500;
-    imgClone.style.opacity = 0;
+    imgClone.style.opacity = 1;
+    // imgClone.style.objectPosition = '0 0';
 
     // APPEND THE CLONE TO THE MODAL IMAGE CONTAINER
     modalStudentProfileImageBlock.appendChild(imgClone);
+    modalStudentProfileImage.src = selectedStudentImage.src;
 
 
     // TRANSITION ANIMATION TIMELINE
-    modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className: '+=hide_modal_items' });
-    modalNextProfileTransitionTimeline.to(imgClone, 0.3, { left: 0, opacity: 1 });
-    modalNextProfileTransitionTimeline.to(elementsToTransUp, 0.35, { className: '-=hide_modal_items' }, '-=0.25');
+    modalNextProfileTransitionTimeline.to(newTransUp, 0.35, { className: '+=hide_modal_items' });
+    modalNextProfileTransitionTimeline.to(imgClone, 0.7, { objectPosition: '50% -642px', ease: Power2.easeOut }, '-=0.25');
+    modalNextProfileTransitionTimeline.to(newTransUp, 0.35, { className: '-=hide_modal_items' }, '-=0.25');
     modalNextProfileTransitionTimeline.add(function() {
       imgClone.remove();
-      modalStudentProfileImage.src = selectedStudentImage.src;
     });
   }
 
@@ -314,6 +320,7 @@
 
     //set object-fit
     imgClone.style.objectFit = 'cover';
+
 
     // OVERLAY IMAGE (SHOULD CALCLUATE ZINDEX BASED ON ORIG IMAGE INDEX + N)
     imgClone.style.zIndex = "300";
