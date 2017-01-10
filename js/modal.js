@@ -6,7 +6,7 @@
   var modalStudentProfileImageBlock = document.querySelector(".user-modal__photo-block");
   var modalContainer = document.querySelector(".user-modal__container");
   var modalExitButton = document.querySelector('.user-modal__info-block__header__close-icon');
-  var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
+  var elementsToTransUp = document.querySelectorAll('.user-modal__photo-block__quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container', '.user-modal__carousel__slide');
   var bodyElement = document.querySelector('body');
   var mainElement = document.querySelector('main');
   var prev = document.getElementById('intermodal--prev');
@@ -237,7 +237,7 @@
 
   function _switchModal(profileID) {
     var selectedStudentImage = studentImageGridImages[profileID];
-    var newTransUp = document.querySelectorAll('.user-modal__photo-block__quote blockquote.student-quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .career-path__list li, .career-path-update__span, .user-modal__carousel__nav__container');
+    var newTransUp = document.querySelectorAll('.user-modal__photo-block__quote blockquote.student-quote, .user-modal__info-block__header, .bio-info__section-heading, .user-modal__info-block__main-content--bio-info-wrapper, .user-modal__carousel__slide--selected');
     var modalNextProfileTransitionTimeline = new TimelineMax();
     var modalStudentProfileImagePos = modalStudentProfileImage.getBoundingClientRect();
     var imgClone = modalStudentProfileImage.cloneNode(true);
